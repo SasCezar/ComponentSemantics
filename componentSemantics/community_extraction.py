@@ -6,7 +6,8 @@ import leidenalg
 import numpy
 from tqdm import tqdm
 
-from feature_extraction import DocumentFeatureExtraction, TfidfFeatureExtraction
+from feature_extraction import TfidfFeatureExtraction
+from utils import check_dir, clean_graph
 
 
 class CommunityExtraction:
@@ -22,19 +23,13 @@ class CommunityExtraction:
 
     def extract(self, project_name, graph_path, out_path):
         graph = igraph.Graph.Read_GraphML(graph_path)
-        graph = self._clean(graph)
+        graph = clean_graph(graph)
         graph_out = os.path.join(out_path, "graphs", "projects", project_name)
-        self._check_dir(graph_out)
-
-        features_out = os.path.join(out_path, "embeddings", self.features.level)
-        features = self.features.get_embeddings(graph)
-        self._check_dir(features_out)
-        features_name = f"{project_name}.vec"
-        self.features.save_features(features, features_out, features_name)
+        check_dir(graph_out)
 
         for method in tqdm(self.algorithms, leave=False):
             method_out = os.path.join(out_path, "graphs", method, "raw", project_name)
-            self._check_dir(method_out)
+            check_dir(method_out)
             communities = self.algorithms[method](graph)
             graph.vs[method] = communities.membership
             sub_communities = list(self._extract_sub(graph, method))
@@ -65,22 +60,6 @@ class CommunityExtraction:
             comm = graph.subgraph(ids)
             yield comm
 
-    def _clean(self, graph):
-        delete = [x.index for x in graph.vs if "$" in x['name']]
-        graph.delete_vertices(delete)
-        for edge_label in self._clean_edges:
-            graph.es.select(labelE=edge_label).delete()
-
-        graph.vs.select(_degree=0).delete()
-
-        return graph
-
-    @staticmethod
-    def _check_dir(path):
-        project_path = os.path.join(path)
-        if not os.path.exists(project_path):
-            os.makedirs(project_path)
-
     @staticmethod
     def save_graph(graph, path, name):
         out = os.path.join(path, name)
@@ -92,10 +71,8 @@ class CommunityExtraction:
         n = len(set(graph.vs[method]))
         dependency = numpy.zeros((n, n))
         for edge in graph.es:
-            source_vertex = graph.vs[edge.source]
-            target_vertex = graph.vs[edge.target]
-            source_community = source_vertex[method]
-            target_community = target_vertex[method]
+            source_community = graph.vs[edge.source][method]
+            target_community = graph.vs[edge.target][method]
             if source_community != target_community:
                 dependency[source_community, target_community] += 1
                 connected.add(source_community)
@@ -104,7 +81,7 @@ class CommunityExtraction:
         return connected, dependency
 
 
-def process(in_path, out_path):
+def extract_communities(in_path, out_path):
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project))]
 
@@ -117,4 +94,4 @@ def process(in_path, out_path):
 
 
 if __name__ == '__main__':
-    process("../../data/arcanOutput/", "../../data/")
+    extract_communities("../data/arcanOutput/", "../data/")

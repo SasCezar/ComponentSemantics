@@ -1,7 +1,9 @@
+import glob
 import os
 import re
 from abc import abstractmethod, ABC
 
+import igraph
 import sourcy
 import spacy
 from more_itertools import flatten
@@ -10,14 +12,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from tqdm import tqdm
 import numpy as np
 
+from utils import check_dir, clean_graph
+
+
 class FeatureExtraction(ABC):
     def __init__(self, model="en_trf_bertbaseuncased_lg"):
         self.nlp = spacy.load(model)
-        self.level = ""
+        self.method = ""
 
     @abstractmethod
     def get_embeddings(self, graph):
-        pass
+        raise NotImplemented()
 
     @staticmethod
     def split_camel(name):
@@ -32,6 +37,15 @@ class FeatureExtraction(ABC):
                 rep = " ".join([str(x) for x in embedding.tolist()])
                 line = name + " " + rep + "\n"
                 outf.write(line)
+
+    def extract(self, project_name, graph_path, out_path):
+        graph = igraph.Graph.Read_GraphML(graph_path)
+        graph = clean_graph(graph)
+        features_out = os.path.join(out_path, "embeddings", self.method)
+        features = self.get_embeddings(graph)
+        check_dir(features_out)
+        features_name = f"{project_name}.vec"
+        self.save_features(features, features_out, features_name)
 
 
 class PackageFeatureExtraction(FeatureExtraction):
@@ -135,3 +149,18 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
         X = self.vectorizer.fit_transform(documents).todense()
         for file, vector in zip(files, X):
             yield file, file, np.array(vector.tolist()[0])
+
+
+def extract_features(in_path, out_path):
+    projects = [project for project in os.listdir(in_path)
+                if os.path.isdir(os.path.join(in_path, project))]
+
+    feature = TfidfFeatureExtraction()
+
+    for project in tqdm(projects):
+        filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))[0]
+        feature.extract(project, filepath, out_path)
+
+
+if __name__ == '__main__':
+    extract_features("../data/arcanOutput/", "../data/")
