@@ -6,8 +6,9 @@ import sourcy
 import spacy
 from more_itertools import flatten
 from nltk.corpus import stopwords
+from sklearn.feature_extraction.text import TfidfVectorizer
 from tqdm import tqdm
-
+import numpy as np
 
 class FeatureExtraction(ABC):
     def __init__(self, model="en_trf_bertbaseuncased_lg"):
@@ -103,3 +104,34 @@ class DocumentFeatureExtraction(FeatureExtraction):
     @staticmethod
     def fix(path):
         return path.replace("SemanticGraphEmbedding", "ComponentSemantics")
+
+
+class TfidfFeatureExtraction(DocumentFeatureExtraction):
+    def __init__(self):
+        super().__init__()
+        self.vectorizer = TfidfVectorizer()
+        self.level = "TFIDF"
+
+    def get_embeddings(self, graph):
+        documents = []
+        files = []
+        for node in tqdm(graph.vs, leave=False):
+            path = node['filePath']
+            if not os.path.isfile(self.fix(path)):
+                continue
+            text = self.read_file(self.fix(path))
+
+            doc = self.scp(text)
+
+            ids = [self.split_camel(x.token) for x in doc.identifiers]
+            ids = [x.lower() for x in set(flatten(ids))]
+            ids = [x for x in ids if x not in self.stop]
+
+            doc = self.nlp(" ".join(ids))
+
+            documents.append(" ".join([token.lemma_ for token in doc]))
+            files.append(path)
+
+        X = self.vectorizer.fit_transform(documents).todense()
+        for file, vector in zip(files, X):
+            yield file, file, np.array(vector.tolist()[0])

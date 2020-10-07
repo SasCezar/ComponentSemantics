@@ -37,7 +37,7 @@ def plot_heatmap(maxtrix, project):
 
     ax = plt.axes()
 
-    seaborn.heatmap(maxtrix, mask=mask, vmin=0.70, vmax=0.99)
+    seaborn.heatmap(maxtrix, mask=mask)  # , vmin=0.70, vmax=0.99)
     ax.set_title(f"{project} - Doc")
     plt.show()
 
@@ -48,7 +48,7 @@ def plot_seaborns(df):
 
 
 def visualize(embeddings, classes):
-    points = PCA(n_components=2).fit_transform(embeddings)
+    points = TSNE(n_components=2).fit_transform(embeddings)
 
     df = pd.DataFrame(points, columns=["PC1", "PC2"])
     df["y"] = classes
@@ -56,7 +56,7 @@ def visualize(embeddings, classes):
 
 
 def community_features(path, embeddings, level):
-    level = {"package": "name", "document": "filePath"}[level]
+    level = {"package": "name", "document": "filePath", "TFIDF": "filePath"}[level]
 
     x = os.path.join(path, "**", "*.graphml")
     files = glob.glob(x, recursive=True)
@@ -111,65 +111,58 @@ def load_dependencies(path, skipped):
 
 def communities_similarities(features):
     avgs = []
-    sims = []
     for i, community in features.groupby("classes"):
         comm_feat = sklearn.metrics.pairwise.cosine_similarity(community["features"].tolist())
         iterate_indices = numpy.tril_indices(comm_feat.shape[0])
-        plot_heatmap(comm_feat, "TEST")
         n = 0
         tot = 0
         for r, c in zip(*iterate_indices):
             tot += comm_feat[r, c]
             n += 1
-            sims.append(comm_feat[r, c])
 
         mean = tot / n
-        print("Community", i, "Mean Sim", mean)
         avgs.append(mean)
-
-    print("SIMS AVG", numpy.mean(sims), "MEAN MEANS", numpy.mean(avgs))
-    return numpy.mean(avgs)
+    return numpy.mean(avgs), numpy.std(avgs)
 
 
-def main(method, embedding):
-    for project in ["antlr4", "avro", "openj9"]:
-        embedding_path = f"../../data/embeddings/{embedding}/{project}.vec"
-        embeddings = load_embeddings(embedding_path)
-        graph = f"../../data/graphs/{method}/raw/{project}/"
+def main(project, method, embedding):
+    embedding_path = f"../../data/embeddings/{embedding}/{project}.vec"
+    embeddings = load_embeddings(embedding_path)
+    graph = f"../../data/graphs/{method}/raw/{project}/"
 
-        features, skipped = community_features(graph, embeddings, embedding)
+    features, skipped = community_features(graph, embeddings, embedding)
 
-        visualize(features['features'].tolist(), features["classes"].tolist())
+    visualize(features['features'].tolist(), features["classes"].tolist())
 
-        aggregated_features = aggregate(features)
-        similarities = sklearn.metrics.pairwise.cosine_similarity(
-            numpy.array(aggregated_features["features"].tolist()))
-        plot_heatmap(similarities, project)
+    aggregated_features = aggregate(features)
+    similarities = sklearn.metrics.pairwise.cosine_similarity(
+        numpy.array(aggregated_features["features"].tolist()))
+    plot_heatmap(similarities, project)
 
-        path = f"../../data/graphs/projects/{project}/comm_dependencies_{method}.csv"
+    path = f"../../data/graphs/projects/{project}/comm_dependencies_{method}.csv"
 
-        dependencies = load_dependencies(path, skipped)
-        assert dependencies.shape == similarities.shape, print(dependencies.shape, similarities.shape)
+    dependencies = load_dependencies(path, skipped)
+    assert dependencies.shape == similarities.shape, print(dependencies.shape, similarities.shape)
 
-        dep_sim, sims = get_depsim(dependencies, similarities)
+    dep_sim, sims = get_depsim(dependencies, similarities)
 
-        communities_sim = communities_similarities(features)
+    communities_sim = communities_similarities(features)
+    print("Community Similarity", communities_sim[0], "Std", communities_sim[1])
+    print("Project", numpy.mean(sims), "Std", numpy.std(sims))
+    glob_sims = sklearn.metrics.pairwise.cosine_similarity(features["features"].tolist())
+    glob_sims = glob_sims.reshape(-1)
+    print("GLOBAL Project", numpy.mean(glob_sims), "Std", numpy.std(glob_sims))
 
-        print("Project", numpy.mean(sims), "Std", numpy.std(sims))
-        glob_sims = sklearn.metrics.pairwise.cosine_similarity(features["features"].tolist())
-        glob_sims = glob_sims.reshape(-1)
-        print("GLOBAL Project", numpy.mean(glob_sims), "Std", numpy.std(glob_sims))
+    cosine_distance = sklearn.metrics.pairwise.cosine_distances(features["features"].tolist())
 
-        cosine_distance = sklearn.metrics.pairwise.cosine_distances(features["features"].tolist())
+    silhouette = sklearn.metrics.silhouette_score(cosine_distance, features['classes'].tolist(),
+                                                  metric="precomputed")
 
-        silhouette = sklearn.metrics.silhouette_score(cosine_distance, features['classes'].tolist(),
-                                                      metric="precomputed")
+    print("Similarity Silhouette", silhouette)
 
-        print("Similarity Silhouette", silhouette)
-
-        df = pd.DataFrame(dep_sim, columns=["similarity", "dependency"])
-        corr = df.corr()
-        print("Correlation", corr)
+    df = pd.DataFrame(dep_sim, columns=["similarity", "dependency"])
+    corr = df.corr()
+    print("Correlation", corr)
 
 
 def get_depsim(dependencies, similarities):
@@ -190,8 +183,10 @@ def get_depsim(dependencies, similarities):
 
 if __name__ == '__main__':
     methods = ["leiden", "infomap"]
-    embeddings = ["package", "document"]
+    embeddings = ["TFIDF"]
     for method in methods:
         for embedding in embeddings:
-            print("Processing", method, embedding)
-            main(method, embedding)
+            for project in ["antlr4", "avro", "openj9"]:
+                print("Processing", project, method, embedding)
+                main(project, method, embedding)
+                print("=" * 60)

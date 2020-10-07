@@ -6,7 +6,7 @@ import leidenalg
 import numpy
 from tqdm import tqdm
 
-from feature_extraction import DocumentFeatureExtraction
+from feature_extraction import DocumentFeatureExtraction, TfidfFeatureExtraction
 
 
 class CommunityExtraction:
@@ -108,7 +108,7 @@ def process(in_path, out_path):
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project))]
 
-    feature = DocumentFeatureExtraction()
+    feature = TfidfFeatureExtraction()
     extractor = CommunityExtraction(feature)
 
     for project in tqdm(projects):
@@ -117,4 +117,4 @@ def process(in_path, out_path):
 
 
 if __name__ == '__main__':
-    process("../data/arcanOutput/", "../../data/")
+    process("../../data/arcanOutput/", "../../data/")
