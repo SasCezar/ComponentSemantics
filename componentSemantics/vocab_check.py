@@ -53,8 +53,8 @@ def name_to_sentence(name):
 stop = set(stopwords.words('english'))
 
 def check_vocab():
-    in_path = "../../data/arcanOutput/"
-    out_path = "../../data/embeddings/"
+    in_path = "../data/arcanOutput/"
+    out_path = "../data/embeddings/"
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project)) if "elasticsearch" not in project]
 

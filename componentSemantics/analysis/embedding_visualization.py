@@ -113,10 +113,10 @@ def main():
         pdata = []
         method = "infomap"
         # project = "elasticsearch"
-        path = f"//data/graphs/{method}/raw/{project}"
+        path = f"../../data/graphs/{method}/raw/{project}"
         embeddings, classes, shapes, size, means = load_embeddings(path, project)
 
-        visualize(embeddings, classes, shapes, size, project, method)
+        # visualize(embeddings, classes, shapes, size, project, method)
 
         similarities = sklearn.metrics.pairwise.cosine_similarity(numpy.array(means))
 
@@ -124,7 +124,7 @@ def main():
         # norm_similarities = similarities / similarities.sum().sum()
         # similarities = norm_similarities
         # print(similarities)
-        path = f"//data/graphs/projects/{project}/comm_dependencies_{method}.csv"
+        path = f"../../data/graphs/projects/{project}/comm_dependencies_{method}.csv"
 
         dependencies = numpy.loadtxt(path, dtype=int, delimiter=",")
         norm_dependencies = dependencies / dependencies.sum().sum()

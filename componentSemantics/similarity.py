@@ -31,9 +31,6 @@ def load_embeddings(path):
     return embeddings
 
 
-# import plotly.express as px
-
-
 def plot_heatmap(maxtrix, project):
     mask = numpy.zeros_like(maxtrix)
     mask[numpy.triu_indices_from(mask)] = True
@@ -45,34 +42,29 @@ def plot_heatmap(maxtrix, project):
     plt.show()
 
 
-# def plot_plotly(df):
-#    fig = px.scatter(df, x='PC1', y='PC2', color='y', symbol="type")
-#    fig.show()
-
-
 def plot_seaborns(df):
-    fig = seaborn.scatterplot(df["PC1"], df["PC2"], hue=df["y"], markers=df['type'])
+    fig = seaborn.scatterplot(data=df, x="PC1", y="PC2", hue="y")
     plt.show()
 
 
-def visualize(embeddings, classes, shapes, size):
+def visualize(embeddings, classes):
     points = PCA(n_components=2).fit_transform(embeddings)
 
     df = pd.DataFrame(points, columns=["PC1", "PC2"])
     df["y"] = classes
-    df['type'] = shapes
-    df["size"] = size
     plot_seaborns(df)
 
 
-def get_features_communities(path, embeddings):
+def community_features(path, embeddings, level):
+    level = {"package": "name", "document": "filePath"}[level]
+
     x = os.path.join(path, "**", "*.graphml")
     files = glob.glob(x, recursive=True)
 
     communities = []
     features = []
     skipped = []
-    feature_shape = embeddings[list(embeddings.keys())[0]].shape
+
     for file in files:
         i = str(re.search("comm_(\d+).graphml", file, re.IGNORECASE).group(1))
         doc_emb = []
@@ -80,18 +72,16 @@ def get_features_communities(path, embeddings):
         subcommunity = igraph.Graph.Read_GraphML(file)
 
         for node in subcommunity.vs:
-            if "." == node["filePath"]:
+            if "." == node[level]:
                 continue
 
-            node_features = numpy.array(embeddings[node["filePath"]]).astype(numpy.float)
+            node_features = numpy.array(embeddings[node[level]]).astype(numpy.float)
             doc_emb.append(node_features)
             features.append(node_features)
             communities.append(i)
 
         if not doc_emb:
             skipped.append(i)
-            # features.append(np.zeros(feature_shape))
-            # communities.append(i)
 
     data = pd.DataFrame(zip(features, communities), columns=["features", "classes"])
     return data, skipped
@@ -104,6 +94,7 @@ def aggregate(data, method="mean"):
         data = data.groupby('classes')["features"].apply(np.sum).reset_index(name='features')
     else:
         raise ValueError("Method of aggregation not defined.")
+
     data["classes"] = pd.to_numeric(data["classes"])
     return data.sort_values("classes").set_index("classes", drop=False)
 
@@ -111,22 +102,44 @@ def aggregate(data, method="mean"):
 def load_dependencies(path, skipped):
     dependencies = numpy.loadtxt(path, dtype=int, delimiter=",")
     norm_dependencies = dependencies / dependencies.sum().sum()
-
+    skipped = np.array(skipped).astype(int)
     dependencies = norm_dependencies
     dependencies = numpy.delete(dependencies, skipped, axis=0)
     dependencies = numpy.delete(dependencies, skipped, axis=1)
     return dependencies
 
 
+def communities_similarities(features):
+    avgs = []
+    sims = []
+    for i, community in features.groupby("classes"):
+        comm_feat = sklearn.metrics.pairwise.cosine_similarity(community["features"].tolist())
+        iterate_indices = numpy.tril_indices(comm_feat.shape[0])
+        plot_heatmap(comm_feat, "TEST")
+        n = 0
+        tot = 0
+        for r, c in zip(*iterate_indices):
+            tot += comm_feat[r, c]
+            n += 1
+            sims.append(comm_feat[r, c])
+
+        mean = tot / n
+        print("Community", i, "Mean Sim", mean)
+        avgs.append(mean)
+
+    print("SIMS AVG", numpy.mean(sims), "MEAN MEANS", numpy.mean(avgs))
+    return numpy.mean(avgs)
+
+
 def main(method, embedding):
     for project in ["antlr4", "avro", "openj9"]:
         embedding_path = f"../../data/embeddings/{embedding}/{project}.vec"
         embeddings = load_embeddings(embedding_path)
-        graph = f"/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/graphs/{method}/raw/{project}/"
+        graph = f"../../data/graphs/{method}/raw/{project}/"
 
-        features, skipped = get_features_communities(graph, embeddings)
+        features, skipped = community_features(graph, embeddings, embedding)
 
-        # visualize(embeddings, classes, shapes, size)
+        visualize(features['features'].tolist(), features["classes"].tolist())
 
         aggregated_features = aggregate(features)
         similarities = sklearn.metrics.pairwise.cosine_similarity(
@@ -140,17 +153,21 @@ def main(method, embedding):
 
         dep_sim, sims = get_depsim(dependencies, similarities)
 
+        communities_sim = communities_similarities(features)
+
         print("Project", numpy.mean(sims), "Std", numpy.std(sims))
+        glob_sims = sklearn.metrics.pairwise.cosine_similarity(features["features"].tolist())
+        glob_sims = glob_sims.reshape(-1)
+        print("GLOBAL Project", numpy.mean(glob_sims), "Std", numpy.std(glob_sims))
 
-        df = pd.DataFrame(dep_sim, columns=["similarity", "dependency"])
+        cosine_distance = sklearn.metrics.pairwise.cosine_distances(features["features"].tolist())
 
-        cosine_distance = sklearn.metrics.pairwise.cosine_distances(aggregated_features["features"].tolist())
-
-        silhouette = sklearn.metrics.silhouette_score(cosine_distance, aggregated_features['classes'].tolist(),
+        silhouette = sklearn.metrics.silhouette_score(cosine_distance, features['classes'].tolist(),
                                                       metric="precomputed")
 
         print("Similarity Silhouette", silhouette)
 
+        df = pd.DataFrame(dep_sim, columns=["similarity", "dependency"])
         corr = df.corr()
         print("Correlation", corr)
 
@@ -161,19 +178,20 @@ def get_depsim(dependencies, similarities):
     iterate_indices = numpy.tril_indices(dependencies.shape[0])
     col_skip = dependencies.any(axis=0)
     rows_skip = dependencies.any(axis=1)
-    for z, x, c, r in zip(*iterate_indices, col_skip, rows_skip):
+    for i, j, c, r in zip(*iterate_indices, col_skip, rows_skip):
         if c and r:
-            simil = similarities[z, x]
-            sumx = dependencies[z, x] + dependencies[x, z]
+            simil = similarities[i, j]
+            sumx = dependencies[i, j] + dependencies[j, i]
             dep_sim.append((sumx, simil))
 
-            sims.append(similarities[z, x])
+            sims.append(similarities[i, j])
     return dep_sim, sims
 
 
 if __name__ == '__main__':
-    methods = ["infomap"]
-    embeddings = ["document"]
+    methods = ["leiden", "infomap"]
+    embeddings = ["package", "document"]
     for method in methods:
         for embedding in embeddings:
+            print("Processing", method, embedding)
             main(method, embedding)

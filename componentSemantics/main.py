@@ -1,14 +1,12 @@
 import glob
 import os
-import re
 
 import igraph
 import leidenalg
 import numpy
-import spacy
 from tqdm import tqdm
 
-from community.feature_extraction import PackageFeatureExtraction, DocumentFeatureExtraction
+from feature_extraction import DocumentFeatureExtraction
 
 
 class CommunityExtraction:
@@ -119,4 +117,4 @@ def process(in_path, out_path):
 
 
 if __name__ == '__main__':
-    process("../../data/arcanOutput/", "../../data/")
+    process("../data/arcanOutput/", "../../data/")
