@@ -6,20 +6,17 @@ import leidenalg
 import numpy
 from tqdm import tqdm
 
-from feature_extraction import TfidfFeatureExtraction
 from utils import check_dir, clean_graph
 
 
 class CommunityExtraction:
-    def __init__(self, features):
+    def __init__(self):
         self.algorithms = {
             "leiden": self.leiden,
             "infomap": self.infomap
         }
 
-        self.features = features
-
-        self._clean_edges = ["isChildOf", "isImplementationOf", "nestedTo", "belongsTo", "implementedBy", "definedBy"]
+        self.visual_style = {"vertex_size": 15, "bbox": (1000, 1000), "margin": 20}
 
     def extract(self, project_name, graph_path, out_path):
         graph = igraph.Graph.Read_GraphML(graph_path)
@@ -27,6 +24,9 @@ class CommunityExtraction:
         graph_out = os.path.join(out_path, "graphs", "projects", project_name)
         check_dir(graph_out)
 
+        plot_out = os.path.join(out_path, "plots", "graphs")
+        check_dir(plot_out)
+        print("Project", project_name, "# Nodes", len(graph.vs), "# Edges", len(graph.es))
         for method in tqdm(self.algorithms, leave=False):
             method_out = os.path.join(out_path, "graphs", method, "raw", project_name)
             check_dir(method_out)
@@ -34,6 +34,9 @@ class CommunityExtraction:
             graph.vs[method] = communities.membership
             sub_communities = list(self._extract_sub(graph, method))
 
+            pal = igraph.drawing.colors.ClusterColoringPalette(len(set(graph.vs[method])))
+            graph.vs['color'] = pal.get_many(graph.vs[method])
+            self.plot(graph, plot_out, f"{project_name}_{method}.pdf", method)
             connected_components, dependency = self.extract_community_dependency(graph, method)
             name = f"comm_dependencies_{method}.csv"
             numpy.savetxt(os.path.join(graph_out, name), dependency.astype(int), fmt='%i', delimiter=",")
@@ -41,6 +44,8 @@ class CommunityExtraction:
             for i, community in enumerate(sub_communities):
                 name = f"comm_{i}.graphml"
                 self.save_graph(community, method_out, name)
+
+            print("Project", project_name, "Method", method, "# Comm", len(set(communities.membership)))
 
         name = f"{project_name}.graphml"
         self.save_graph(graph, graph_out, name)
@@ -80,13 +85,18 @@ class CommunityExtraction:
 
         return connected, dependency
 
+    def plot(self, graph, path, name, method):
+        layout = graph.layout_fruchterman_reingold()
+        self.visual_style["layout"] = layout
+        self.visual_style["vertex_label"] = graph.vs[method]
+        igraph.plot(graph, os.path.join(path, name), **self.visual_style)
+
 
 def extract_communities(in_path, out_path):
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project))]
 
-    feature = TfidfFeatureExtraction()
-    extractor = CommunityExtraction(feature)
+    extractor = CommunityExtraction()
 
     for project in tqdm(projects):
         filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))[0]
@@ -94,4 +104,4 @@ def extract_communities(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_communities("../data/arcanOutput/", "../data/")
+    extract_communities("../data/arcanOutput/", "../data_2/")

@@ -34,11 +34,6 @@ def check_dir(path):
         os.makedirs(project_path)
 
 
-def split_camel(name):
-    splitted = re.sub('([A-Z][a-z]+)|_', r' \1', re.sub('([A-Z]+)', r' \1', name)).split()
-    return splitted
-
-
 def name_to_sentence(name):
     tokens = name.split(".")[2:]
     clean = []
@@ -91,7 +86,7 @@ def check_vocab():
             files_vocab.update(ids)
 
     #nlp = spacy.load("en_trf_bertbaseuncased_lg")
-    nlp = spacy.load("../../data/models/codebert-base")
+    nlp = spacy.load("../data/models/CodeGPT-small-java")
     spacy_vocab = set(nlp.vocab.strings)
     print(list(spacy_vocab)[:10])
     spacy_tokens = set()

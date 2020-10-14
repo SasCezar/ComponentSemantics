@@ -16,9 +16,9 @@ from utils import check_dir, clean_graph
 
 
 class FeatureExtraction(ABC):
-    def __init__(self, model="en_trf_bertbaseuncased_lg"):
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method=None):
         self.nlp = spacy.load(model)
-        self.method = ""
+        self.method = method
 
     @abstractmethod
     def get_embeddings(self, graph):
@@ -49,10 +49,9 @@ class FeatureExtraction(ABC):
 
 
 class PackageFeatureExtraction(FeatureExtraction):
-    def __init__(self, model="en_trf_bertbaseuncased_lg"):
-        super().__init__(model)
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method="package"):
+        super().__init__(model, method)
         self.nlp = spacy.load(model)
-        self.level = "package"
 
     def get_embeddings(self, graph):
         for node in tqdm(graph.vs, leave=False):
@@ -76,12 +75,12 @@ class PackageFeatureExtraction(FeatureExtraction):
 
 
 class DocumentFeatureExtraction(FeatureExtraction):
-    def __init__(self, model="en_trf_bertbaseuncased_lg"):
-        super().__init__(model)
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method="document", preprocess=True):
+        super().__init__(model, method)
         self.nlp = spacy.load(model)
-        self.level = "document"
         self.scp = sourcy.load("java")
         self.stop = set(stopwords.words('english'))
+        self.preprocess = preprocess
 
     def get_embeddings(self, graph):
         for node in tqdm(graph.vs, leave=False):
@@ -92,10 +91,16 @@ class DocumentFeatureExtraction(FeatureExtraction):
 
             doc = self.scp(text)
 
-            ids = [self.split_camel(x.token) for x in doc.identifiers]
-            ids = [x.lower() for x in set(flatten(ids))]
-            ids = [x for x in ids if x not in self.stop]
-            embedding = self.nlp(" ".join(ids)).vector
+            if self.preprocess:
+                ids = [self.split_camel(x.token) for x in doc.identifiers]
+                ids = [x.lower() for x in set(flatten(ids))]
+                ids = [x for x in ids if x not in self.stop]
+
+            else:
+                ids = [x.token for x in doc.tokens]
+
+            text = " ".join(ids)
+            embedding = self.nlp(text).vector
 
             yield path, path, embedding
 
@@ -121,10 +126,9 @@ class DocumentFeatureExtraction(FeatureExtraction):
 
 
 class TfidfFeatureExtraction(DocumentFeatureExtraction):
-    def __init__(self):
-        super().__init__()
-        self.vectorizer = TfidfVectorizer()
-        self.level = "TFIDF"
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method="TFIDF"):
+        super().__init__(model, method)
+        self.vectorizer = TfidfVectorizer(max_features=1000)
 
     def get_embeddings(self, graph):
         documents = []
@@ -149,17 +153,22 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
         X = self.vectorizer.fit_transform(documents).todense()
         for file, vector in zip(files, X):
             yield file, file, np.array(vector.tolist()[0])
+        # print("Vocab", len(self.vectorizer.vocabulary_))
 
 
 def extract_features(in_path, out_path):
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project))]
 
-    feature = TfidfFeatureExtraction()
-
-    for project in tqdm(projects):
-        filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))[0]
-        feature.extract(project, filepath, out_path)
+    features = [
+        # PackageFeatureExtraction(),
+        # TfidfFeatureExtraction(),
+        DocumentFeatureExtraction(method="doc-cls")
+    ]
+    for feature in features:
+        for project in tqdm(projects):
+            filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))[0]
+            feature.extract(project, filepath, out_path)
 
 
 if __name__ == '__main__':
