@@ -189,8 +189,10 @@ def main(project, method, embedding):
     print(f"Similarity Silhouette {silhouette:.4f}")
 
     df = pd.DataFrame(dep_sim, columns=["similarity", "dependency"])
-    corr = df.corr()
-    print(f"Correlation {corr['similarity'][1]:.4f}")
+
+    for method in ["pearson", "kendall", "spearman"]:
+        corr = df.corr(method=method)
+        print(f"Correlation {method}: {corr['similarity'][1]:.4f}")
 
 
 def get_depsim(dependencies, similarities):
@@ -213,7 +215,7 @@ def get_depsim(dependencies, similarities):
 
 if __name__ == '__main__':
     methods = ["leiden", "infomap"]
-    embeddings = ["TFIDF"]
+    embeddings = ["package", "document", "TFIDF"]
     for embedding in embeddings:
         for method in methods:
             for project in ["antlr4", "avro", "openj9"]:
