@@ -1,6 +1,7 @@
 import glob
 import os
 import re
+from collections import Counter
 
 import igraph
 import matplotlib
@@ -73,7 +74,7 @@ def visualize(embeddings, classes, project, method, embedding, out):
     plot_seaborns(df, project, method, embedding, out)
 
 
-def community_features(path, embeddings, level):
+def community_features(path, embeddings, level, ignore):
     level = {"package": "name", "document": "filePath", "TFIDF": "filePath", "CodeGPT": "filePath",
              "BERT-Tokens": "filePath"}[level]
 
@@ -103,7 +104,13 @@ def community_features(path, embeddings, level):
             skipped.append(i)
 
     data = pd.DataFrame(zip(features, communities), columns=["features", "classes"])
-    return data, skipped
+    ignore_list = []
+    if ignore:
+        ignore_list = [x[0] for x in Counter(data["classes"]).most_common() if x[1] < ignore]
+
+    data = data[~data["classes"].isin(ignore_list)]
+
+    return data, skipped, ignore_list
 
 
 def aggregate(data, method="sum"):
@@ -144,7 +151,7 @@ def communities_similarities(features):
     return numpy.mean(avgs), numpy.std(avgs)
 
 
-def main(project, method, embedding):
+def main(project, method, embedding, ignore):
     embedding_path = f"../data/embeddings/{embedding}/{project}.vec"
     embeddings = load_embeddings(embedding_path)
     graph = f"../data/graphs/{method}/raw/{project}/"
@@ -152,8 +159,8 @@ def main(project, method, embedding):
     plot_out = f"../data/plots/analysis/"
     check_dir(plot_out)
 
-    features, skipped = community_features(graph, embeddings, embedding)
-
+    features, skipped, ignored = community_features(graph, embeddings, embedding, ignore)
+    skipped.extend(ignored)
     visualize(features['features'].tolist(), features["classes"].tolist(), project, method, embedding, plot_out)
 
     aggregated_features = aggregate(features)
@@ -220,5 +227,5 @@ if __name__ == '__main__':
         for method in methods:
             for project in ["antlr4", "avro", "openj9"]:
                 print("Processing", project, method, embedding)
-                main(project, method, embedding)
+                main(project, method, embedding, 0)
                 print("=" * 60)

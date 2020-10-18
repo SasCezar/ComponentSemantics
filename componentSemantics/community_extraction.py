@@ -1,9 +1,14 @@
 import glob
 import os
+from collections import Counter
 
 import igraph
 import leidenalg
 import numpy
+import seaborn
+
+import matplotlib.pyplot as plt
+
 from tqdm import tqdm
 
 from utils import check_dir, clean_graph
@@ -27,7 +32,7 @@ class CommunityExtraction:
         plot_out = os.path.join(out_path, "plots", "graphs")
         check_dir(plot_out)
         print("Project", project_name, "# Nodes", len(graph.vs), "# Edges", len(graph.es))
-        for method in tqdm(self.algorithms, leave=False):
+        for method in self.algorithms:
             method_out = os.path.join(out_path, "graphs", method, "raw", project_name)
             check_dir(method_out)
             communities = self.algorithms[method](graph)
@@ -46,6 +51,15 @@ class CommunityExtraction:
                 self.save_graph(community, method_out, name)
 
             print("Project", project_name, "Method", method, "# Comm", len(set(communities.membership)))
+
+            counts = Counter(communities.membership)
+            ax = plt.axes()
+            seaborn.regplot(x=list(range(len([x[1] for x in counts.most_common(100)]))),
+                            y=[x[1] for x in counts.most_common(100)],
+                            scatter_kws={"s": 80},
+                            order=3, ci=None)
+            ax.set_title(f"{project_name} - {method}")
+            plt.show()
 
         name = f"{project_name}.graphml"
         self.save_graph(graph, graph_out, name)
