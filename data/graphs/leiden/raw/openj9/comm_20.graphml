@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_InstabilityMetric" for="node" attr.name="InstabilityMetric" attr.type="double"/>
+  <key id="v_componentType" for="node" attr.name="componentType" attr.type="string"/>
+  <key id="v_FanOut" for="node" attr.name="FanOut" attr.type="double"/>
+  <key id="v_filePath" for="node" attr.name="filePath" attr.type="string"/>
+  <key id="v_PageRank" for="node" attr.name="PageRank" attr.type="double"/>
+  <key id="v_FanIn" for="node" attr.name="FanIn" attr.type="double"/>
+  <key id="v_labelV" for="node" attr.name="labelV" attr.type="string"/>
+  <key id="v_ferma_type" for="node" attr.name="ferma_type" attr.type="string"/>
+  <key id="v_simpleName" for="node" attr.name="simpleName" attr.type="string"/>
+  <key id="v_TotalAmountOfChanges" for="node" attr.name="TotalAmountOfChanges" attr.type="double"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_LinesOfCode" for="node" attr.name="LinesOfCode" attr.type="double"/>
+  <key id="v_ChangeHasOccurred" for="node" attr.name="ChangeHasOccurred" attr.type="boolean"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_leiden" for="node" attr.name="leiden" attr.type="double"/>
+  <key id="e_labelE" for="edge" attr.name="labelE" attr.type="string"/>
+  <key id="e_ferma_type" for="edge" attr.name="ferma_type" attr.type="string"/>
+  <key id="e_LocationList" for="edge" attr.name="LocationList" attr.type="string"/>
+  <key id="e_Weight" for="edge" attr.name="Weight" attr.type="double"/>
+  <key id="e_id" for="edge" attr.name="id" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.jvm/share/classes/com/ibm/jvm/InvalidDumpOptionException.java</data>
+      <data key="v_PageRank">0.000314928301281128</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">InvalidDumpOptionException</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.InvalidDumpOptionException</data>
+      <data key="v_LinesOfCode">38</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1350</data>
+      <data key="v_leiden">20</data>
+    </node>
+    <node id="n1">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">5</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.jvm/share/classes/com/ibm/jvm/Dump.java</data>
+      <data key="v_PageRank">0.000269148151784935</data>
+      <data key="v_FanIn">0</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Dump</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.Dump</data>
+      <data key="v_LinesOfCode">603</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1363</data>
+      <data key="v_leiden">20</data>
+    </node>
+    <node id="n2">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.jvm/share/classes/com/ibm/jvm/DumpPermission.java</data>
+      <data key="v_PageRank">0.000314928301281128</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">DumpPermission</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.DumpPermission</data>
+      <data key="v_LinesOfCode">38</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1374</data>
+      <data key="v_leiden">20</data>
+    </node>
+    <node id="n3">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.jvm/share/classes/com/ibm/jvm/ToolDumpPermission.java</data>
+      <data key="v_PageRank">0.000314928301281128</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">ToolDumpPermission</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.ToolDumpPermission</data>
+      <data key="v_LinesOfCode">32</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1379</data>
+      <data key="v_leiden">20</data>
+    </node>
+    <node id="n4">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.jvm/share/classes/com/ibm/jvm/DumpConfigurationUnavailableException.java</data>
+      <data key="v_PageRank">0.000314928301281128</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">DumpConfigurationUnavailableException</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.DumpConfigurationUnavailableException</data>
+      <data key="v_LinesOfCode">39</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1384</data>
+      <data key="v_leiden">20</data>
+    </node>
+    <edge source="n1" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">223;256;296;330;371;405;446;481;490;492;554;565;570;600;618</data>
+      <data key="e_Weight">15</data>
+      <data key="e_id">1368</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">181;181</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">1378</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">182;182</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">1383</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">600;618;673;682</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">1388</data>
+    </edge>
+  </graph>
+</graphml>

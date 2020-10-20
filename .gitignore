@@ -128,4 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .idea/
-data/
+data/filters/
+data/models/
+data/repositories
+data/arcanOutput/**/*.csv

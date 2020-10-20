@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_InstabilityMetric" for="node" attr.name="InstabilityMetric" attr.type="double"/>
+  <key id="v_componentType" for="node" attr.name="componentType" attr.type="string"/>
+  <key id="v_FanOut" for="node" attr.name="FanOut" attr.type="double"/>
+  <key id="v_filePath" for="node" attr.name="filePath" attr.type="string"/>
+  <key id="v_PageRank" for="node" attr.name="PageRank" attr.type="double"/>
+  <key id="v_FanIn" for="node" attr.name="FanIn" attr.type="double"/>
+  <key id="v_labelV" for="node" attr.name="labelV" attr.type="string"/>
+  <key id="v_ferma_type" for="node" attr.name="ferma_type" attr.type="string"/>
+  <key id="v_simpleName" for="node" attr.name="simpleName" attr.type="string"/>
+  <key id="v_TotalAmountOfChanges" for="node" attr.name="TotalAmountOfChanges" attr.type="double"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_LinesOfCode" for="node" attr.name="LinesOfCode" attr.type="double"/>
+  <key id="v_ChangeHasOccurred" for="node" attr.name="ChangeHasOccurred" attr.type="boolean"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_leiden" for="node" attr.name="leiden" attr.type="double"/>
+  <key id="v_infomap" for="node" attr.name="infomap" attr.type="double"/>
+  <key id="e_labelE" for="edge" attr.name="labelE" attr.type="string"/>
+  <key id="e_ferma_type" for="edge" attr.name="ferma_type" attr.type="string"/>
+  <key id="e_LocationList" for="edge" attr.name="LocationList" attr.type="string"/>
+  <key id="e_Weight" for="edge" attr.name="Weight" attr.type="double"/>
+  <key id="e_id" for="edge" attr.name="id" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">interface</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/runtime/Java/src/org/antlr/v4/runtime/tree/Tree.java</data>
+      <data key="v_PageRank">0.00510354615183336</data>
+      <data key="v_FanIn">20</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Tree</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.runtime.tree.Tree</data>
+      <data key="v_LinesOfCode">35</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1310</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n1">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">6</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/Trees.java</data>
+      <data key="v_PageRank">0.000607787554618004</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Trees</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.Trees</data>
+      <data key="v_LinesOfCode">110</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2603</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n2">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/JFileChooserConfirmOverwrite.java</data>
+      <data key="v_PageRank">0.000627872105700306</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">JFileChooserConfirmOverwrite</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.JFileChooserConfirmOverwrite</data>
+      <data key="v_LinesOfCode">31</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2612</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n3">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">interface</data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/TreeTextProvider.java</data>
+      <data key="v_PageRank">0.000944390961897704</data>
+      <data key="v_FanIn">4</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">TreeTextProvider</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.TreeTextProvider</data>
+      <data key="v_LinesOfCode">10</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2636</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n4">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">23</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/TreeViewer.java</data>
+      <data key="v_PageRank">0.00142541356917383</data>
+      <data key="v_FanIn">5</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">TreeViewer</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.TreeViewer</data>
+      <data key="v_LinesOfCode">716</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2646</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n5">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">9</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/TreePostScriptGenerator.java</data>
+      <data key="v_PageRank">0.000846936489578653</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">TreePostScriptGenerator</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.TreePostScriptGenerator</data>
+      <data key="v_LinesOfCode">130</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2652</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n6">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">5</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/TreeLayoutAdaptor.java</data>
+      <data key="v_PageRank">0.00114402364091109</data>
+      <data key="v_FanIn">4</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">TreeLayoutAdaptor</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.TreeLayoutAdaptor</data>
+      <data key="v_LinesOfCode">99</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2659</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <node id="n7">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/antlr4/tool/src/org/antlr/v4/gui/GraphicsSupport.java</data>
+      <data key="v_PageRank">0.000627872105700306</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">GraphicsSupport</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">org.antlr.v4.gui.GraphicsSupport</data>
+      <data key="v_LinesOfCode">108</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2743</data>
+      <data key="v_leiden">0</data>
+      <data key="v_infomap">16</data>
+    </node>
+    <edge source="n1" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">24;25;30;32;36;40;44;49;53;56;60;65;68;71;76;77;80;85;96;99;107;108;109;110;113;116</data>
+      <data key="e_Weight">26</data>
+      <data key="e_id">2651</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">107;109;113;116</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">2644</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">25;26</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">2650</data>
+    </edge>
+    <edge source="n1" target="n5">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">71;73</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">2656</data>
+    </edge>
+    <edge source="n3" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">12</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2641</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">64;65;69;75;77;83;86;93;94;115;117;144;145;175;176;179;184;202;246;251;252;268;271;276;309;418;419;420;424;609;611;615;679;680;683;684;708;709;709;710;710;713;714;714;723;724;727;729;786;790;791;791;810;810;811;834;835;841</data>
+      <data key="e_Weight">58</data>
+      <data key="e_id">2724</data>
+    </edge>
+    <edge source="n4" target="n2">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">531</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2740</data>
+    </edge>
+    <edge source="n4" target="n3">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">56;92;684;689;693;694</data>
+      <data key="e_Weight">6</data>
+      <data key="e_id">2741</data>
+    </edge>
+    <edge source="n4" target="n6">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">811</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2723</data>
+    </edge>
+    <edge source="n4" target="n7">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">674</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2747</data>
+    </edge>
+    <edge source="n5" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">23;25;26;31;32;46;48;52;53;56;59;63;63;74;74;75;81;91;92;108;110;111;115;126;130;130;131;134;135;138;139</data>
+      <data key="e_Weight">31</data>
+      <data key="e_id">2816</data>
+    </edge>
+    <edge source="n5" target="n3">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">47;139;144;148;149</data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">2813</data>
+    </edge>
+    <edge source="n5" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">60</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2815</data>
+    </edge>
+    <edge source="n5" target="n6">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">75</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">2814</data>
+    </edge>
+    <edge source="n6" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">16;17;18;20;21;25;26;26;51;53;55;56;60;61;61;85;87;88;92;93;97;97;98;102;107;107;108;112;112;113;117;117;118;122;122;123</data>
+      <data key="e_Weight">36</data>
+      <data key="e_id">2684</data>
+    </edge>
+  </graph>
+</graphml>

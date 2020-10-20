@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_InstabilityMetric" for="node" attr.name="InstabilityMetric" attr.type="double"/>
+  <key id="v_componentType" for="node" attr.name="componentType" attr.type="string"/>
+  <key id="v_FanOut" for="node" attr.name="FanOut" attr.type="double"/>
+  <key id="v_filePath" for="node" attr.name="filePath" attr.type="string"/>
+  <key id="v_PageRank" for="node" attr.name="PageRank" attr.type="double"/>
+  <key id="v_FanIn" for="node" attr.name="FanIn" attr.type="double"/>
+  <key id="v_labelV" for="node" attr.name="labelV" attr.type="string"/>
+  <key id="v_ferma_type" for="node" attr.name="ferma_type" attr.type="string"/>
+  <key id="v_simpleName" for="node" attr.name="simpleName" attr.type="string"/>
+  <key id="v_TotalAmountOfChanges" for="node" attr.name="TotalAmountOfChanges" attr.type="double"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_LinesOfCode" for="node" attr.name="LinesOfCode" attr.type="double"/>
+  <key id="v_ChangeHasOccurred" for="node" attr.name="ChangeHasOccurred" attr.type="boolean"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_leiden" for="node" attr.name="leiden" attr.type="double"/>
+  <key id="v_infomap" for="node" attr.name="infomap" attr.type="double"/>
+  <key id="e_labelE" for="edge" attr.name="labelE" attr.type="string"/>
+  <key id="e_ferma_type" for="edge" attr.name="ferma_type" attr.type="string"/>
+  <key id="e_LocationList" for="edge" attr.name="LocationList" attr.type="string"/>
+  <key id="e_Weight" for="edge" attr.name="Weight" attr.type="double"/>
+  <key id="e_id" for="edge" attr.name="id" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_InstabilityMetric">0.375</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">3</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0289163630268921</data>
+      <data key="v_FanIn">5</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">corereaders</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders</data>
+      <data key="v_LinesOfCode">7033</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2049</data>
+      <data key="v_leiden">7</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_InstabilityMetric">0.333333333333333</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0146210993583577</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">dumpreader</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.dumpreader</data>
+      <data key="v_LinesOfCode">1420</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">8261</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_InstabilityMetric">1</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.00309349463780263</data>
+      <data key="v_FanIn">0</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">extract</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.j9.dump.extract</data>
+      <data key="v_LinesOfCode">613</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">4455</data>
+      <data key="v_leiden">7</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n3">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0155394180031053</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">util</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.util</data>
+      <data key="v_LinesOfCode">1993</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">8557</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n4">
+      <data key="v_InstabilityMetric">0.5</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0112874151955651</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">binaryreaders</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.binaryreaders</data>
+      <data key="v_LinesOfCode">373</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">4501</data>
+      <data key="v_leiden">7</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n5">
+      <data key="v_InstabilityMetric">0.5</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0112874151955651</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">addressspace</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.addressspace</data>
+      <data key="v_LinesOfCode">930</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">8814</data>
+      <data key="v_leiden">7</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n6">
+      <data key="v_InstabilityMetric">0.5</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.00790283503758017</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">mvs</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs</data>
+      <data key="v_LinesOfCode">1474</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3450</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n7">
+      <data key="v_InstabilityMetric">1</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.00309349463780263</data>
+      <data key="v_FanIn">0</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">j9</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.j9</data>
+      <data key="v_LinesOfCode">804</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">1461</data>
+      <data key="v_leiden">7</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <node id="n8">
+      <data key="v_InstabilityMetric">0.666666666666667</data>
+      <data key="v_componentType"></data>
+      <data key="v_FanOut">2</data>
+      <data key="v_filePath">.</data>
+      <data key="v_PageRank">0.0112874151955651</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">container</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Container</data>
+      <data key="v_simpleName">le</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le</data>
+      <data key="v_LinesOfCode">5104</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5658</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">1</data>
+    </node>
+    <edge source="n0" target="n4">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">15026</data>
+    </edge>
+    <edge source="n0" target="n5">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">15024</data>
+    </edge>
+    <edge source="n0" target="n8">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">15096</data>
+    </edge>
+    <edge source="n1" target="n3">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">15099</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">15081</data>
+    </edge>
+    <edge source="n4" target="n0">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">15097</data>
+    </edge>
+    <edge source="n5" target="n0">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">15098</data>
+    </edge>
+    <edge source="n6" target="n1">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">15105</data>
+    </edge>
+    <edge source="n7" target="n0">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">7</data>
+      <data key="e_id">15138</data>
+    </edge>
+    <edge source="n8" target="n1">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">3</data>
+      <data key="e_id">15100</data>
+    </edge>
+    <edge source="n8" target="n6">
+      <data key="e_labelE">containerIsAfferentOf</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList"></data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">15102</data>
+    </edge>
+  </graph>
+</graphml>

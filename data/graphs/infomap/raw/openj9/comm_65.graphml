@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_InstabilityMetric" for="node" attr.name="InstabilityMetric" attr.type="double"/>
+  <key id="v_componentType" for="node" attr.name="componentType" attr.type="string"/>
+  <key id="v_FanOut" for="node" attr.name="FanOut" attr.type="double"/>
+  <key id="v_filePath" for="node" attr.name="filePath" attr.type="string"/>
+  <key id="v_PageRank" for="node" attr.name="PageRank" attr.type="double"/>
+  <key id="v_FanIn" for="node" attr.name="FanIn" attr.type="double"/>
+  <key id="v_labelV" for="node" attr.name="labelV" attr.type="string"/>
+  <key id="v_ferma_type" for="node" attr.name="ferma_type" attr.type="string"/>
+  <key id="v_simpleName" for="node" attr.name="simpleName" attr.type="string"/>
+  <key id="v_TotalAmountOfChanges" for="node" attr.name="TotalAmountOfChanges" attr.type="double"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_LinesOfCode" for="node" attr.name="LinesOfCode" attr.type="double"/>
+  <key id="v_ChangeHasOccurred" for="node" attr.name="ChangeHasOccurred" attr.type="boolean"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_leiden" for="node" attr.name="leiden" attr.type="double"/>
+  <key id="v_infomap" for="node" attr.name="infomap" attr.type="double"/>
+  <key id="e_labelE" for="edge" attr.name="labelE" attr.type="string"/>
+  <key id="e_ferma_type" for="edge" attr.name="ferma_type" attr.type="string"/>
+  <key id="e_LocationList" for="edge" attr.name="LocationList" attr.type="string"/>
+  <key id="e_Weight" for="edge" attr.name="Weight" attr.type="double"/>
+  <key id="e_id" for="edge" attr.name="id" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">10</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfjview/share/classes/com/ibm/jvm/dtfjview/commands/ExceptionHandler.java</data>
+      <data key="v_PageRank">0.000629051944795951</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">ExceptionHandler</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.dtfjview.commands.ExceptionHandler</data>
+      <data key="v_LinesOfCode">504</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">9580</data>
+      <data key="v_leiden">3</data>
+      <data key="v_infomap">65</data>
+    </node>
+    <node id="n1">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfjview/share/classes/com/ibm/jvm/dtfjview/commands/ExceptionHandler.java</data>
+      <data key="v_PageRank">0.000322656271414531</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">DTFJClass</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.dtfjview.commands.DTFJClass</data>
+      <data key="v_LinesOfCode">504</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">9631</data>
+      <data key="v_leiden">3</data>
+      <data key="v_infomap">65</data>
+    </node>
+    <node id="n2">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">3</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfjview/share/classes/com/ibm/jvm/dtfjview/commands/ExceptionHandler.java</data>
+      <data key="v_PageRank">0.00059707964863001</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">DTFJMethod</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.jvm.dtfjview.commands.DTFJMethod</data>
+      <data key="v_LinesOfCode">504</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">9636</data>
+      <data key="v_leiden">3</data>
+      <data key="v_infomap">65</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">53;222;260;262;263;264;265;266;268;269;270;271;272;273;276;278;280;281;282;283;285;287;289;290;291;292;293;294;295;296;297;298;300;302;304;305;306;308;310;312;313;314;315;316;319;321;323;324;325;326;328;330;332;333;335;337;339;341;342;344;346;348;349;351;352;353;355;356;357;358;359;361;362;364;366;367;368;369;370;371;372;373;375;381;382;384;386;388;390;392;394;396;398;400;401;402;403;404;407;409;411;412;413;414;415;417;418;419;420;422;424;425;426;427;428;429;430;431;432;433;435;436;437;438;439;442;444;449;450;451;452;453;454;455;457;458;459;460;462;463;464;465;466;467;468;471;472;474;476;478;479;481;485;486;487;488;490;491;492;493;494;496;497;500;502</data>
+      <data key="e_Weight">165</data>
+      <data key="e_id">9804</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">92;93;178;181;214;222</data>
+      <data key="e_Weight">6</data>
+      <data key="e_id">9806</data>
+    </edge>
+    <edge source="n1" target="n2">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">511;518;520;523;524</data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">9640</data>
+    </edge>
+    <edge source="n2" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">545</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">9745</data>
+    </edge>
+  </graph>
+</graphml>

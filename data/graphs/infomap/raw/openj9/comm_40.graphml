@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_InstabilityMetric" for="node" attr.name="InstabilityMetric" attr.type="double"/>
+  <key id="v_componentType" for="node" attr.name="componentType" attr.type="string"/>
+  <key id="v_FanOut" for="node" attr.name="FanOut" attr.type="double"/>
+  <key id="v_filePath" for="node" attr.name="filePath" attr.type="string"/>
+  <key id="v_PageRank" for="node" attr.name="PageRank" attr.type="double"/>
+  <key id="v_FanIn" for="node" attr.name="FanIn" attr.type="double"/>
+  <key id="v_labelV" for="node" attr.name="labelV" attr.type="string"/>
+  <key id="v_ferma_type" for="node" attr.name="ferma_type" attr.type="string"/>
+  <key id="v_simpleName" for="node" attr.name="simpleName" attr.type="string"/>
+  <key id="v_TotalAmountOfChanges" for="node" attr.name="TotalAmountOfChanges" attr.type="double"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_LinesOfCode" for="node" attr.name="LinesOfCode" attr.type="double"/>
+  <key id="v_ChangeHasOccurred" for="node" attr.name="ChangeHasOccurred" attr.type="boolean"/>
+  <key id="v_id" for="node" attr.name="id" attr.type="string"/>
+  <key id="v_leiden" for="node" attr.name="leiden" attr.type="double"/>
+  <key id="v_infomap" for="node" attr.name="infomap" attr.type="double"/>
+  <key id="e_labelE" for="edge" attr.name="labelE" attr.type="string"/>
+  <key id="e_ferma_type" for="edge" attr.name="ferma_type" attr.type="string"/>
+  <key id="e_LocationList" for="edge" attr.name="LocationList" attr.type="string"/>
+  <key id="e_Weight" for="edge" attr.name="Weight" attr.type="double"/>
+  <key id="e_id" for="edge" attr.name="id" attr.type="string"/>
+  <graph id="G" edgedefault="directed">
+    <node id="n0">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">26</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/Caa.java</data>
+      <data key="v_PageRank">0.000443730974164185</data>
+      <data key="v_FanIn">6</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Caa</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.Caa</data>
+      <data key="v_LinesOfCode">767</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2679</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n1">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">27</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/DsaStackFrame.java</data>
+      <data key="v_PageRank">0.000704976232182562</data>
+      <data key="v_FanIn">7</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">DsaStackFrame</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.DsaStackFrame</data>
+      <data key="v_LinesOfCode">973</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2697</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n2">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">18</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/Tcb.java</data>
+      <data key="v_PageRank">0.000315019201248616</data>
+      <data key="v_FanIn">3</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Tcb</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.Tcb</data>
+      <data key="v_LinesOfCode">379</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2702</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n3">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CaaNotFound.java</data>
+      <data key="v_PageRank">0.000296461649162846</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CaaNotFound</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CaaNotFound</data>
+      <data key="v_LinesOfCode">25</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2726</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n4">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/RegisterSet.java</data>
+      <data key="v_PageRank">0.000352111472866755</data>
+      <data key="v_FanIn">5</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">RegisterSet</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.RegisterSet</data>
+      <data key="v_LinesOfCode">102</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">2731</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n5">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/OtcbcopyonforkTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">OtcbcopyonforkTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.OtcbcopyonforkTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3455</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n6">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IhastcbTemplate.java</data>
+      <data key="v_PageRank">0.00029854800335238</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IhastcbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IhastcbTemplate</data>
+      <data key="v_LinesOfCode">77</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3461</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n7">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/LseslsedTemplate.java</data>
+      <data key="v_PageRank">0.000307675792804285</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">LseslsedTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.LseslsedTemplate</data>
+      <data key="v_LinesOfCode">41</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3467</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n8">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IhapsaTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IhapsaTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IhapsaTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3473</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n9">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/Ihartm2aTemplate.java</data>
+      <data key="v_PageRank">0.000302221173007995</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Ihartm2aTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.Ihartm2aTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3479</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n10">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/CeexcvtTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexcvtTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.CeexcvtTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3485</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n11">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IhaascbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IhaascbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IhaascbTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3497</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n12">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IhaasxbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IhaasxbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IhaasxbTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3502</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n13">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/BpxzotcbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">BpxzotcbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.BpxzotcbTemplate</data>
+      <data key="v_LinesOfCode">51</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3507</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n14">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IkjrbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IkjrbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IkjrbTemplate</data>
+      <data key="v_LinesOfCode">41</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3512</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n15">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/Lsestate1Template.java</data>
+      <data key="v_PageRank">0.000322560175234441</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Lsestate1Template</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.Lsestate1Template</data>
+      <data key="v_LinesOfCode">70</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3517</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n16">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/BpxzustaTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">BpxzustaTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.BpxzustaTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3527</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n17">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IharbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IharbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IharbTemplate</data>
+      <data key="v_LinesOfCode">58</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3532</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n18">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/LsestateTemplate.java</data>
+      <data key="v_PageRank">0.000322560175234441</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">LsestateTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.LsestateTemplate</data>
+      <data key="v_LinesOfCode">67</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3537</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n19">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/IkjtcbTemplate.java</data>
+      <data key="v_PageRank">0.00028403253421509</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">IkjtcbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.IkjtcbTemplate</data>
+      <data key="v_LinesOfCode">87</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3542</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n20">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">7</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/Lse.java</data>
+      <data key="v_PageRank">0.00031710555543815</data>
+      <data key="v_FanIn">3</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Lse</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.Lse</data>
+      <data key="v_LinesOfCode">121</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3547</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n21">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/LsedTemplate.java</data>
+      <data key="v_PageRank">0.000322560175234441</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">LsedTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.LsedTemplate</data>
+      <data key="v_LinesOfCode">40</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3553</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n22">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/mvs/Lses1lsed1Template.java</data>
+      <data key="v_PageRank">0.000307675792804285</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Lses1lsed1Template</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.mvs.Lses1lsed1Template</data>
+      <data key="v_LinesOfCode">41</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">3573</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n23">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexoepvTemplate.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexoepvTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexoepvTemplate</data>
+      <data key="v_LinesOfCode">67</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5663</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n24">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexstkhTemplate.java</data>
+      <data key="v_PageRank">0.000302221173007995</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexstkhTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexstkhTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5681</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n25">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/Ceexhp1bTemplate.java</data>
+      <data key="v_PageRank">0.000402862554064354</data>
+      <data key="v_FanIn">3</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Ceexhp1bTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.Ceexhp1bTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5719</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n26">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeedsaTemplate.java</data>
+      <data key="v_PageRank">0.000355087328724188</data>
+      <data key="v_FanIn">4</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeedsaTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeedsaTemplate</data>
+      <data key="v_LinesOfCode">97</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5724</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n27">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/Ceexpp1bTemplate.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Ceexpp1bTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.Ceexpp1bTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5735</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n28">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexcibTemplate.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexcibTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexcibTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5741</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n29">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/Ceedsahp_transitionTemplate.java</data>
+      <data key="v_PageRank">0.000322014307501128</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Ceedsahp_transitionTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.Ceedsahp_transitionTemplate</data>
+      <data key="v_LinesOfCode">67</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5747</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n30">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">1</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/Function.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">Function</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.Function</data>
+      <data key="v_LinesOfCode">49</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5752</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n31">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexsfxmTemplate.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexsfxmTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexsfxmTemplate</data>
+      <data key="v_LinesOfCode">67</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5763</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n32">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexcibhTemplate.java</data>
+      <data key="v_PageRank">0.000291356040972918</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexcibhTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexcibhTemplate</data>
+      <data key="v_LinesOfCode">61</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5773</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n33">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexhepvTemplate.java</data>
+      <data key="v_PageRank">0.000353304103801494</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexhepvTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexhepvTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5778</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n34">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/SmcbTemplate.java</data>
+      <data key="v_PageRank">0.000302221173007995</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">SmcbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.SmcbTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5826</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n35">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeextvbTemplate.java</data>
+      <data key="v_PageRank">0.000283663620922224</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeextvbTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeextvbTemplate</data>
+      <data key="v_LinesOfCode">40</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5901</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n36">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeelcaTemplate.java</data>
+      <data key="v_PageRank">0.000302221173007995</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeelcaTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeelcaTemplate</data>
+      <data key="v_LinesOfCode">48</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5907</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n37">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeextvbeTemplate.java</data>
+      <data key="v_PageRank">0.000283663620922224</data>
+      <data key="v_FanIn">1</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeextvbeTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeextvbeTemplate</data>
+      <data key="v_LinesOfCode">47</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5913</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <node id="n38">
+      <data key="v_InstabilityMetric">0</data>
+      <data key="v_componentType">class</data>
+      <data key="v_FanOut">0</data>
+      <data key="v_filePath">/media/cezarsas/Data/PyCharmProjects/SemanticGraphEmbedding/data/repositories/openj9/jcl/src/openj9.dtfj/share/classes/com/ibm/dtfj/corereaders/zos/le/CeexlaaTemplate.java</data>
+      <data key="v_PageRank">0.000302221173007995</data>
+      <data key="v_FanIn">2</data>
+      <data key="v_labelV">unit</data>
+      <data key="v_ferma_type">com.arcan.data.graphs.depend.Unit</data>
+      <data key="v_simpleName">CeexlaaTemplate</data>
+      <data key="v_TotalAmountOfChanges">0</data>
+      <data key="v_name">com.ibm.dtfj.corereaders.zos.le.CeexlaaTemplate</data>
+      <data key="v_LinesOfCode">37</data>
+      <data key="v_ChangeHasOccurred">false</data>
+      <data key="v_id">5919</data>
+      <data key="v_leiden">2</data>
+      <data key="v_infomap">40</data>
+    </node>
+    <edge source="n0" target="n1">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">65;515;606;607</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">5882</data>
+    </edge>
+    <edge source="n0" target="n2">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">57;94;95;99;101;116;117;118;119;122;137;153;173;195;215;364;434;453;499;683</data>
+      <data key="e_Weight">20</data>
+      <data key="e_id">5883</data>
+    </edge>
+    <edge source="n0" target="n3">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">101;116;166</data>
+      <data key="e_Weight">3</data>
+      <data key="e_id">5895</data>
+    </edge>
+    <edge source="n0" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">263;279;288;298;307;338;365;396;398;406;433;434;440;451;453;497;499;500;607;647</data>
+      <data key="e_Weight">20</data>
+      <data key="e_id">5925</data>
+    </edge>
+    <edge source="n0" target="n6">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">195</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5874</data>
+    </edge>
+    <edge source="n0" target="n9">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">365</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5912</data>
+    </edge>
+    <edge source="n0" target="n20">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">453</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5924</data>
+    </edge>
+    <edge source="n0" target="n24">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">353</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5881</data>
+    </edge>
+    <edge source="n0" target="n26">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">515</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5885</data>
+    </edge>
+    <edge source="n0" target="n34">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">353</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5884</data>
+    </edge>
+    <edge source="n0" target="n35">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">766;768</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5905</data>
+    </edge>
+    <edge source="n0" target="n36">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">195;316</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5911</data>
+    </edge>
+    <edge source="n0" target="n37">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">769</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5917</data>
+    </edge>
+    <edge source="n0" target="n38">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">195;316</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5923</data>
+    </edge>
+    <edge source="n1" target="n0">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">68;105;111;115;208;237;501;643;672;749;904</data>
+      <data key="e_Weight">11</data>
+      <data key="e_id">5746</data>
+    </edge>
+    <edge source="n1" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">56;105;108;153;179</data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">5783</data>
+    </edge>
+    <edge source="n1" target="n23">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">267;452;461</data>
+      <data key="e_Weight">3</data>
+      <data key="e_id">5693</data>
+    </edge>
+    <edge source="n1" target="n25">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">863;904</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5723</data>
+    </edge>
+    <edge source="n1" target="n26">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">267;471;501;672;749</data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">5728</data>
+    </edge>
+    <edge source="n1" target="n27">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">454;463</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5739</data>
+    </edge>
+    <edge source="n1" target="n28">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">501;643</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5745</data>
+    </edge>
+    <edge source="n1" target="n29">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">267;471;501;749</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">5751</data>
+    </edge>
+    <edge source="n1" target="n30">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">223;225</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">5756</data>
+    </edge>
+    <edge source="n1" target="n31">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">672</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5767</data>
+    </edge>
+    <edge source="n1" target="n32">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">643</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5777</data>
+    </edge>
+    <edge source="n1" target="n33">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">863</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">5782</data>
+    </edge>
+    <edge source="n2" target="n4">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">187;189;190;209;216;217;241;356</data>
+      <data key="e_Weight">8</data>
+      <data key="e_id">3552</data>
+    </edge>
+    <edge source="n2" target="n5">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">241</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3492</data>
+    </edge>
+    <edge source="n2" target="n6">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">190;241;368</data>
+      <data key="e_Weight">3</data>
+      <data key="e_id">3493</data>
+    </edge>
+    <edge source="n2" target="n8">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">81;241</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">3494</data>
+    </edge>
+    <edge source="n2" target="n10">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">241</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3496</data>
+    </edge>
+    <edge source="n2" target="n11">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">81</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3501</data>
+    </edge>
+    <edge source="n2" target="n12">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">81</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3506</data>
+    </edge>
+    <edge source="n2" target="n13">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">241</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3511</data>
+    </edge>
+    <edge source="n2" target="n14">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">241</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3516</data>
+    </edge>
+    <edge source="n2" target="n15">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">368</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3521</data>
+    </edge>
+    <edge source="n2" target="n16">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">241</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3531</data>
+    </edge>
+    <edge source="n2" target="n17">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">190;241</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">3536</data>
+    </edge>
+    <edge source="n2" target="n18">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">368</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3541</data>
+    </edge>
+    <edge source="n2" target="n19">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">148;156;164;172;180;190</data>
+      <data key="e_Weight">6</data>
+      <data key="e_id">3546</data>
+    </edge>
+    <edge source="n2" target="n20">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">51;241;365;368</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">3551</data>
+    </edge>
+    <edge source="n2" target="n21">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">368</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3557</data>
+    </edge>
+    <edge source="n20" target="n7">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">60;74</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">3584</data>
+    </edge>
+    <edge source="n20" target="n15">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">81;102;122;129;137</data>
+      <data key="e_Weight">5</data>
+      <data key="e_id">3586</data>
+    </edge>
+    <edge source="n20" target="n18">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">74;88;95;112</data>
+      <data key="e_Weight">4</data>
+      <data key="e_id">3589</data>
+    </edge>
+    <edge source="n20" target="n21">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">136</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3590</data>
+    </edge>
+    <edge source="n20" target="n22">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">81</data>
+      <data key="e_Weight">1</data>
+      <data key="e_id">3588</data>
+    </edge>
+    <edge source="n30" target="n1">
+      <data key="e_labelE">dependsOn</data>
+      <data key="e_ferma_type">com.arcan.data.graphs.depend.DependencyEdge</data>
+      <data key="e_LocationList">33;34</data>
+      <data key="e_Weight">2</data>
+      <data key="e_id">6075</data>
+    </edge>
+  </graph>
+</graphml>
