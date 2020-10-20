@@ -151,12 +151,12 @@ def communities_similarities(features):
     return numpy.mean(avgs), numpy.std(avgs)
 
 
-def main(project, method, embedding, ignore):
-    embedding_path = f"../data/embeddings/{embedding}/{project}.vec"
+def main(in_path, out_path, project, method, embedding, ignore):
+    embedding_path = f"{in_path}/embeddings/{embedding}/{project}.vec"
     embeddings = load_embeddings(embedding_path)
-    graph = f"../data/graphs/{method}/raw/{project}/"
+    graph = f"{in_path}/graphs/{method}/raw/{project}/"
 
-    plot_out = f"../data/plots/analysis/"
+    plot_out = f"{out_path}/plots/analysis/"
     check_dir(plot_out)
 
     features, skipped, ignored = community_features(graph, embeddings, embedding, ignore)
@@ -168,12 +168,17 @@ def main(project, method, embedding, ignore):
         numpy.array(aggregated_features["features"].tolist()))
     plot_heatmap(similarities, project, method, embedding, plot_out)
 
-    path = f"../data/graphs/projects/{project}/comm_dependencies_{method}.csv"
-
+    path = f"{in_path}/graphs/projects/{project}/comm_dependencies_{method}.csv"
     dependencies = load_dependencies(path, skipped)
+
+    path = f"{in_path}/graphs/projects/{project}/comm_dependencies_weighted_{method}.csv"
+    dependencies_weighted = load_dependencies(path, skipped)
+
     assert dependencies.shape == similarities.shape, print(dependencies.shape, similarities.shape)
+    assert dependencies_weighted.shape == similarities.shape, print(dependencies.shape, similarities.shape)
 
     dep_sim, sims = get_depsim(dependencies, similarities)
+    wdep_sim, _ = get_depsim(dependencies_weighted, similarities)
 
     communities_sim = communities_similarities(features)
     print("Community Similarity", f"{communities_sim[0]:.4f}\pm{communities_sim[1]:.4f}")
@@ -201,6 +206,12 @@ def main(project, method, embedding, ignore):
         corr = df.corr(method=method)
         print(f"Correlation {method}: {corr['similarity'][1]:.4f}")
 
+    df = pd.DataFrame(wdep_sim, columns=["similarity", "dependency"])
+
+    for method in ["pearson", "kendall", "spearman"]:
+        corr = df.corr(method=method)
+        print(f"Weighted Correlation {method}: {corr['similarity'][1]:.4f}")
+
 
 def get_depsim(dependencies, similarities):
     dep_sim = []
@@ -221,11 +232,13 @@ def get_depsim(dependencies, similarities):
 
 
 if __name__ == '__main__':
+    in_path = "../data_weighted/"
+    out_path = "../data_weighted/"
     methods = ["leiden", "infomap"]
     embeddings = ["package", "document", "TFIDF"]
     for embedding in embeddings:
         for method in methods:
             for project in ["antlr4", "avro", "openj9"]:
                 print("Processing", project, method, embedding)
-                main(project, method, embedding, 0)
+                main(in_path, out_path, project, method, embedding, 0)
                 print("=" * 60)

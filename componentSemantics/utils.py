@@ -7,10 +7,12 @@ def check_dir(path):
         os.makedirs(project_path)
 
 
-clean_edges = ["isChildOf", "isImplementationOf", "nestedTo", "belongsTo", "implementedBy", "definedBy"]
+clean_edges = ["isChildOf", "isImplementationOf", "nestedTo", "belongsTo", "implementedBy", "definedBy",
+               "containerIsAfferentOf", "unitIsAfferentOf"]
 
 
 def clean_graph(graph):
+    graph.es['weight'] = graph.es['Weight']
     delete = [x.index for x in graph.vs if "$" in x['name']]
     graph.delete_vertices(delete)
     for edge_label in clean_edges:

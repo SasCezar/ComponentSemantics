@@ -1,12 +1,13 @@
 import glob
 import os
+import shutil
 from collections import Counter
 
 import igraph
 import leidenalg
 import numpy
 import seaborn
-
+import random
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm
@@ -42,9 +43,12 @@ class CommunityExtraction:
             pal = igraph.drawing.colors.ClusterColoringPalette(len(set(graph.vs[method])))
             graph.vs['color'] = pal.get_many(graph.vs[method])
             self.plot(graph, plot_out, f"{project_name}_{method}.pdf", method)
-            connected_components, dependency = self.extract_community_dependency(graph, method)
+            connected_components, dependency, weighted_dependency = self.extract_community_dependency(graph, method)
             name = f"comm_dependencies_{method}.csv"
             numpy.savetxt(os.path.join(graph_out, name), dependency.astype(int), fmt='%i', delimiter=",")
+
+            name = f"comm_dependencies_weighted_{method}.csv"
+            numpy.savetxt(os.path.join(graph_out, name), weighted_dependency.astype(int), fmt='%i', delimiter=",")
 
             for i, community in enumerate(sub_communities):
                 name = f"comm_{i}.graphml"
@@ -66,11 +70,11 @@ class CommunityExtraction:
 
     @staticmethod
     def leiden(graph):
-        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition)
+        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition, weights="weight")
 
     @staticmethod
     def infomap(graph):
-        return graph.community_infomap()
+        return graph.community_infomap(edge_weights="weight")
 
     @staticmethod
     def _extract_sub(graph, method):
@@ -89,15 +93,18 @@ class CommunityExtraction:
         connected = set()
         n = len(set(graph.vs[method]))
         dependency = numpy.zeros((n, n))
+        weighted_dependency = numpy.zeros((n, n))
+
         for edge in graph.es:
             source_community = graph.vs[edge.source][method]
             target_community = graph.vs[edge.target][method]
             if source_community != target_community:
                 dependency[source_community, target_community] += 1
+                weighted_dependency[source_community, target_community] += graph.es[edge.index]["weight"]
                 connected.add(source_community)
                 connected.add(target_community)
 
-        return connected, dependency
+        return connected, dependency, weighted_dependency
 
     def plot(self, graph, path, name, method):
         layout = graph.layout_fruchterman_reingold()
@@ -118,4 +125,7 @@ def extract_communities(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_communities("../data/arcanOutput/", "../data_2/")
+    random.seed(1337)
+    numpy.random.seed(1337)
+    shutil.rmtree("../data_weighted/graphs", ignore_errors=True)
+    extract_communities("../data/arcanOutput/", "../data_weighted/")
