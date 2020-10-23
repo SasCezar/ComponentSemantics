@@ -10,6 +10,8 @@ import seaborn
 import random
 import matplotlib.pyplot as plt
 
+from infomap import Infomap
+
 from tqdm import tqdm
 
 from utils import check_dir, clean_graph
@@ -37,7 +39,7 @@ class CommunityExtraction:
             method_out = os.path.join(out_path, "graphs", method, "raw", project_name)
             check_dir(method_out)
             communities = self.algorithms[method](graph)
-            graph.vs[method] = communities.membership
+            graph.vs[method] = communities
             sub_communities = list(self._extract_sub(graph, method))
 
             pal = igraph.drawing.colors.ClusterColoringPalette(len(set(graph.vs[method])))
@@ -54,9 +56,9 @@ class CommunityExtraction:
                 name = f"comm_{i}.graphml"
                 self.save_graph(community, method_out, name)
 
-            print("Project", project_name, "Method", method, "# Comm", len(set(communities.membership)))
+            print("Project", project_name, "Method", method, "# Comm", len(set(communities)))
 
-            counts = Counter(communities.membership)
+            counts = Counter(communities)
             ax = plt.axes()
             seaborn.regplot(x=list(range(len([x[1] for x in counts.most_common(100)]))),
                             y=[x[1] for x in counts.most_common(100)],
@@ -70,11 +72,25 @@ class CommunityExtraction:
 
     @staticmethod
     def leiden(graph):
-        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition, weights="weight")
+        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition, weights="weight").membership
 
     @staticmethod
     def infomap(graph):
-        return graph.community_infomap(edge_weights="weight")
+        im = Infomap("--directed --silent --seed 1337 --num-trials 10")
+
+        for edge in graph.es:
+            im.add_link(edge.source, edge.target, edge["weight"])
+
+        im.run()
+
+        unsorted_communitites = []
+        for node in im.tree:
+            if node.is_leaf:
+                unsorted_communitites.append((node.node_id, node.module_id))
+        min_id = min([x[1] for x in unsorted_communitites])
+        communities = [x[1] - min_id for x in sorted(unsorted_communitites, key=lambda x: x[0])]
+
+        return communities
 
     @staticmethod
     def _extract_sub(graph, method):
