@@ -21,3 +21,12 @@ def clean_graph(graph):
     graph.vs.select(_degree=0).delete()
 
     return graph
+
+
+def load_stopwords(path):
+    stopwords = set()
+    with open(path, "rt", encoding="utf8") as inf:
+        for line in inf:
+            stopwords.add(line.strip())
+
+    return stopwords

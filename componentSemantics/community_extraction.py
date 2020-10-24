@@ -60,7 +60,9 @@ class CommunityExtraction:
 
             counts = Counter(communities)
             ax = plt.axes()
-            seaborn.regplot(x=list(range(len([x[1] for x in counts.most_common(100)]))),
+            sizes = [x[1] for x in counts.most_common(100)]
+            print(sizes)
+            seaborn.regplot(x=list(range(len(sizes))),
                             y=[x[1] for x in counts.most_common(100)],
                             scatter_kws={"s": 80},
                             order=3, ci=None)
@@ -143,5 +145,5 @@ def extract_communities(in_path, out_path):
 if __name__ == '__main__':
     random.seed(1337)
     numpy.random.seed(1337)
-    shutil.rmtree("../data_weighted/graphs", ignore_errors=True)
-    extract_communities("../data/arcanOutput/", "../data_weighted/")
+    shutil.rmtree("../data/graphs")
+    extract_communities("../data/arcanOutput/", "../data/")
