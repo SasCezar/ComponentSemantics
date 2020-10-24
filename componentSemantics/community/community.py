@@ -1,8 +1,15 @@
+import random
 from abc import ABC, abstractmethod
 
+import igraph
 import leidenalg
+import numpy
 from igraph import Graph
 import infomap
+
+igraph.set_random_number_generator(random)
+random.seed(1337)
+numpy.random.seed(1337)
 
 
 class AbstractCommunityDetection(ABC):
@@ -13,7 +20,9 @@ class AbstractCommunityDetection(ABC):
 
 class Leiden(AbstractCommunityDetection):
     def find_community(self, graph: Graph, weights="weight"):
-        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition, weights=weights).membership
+        return leidenalg.find_partition(graph, leidenalg.ModularityVertexPartition,
+                                        weights=weights,
+                                        seed=1337).membership
 
 
 class Infomap(AbstractCommunityDetection):

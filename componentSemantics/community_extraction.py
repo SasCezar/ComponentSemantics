@@ -1,6 +1,5 @@
 import glob
 import os
-import random
 import shutil
 from collections import Counter
 from typing import Dict
@@ -76,7 +75,7 @@ class CommunityExtraction:
     @staticmethod
     def extract_community_dependency(graph, method):
         connected = set()
-        n = graph.vcount()
+        n = len(set(graph.vs[method]))
         dependency = numpy.zeros((n, n))
         weighted_dependency = numpy.zeros((n, n))
 
@@ -112,6 +111,7 @@ class CommunityExtraction:
                         order=3, ci=None)
 
         plt.savefig(os.path.join(graph_out, name))
+        plt.clf()
 
 
 def extract_communities(in_path, out_path):
@@ -131,7 +131,5 @@ def extract_communities(in_path, out_path):
 
 
 if __name__ == '__main__':
-    random.seed(1337)
-    numpy.random.seed(1337)
     shutil.rmtree("../data/graphs")
     extract_communities("../data/arcanOutput/", "../data/")

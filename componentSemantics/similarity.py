@@ -11,28 +11,15 @@ import pandas as pd
 import seaborn
 import seaborn as sns
 import sklearn
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
 import umap
+from sklearn.manifold import TSNE
 
-from utils import check_dir
+from utils import check_dir, load_embeddings
 
 matplotlib.matplotlib_fname()
 import numpy
 
 sns.set_theme(style="ticks")
-
-
-def load_embeddings(path):
-    embeddings = {}
-    with open(path, "rt", encoding="utf8") as inf:
-        for line in inf:
-            splitLines = line.split()
-            word = splitLines[0]
-            embedding = numpy.array([float(value) for value in splitLines[1:]])
-            embeddings[word] = embedding
-
-    return embeddings
 
 
 def plot_heatmap(maxtrix, project, method, embedding, out):
@@ -49,8 +36,6 @@ def plot_heatmap(maxtrix, project, method, embedding, out):
 
 
 def plot_seaborns(df, technique, project, method, embedding, out):
-    ax = plt.axes()
-    import matplotlib
     colors = {}
     classes = set(df['y'].tolist())
 
@@ -60,7 +45,6 @@ def plot_seaborns(df, technique, project, method, embedding, out):
     fig = seaborn.scatterplot(data=df, x="C1", y="C2", hue="y", palette=colors)
     if len(colors) > 12:
         fig.legend_.remove()
-        # plt.legend([],[], frameon=False)
 
     out = os.path.join(out, f"{technique}_{project}_{method}_{embedding}.pdf")
     plt.savefig(out)
@@ -68,41 +52,15 @@ def plot_seaborns(df, technique, project, method, embedding, out):
 
 
 def visualize(embeddings, classes, project, method, embedding, out, raw_out):
-    points = PCA(n_components=2).fit_transform(embeddings)
-
-    df = pd.DataFrame(points, columns=["C1", "C2"])
-    df["y"] = classes
-    df.to_csv(os.path.join(raw_out, f"PCA_{project}_{method}_{embedding}.csv"), encoding="utf8")
-    plot_seaborns(df, "PCA", project, method, embedding, out)
-
-    points = TSNE(n_components=2).fit_transform(embeddings)
-
-    df = pd.DataFrame(points, columns=["C1", "C2"])
-    df["y"] = classes
-    df.to_csv(os.path.join(raw_out, f"TSNE_{project}_{method}_{embedding}.csv"), encoding="utf8")
-    plot_seaborns(df, "TSNE", project, method, embedding, out)
-
     cosine_distance = sklearn.metrics.pairwise.cosine_distances(embeddings)
-    points = TSNE(n_components=2, metric="precomputed").fit_transform(cosine_distance)
+    tsne_points = TSNE(n_components=2, metric="precomputed").fit_transform(cosine_distance)
+    umap_points = umap.UMAP(n_components=2, metric="cosine").fit_transform(embeddings)
 
-    df = pd.DataFrame(points, columns=["C1", "C2"])
-    df["y"] = classes
-    df.to_csv(os.path.join(raw_out, f"TSNE_e_{project}_{method}_{embedding}.csv"), encoding="utf8")
-    plot_seaborns(df, "TSNE_e", project, method, embedding, out)
-
-    points = umap.UMAP(n_components=2, metric="cosine").fit_transform(embeddings)
-
-    df = pd.DataFrame(points, columns=["C1", "C2"])
-    df["y"] = classes
-    df.to_csv(os.path.join(raw_out, f"UMAP_{project}_{method}_{embedding}.csv"), encoding="utf8")
-    plot_seaborns(df, "UMAP", project, method, embedding, out)
-
-    points = umap.UMAP(n_components=2, metric="euclidean").fit_transform(embeddings)
-
-    df = pd.DataFrame(points, columns=["C1", "C2"])
-    df["y"] = classes
-    df.to_csv(os.path.join(raw_out, f"UMAP_e_{project}_{method}_{embedding}.csv"), encoding="utf8")
-    plot_seaborns(df, "UMAP_e", project, method, embedding, out)
+    for metohd, points in [("TSNE", tsne_points), ("UMAP", umap_points)]:
+        df = pd.DataFrame(points, columns=["C1", "C2"])
+        df["y"] = classes
+        df.to_csv(os.path.join(raw_out, f"{method}_{project}_{method}_{embedding}.csv"), encoding="utf8")
+        plot_seaborns(df, method, project, method, embedding, out)
 
 
 def community_features(path, embeddings, level, ignore):
@@ -144,7 +102,7 @@ def community_features(path, embeddings, level, ignore):
     return data, skipped, ignore_list
 
 
-def aggregate(data, method="sum"):
+def aggregate(data, method="mean"):
     if method == "mean":
         data = data.groupby('classes')["features"].apply(np.mean).reset_index(name='features')
     elif method == "sum":
@@ -183,8 +141,7 @@ def communities_similarities(features):
 
 
 def main(in_path, out_path, project, method, embedding, ignore):
-    embedding_path = f"{in_path}/embeddings/{embedding}/{project}.vec"
-    embeddings = load_embeddings(embedding_path)
+    embeddings = load_embeddings(f"{in_path}/embeddings/{embedding}/{project}.vec")
     graph = f"{in_path}/graphs/{method}/raw/{project}/"
 
     plot_out = f"{out_path}/plots/analysis/"
@@ -195,12 +152,14 @@ def main(in_path, out_path, project, method, embedding, ignore):
 
     features, skipped, ignored = community_features(graph, embeddings, embedding, ignore)
     skipped.extend(ignored)
+
     visualize(features['features'].tolist(), features["classes"].tolist(), project, method, embedding, plot_out,
               raw_data_out)
 
     aggregated_features = aggregate(features)
     similarities = sklearn.metrics.pairwise.cosine_similarity(
         numpy.array(aggregated_features["features"].tolist()))
+
     plot_heatmap(similarities, project, method, embedding, plot_out)
 
     path = f"{in_path}/graphs/projects/{project}/comm_dependencies_{method}.csv"
@@ -218,15 +177,6 @@ def main(in_path, out_path, project, method, embedding, ignore):
     communities_sim = communities_similarities(features)
     print("Community Similarity", f"{communities_sim[0]:.4f}", f"\pm{communities_sim[1]:.4f}")
     print("Project", f"{numpy.mean(sims):.4f}\pm{numpy.std(sims):.4f}")
-    glob_sims = sklearn.metrics.pairwise.cosine_similarity(features["features"].tolist())
-
-    iterate_indices = numpy.tril_indices(glob_sims.shape[0])
-
-    tot = []
-    for r, c in zip(*iterate_indices):
-        tot.append(glob_sims[r, c])
-
-    print("GLOBAL Project", f"{numpy.mean(glob_sims):.4f}\pm{numpy.std(glob_sims):.4f}")
 
     cosine_distance = sklearn.metrics.pairwise.cosine_distances(features["features"].tolist())
 
