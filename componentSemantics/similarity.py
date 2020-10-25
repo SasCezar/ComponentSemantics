@@ -56,10 +56,10 @@ def visualize(embeddings, classes, project, method, embedding, out, raw_out):
     tsne_points = TSNE(n_components=2, metric="precomputed").fit_transform(cosine_distance)
     umap_points = umap.UMAP(n_components=2, metric="cosine").fit_transform(embeddings)
 
-    for metohd, points in [("TSNE", tsne_points), ("UMAP", umap_points)]:
+    for dim_technique, points in [("TSNE", tsne_points), ("UMAP", umap_points)]:
         df = pd.DataFrame(points, columns=["C1", "C2"])
         df["y"] = classes
-        df.to_csv(os.path.join(raw_out, f"{method}_{project}_{method}_{embedding}.csv"), encoding="utf8")
+        df.to_csv(os.path.join(raw_out, f"{dim_technique}_{project}_{method}_{embedding}.csv"), encoding="utf8")
         plot_seaborns(df, method, project, method, embedding, out)
 
 
