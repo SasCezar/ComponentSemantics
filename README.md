@@ -5,15 +5,12 @@
 
 ### Conda
 
-``` commandline
-conda create --name [envname] --filename requirements.txt 
-```
 
-### Pip
-1. Create a python venv with python version 3.8.3 
-2. ```commandline 
-   pip install -r requirements_pip.txt
-   ```
+1. Create a virtual environment with Python version 3.8.3 
+2. Run: 
+    ```commandline 
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 Move to the ```componentSemantics``` module, and run the following commands.
