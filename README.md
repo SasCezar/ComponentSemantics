@@ -3,9 +3,6 @@
 
 ## Setup
 
-### Conda
-
-
 1. Create a virtual environment with Python version 3.8.3 
 2. Run: 
     ```commandline 
@@ -22,7 +19,7 @@ Move to the ```componentSemantics``` module, and run the following commands.
     ```commandline
     python feature_extraction.py
     ```
-3. Run rimilarity measures
+3. Run similarity measures
     ```commandline
     python similarity.py
     ```
