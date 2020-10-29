@@ -218,7 +218,7 @@ def get_depsim(dependencies, similarities):
 
 if __name__ == '__main__':
     in_path = "../data/"
-    out_path = "../data/"
+    out_path = "../data_out/"
     methods = ["leiden", "infomap"]
     embeddings = ["package", "document", "TFIDF"]
     for embedding in embeddings:
