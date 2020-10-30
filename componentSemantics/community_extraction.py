@@ -11,7 +11,8 @@ import seaborn
 from tqdm import tqdm
 
 from community.community import Leiden, Infomap, AbstractCommunityDetection
-from utils import check_dir, clean_graph
+from io.graph_load import ArcanGraphLoader
+from utils import check_dir
 
 
 class CommunityExtraction:
@@ -20,8 +21,7 @@ class CommunityExtraction:
         self.visual_style = {"vertex_size": 15, "bbox": (1000, 1000), "margin": 20}
 
     def extract(self, project_name, graph_path, out_path):
-        graph = igraph.Graph.Read_GraphML(graph_path)
-        graph = clean_graph(graph)
+        graph = ArcanGraphLoader().load(graph_path)
         graph_out = os.path.join(out_path, "graphs", "projects", project_name)
         check_dir(graph_out)
 
