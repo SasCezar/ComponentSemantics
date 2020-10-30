@@ -39,7 +39,7 @@ class SemanticScores:
         dep_sim_corr = self.dependency_similarity_corr(dependencies, inter_similarities)
         silhouette = self.silhouette(project_data)
 
-        result = {"cohesion": cohesion, "intersimilarity": (mean_intersimilarity, std_intersimilarity),
+        result = {"cohesion": cohesion, "inter_similarity": (mean_intersimilarity, std_intersimilarity),
                   "dep_sim_corr": dep_sim_corr['similarity'][1],
                   "silhouette": silhouette}
 

@@ -18,21 +18,7 @@ def load_understand(graph_path):
     return graph
 
 
-def get_arcan_nodes_edges(graph):
-    nodes = set()
-    edges = set()
-    for edge in graph.es:
-        source = graph.vs[edge.source]["name"]
-        target = graph.vs[edge.target]["name"]
-
-        nodes.add(source)
-        nodes.add(target)
-        edges.add((source, target))
-
-    return nodes, edges
-
-
-def get_understand_edges(graph):
+def get_edges(graph):
     nodes = set()
     edges = set()
     for edge in graph.es:
@@ -53,8 +39,8 @@ if __name__ == '__main__':
     arcan_graph = load_arcan(arcan_graph_path)
     understand_graph = load_understand(understand_graph_path)
 
-    arcan_nodes, arcan_edges = get_arcan_nodes_edges(arcan_graph)
-    understand_nodes, understand_edges = get_understand_edges(understand_graph)
+    arcan_nodes, arcan_edges = get_edges(arcan_graph)
+    understand_nodes, understand_edges = get_edges(understand_graph)
 
     nodes_intersection = arcan_nodes.intersection(understand_nodes)
     print(len(nodes_intersection), len(arcan_nodes))
