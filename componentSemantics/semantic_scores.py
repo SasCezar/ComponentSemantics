@@ -1,7 +1,7 @@
 import pandas
 
 from analysis.semantic import SemanticScores
-from io.result import semantic_results_to_latex
+from csio.result import semantic_results_to_latex
 
 if __name__ == '__main__':
     in_path = "../data/"

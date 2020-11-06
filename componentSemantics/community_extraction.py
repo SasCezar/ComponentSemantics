@@ -11,7 +11,7 @@ import seaborn
 from tqdm import tqdm
 
 from community.community import Leiden, Infomap, AbstractCommunityDetection
-from io.graph_load import ArcanGraphLoader
+from csio.graph_load import ArcanGraphLoader
 from utils import check_dir
 
 

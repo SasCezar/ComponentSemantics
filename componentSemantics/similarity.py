@@ -21,6 +21,11 @@ import numpy
 
 sns.set_theme(style="ticks")
 
+"""
+Deprecated:
+The new file to get the results is semantic_scores.py - However, it has no plotting implemented yet
+Keeping this file untile then
+"""
 
 def plot_heatmap(maxtrix, project, method, embedding, out):
     mask = numpy.zeros_like(maxtrix)

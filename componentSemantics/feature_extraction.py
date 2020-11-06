@@ -3,7 +3,6 @@ import os
 import re
 from abc import abstractmethod, ABC
 
-import igraph
 import numpy as np
 import sourcy
 import spacy
@@ -11,7 +10,8 @@ from more_itertools import flatten
 from sklearn.feature_extraction.text import TfidfVectorizer
 from tqdm import tqdm
 
-from utils import check_dir, clean_graph, load_stopwords
+from csio.graph_load import ArcanGraphLoader
+from utils import check_dir, load_stopwords
 
 
 class FeatureExtraction(ABC):
@@ -41,8 +41,7 @@ class FeatureExtraction(ABC):
                 outf.write(line)
 
     def extract(self, project_name, graph_path, out_path):
-        graph = igraph.Graph.Read_GraphML(graph_path)
-        graph = clean_graph(graph)
+        graph = ArcanGraphLoader().load(graph_path)
         features_out = os.path.join(out_path, "embeddings", self.method)
         features = self.get_embeddings(graph)
         check_dir(features_out)
@@ -143,6 +142,33 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
             yield file, file, np.array(vector.tolist()[0])
 
 
+class DocumentAndCommentsFeatureExtraction(DocumentFeatureExtraction):
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method="comments", stopwords=None):
+        super().__init__(model, method, stopwords)
+
+    def get_identifiers(self, path):
+        text = self.read_file(self.fix(path))
+        doc = self.scp(text)
+
+        comments = [token.token for token in doc.comments]
+
+        clean_comments = []
+        for comment in comments:
+            if "Copyright" in comment or "License" in comment:
+                continue
+            comment_doc = self.nlp(comment)
+            clean_comment = [token.text for token in comment_doc if token.text not in self.stopwords
+                             and str(token.text).isalpha()]
+
+            clean_comments.extend(clean_comment)
+
+        ids = [self.split_camel(x.token) for x in doc.identifiers]
+        ids = [x.lower() for x in set(flatten(ids)) if x.lower() not in self.stopwords]
+        clean_comments.extend(ids)
+
+        return clean_comments
+
+
 def extract_features(in_path, out_path):
     projects = [project for project in os.listdir(in_path)
                 if os.path.isdir(os.path.join(in_path, project))]
@@ -163,4 +189,4 @@ def extract_features(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_features("../data/arcanOutput/", "../data/")
+    extract_features("../data/arcanOutput/", "../data_out/")
