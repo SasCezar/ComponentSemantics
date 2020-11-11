@@ -27,7 +27,7 @@ class CommunityExtraction:
 
         plot_out = os.path.join(out_path, "plots", "graphs")
         check_dir(plot_out)
-        print("Project", project_name, "# Nodes", len(graph.vs), "# Edges", len(graph.es))
+        # print("Project", project_name, "# Nodes", len(graph.vs), "# Edges", len(graph.es))
 
         size_out = os.path.join(out_path, "plots", "size")
         check_dir(size_out)
@@ -49,7 +49,7 @@ class CommunityExtraction:
                 name = f"comm_{i}.graphml"
                 self.save_graph(community, method_out, name)
 
-            print("Project", project_name, "Method", method, "# Comm", len(set(communities)))
+            # print("Project", project_name, "Method", method, "# Comm", len(set(communities)))
 
             self.plot_size_distribution(communities, size_out, f"{project_name}_{method}.pdf")
 
@@ -103,7 +103,6 @@ class CommunityExtraction:
     def plot_size_distribution(communities, graph_out, name):
         counts = Counter(communities)
         sizes = [x[1] for x in counts.most_common(100)]
-        print(sizes)
 
         seaborn.regplot(x=list(range(len(sizes))),
                         y=[x[1] for x in counts.most_common(100)],
@@ -124,12 +123,21 @@ def extract_communities(in_path, out_path):
     }
 
     extractor = CommunityExtraction(algorithms)
-
+    skipped = 0
     for project in tqdm(projects):
-        filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))[0]
-        extractor.extract(project, filepath, out_path)
+        filepath = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))
+        if not filepath:
+            continue
+        filepath = filepath[0]
+        try:
+            extractor.extract(project, filepath, out_path)
+        except:
+            print(project)
+            skipped += 1
+            pass
+    print(skipped)
 
 
 if __name__ == '__main__':
-    shutil.rmtree("../data/graphs")
+    shutil.rmtree("../data/graphs", ignore_errors=True)
     extract_communities("../data/arcanOutput/", "../data/")

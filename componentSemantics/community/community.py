@@ -6,6 +6,7 @@ import leidenalg
 import numpy
 from igraph import Graph
 import infomap
+from cdlib.algorithms import eva
 
 igraph.set_random_number_generator(random)
 random.seed(1337)
@@ -45,3 +46,13 @@ class Infomap(AbstractCommunityDetection):
         communities = [x[1] - min_id for x in sorted(unsorted_communitites, key=lambda x: x[0])]
 
         return communities
+
+
+from cdlib.algorithms import ilouvain
+
+
+class EVA(AbstractCommunityDetection):
+    def find_community(self, graph: Graph, weights="weight", feature_path=""):
+        features = {}
+
+        return eva(graph, features, alpha=0.8)
