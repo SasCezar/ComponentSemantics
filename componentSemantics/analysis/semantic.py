@@ -21,7 +21,7 @@ class SemanticScores:
         self.dependencies_path = self.in_path + \
                                  "/graphs/projects/{project}/comm_dependencies_weighted_{community_algorithm}.csv"
 
-        self.level = defaultdict(lambda: "filePath")
+        self.level = defaultdict(lambda: "filePathReal")
         self.level["package"] = "name"
 
     def analyze(self, project, community_algorithm, features_algorithm):
@@ -39,7 +39,7 @@ class SemanticScores:
         dep_sim_corr = self.dependency_similarity_corr(dependencies, inter_similarities)
         silhouette = self.silhouette(project_data)
 
-        result = {"cohesion": cohesion, "inter_similarity": (mean_intersimilarity, std_intersimilarity),
+        result = {"cohesion": cohesion[0], "inter_similarity": (mean_intersimilarity, std_intersimilarity)[0],
                   "dep_sim_corr": dep_sim_corr['similarity'][1],
                   "silhouette": silhouette}
 

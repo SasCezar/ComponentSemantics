@@ -86,7 +86,7 @@ class DocumentFeatureExtraction(FeatureExtraction):
 
     def get_embeddings(self, graph):
         for node in tqdm(graph.vs, leave=False):
-            path = node['filePath']
+            path = node['filePathReal']
 
             if not os.path.isfile(path):
                 continue

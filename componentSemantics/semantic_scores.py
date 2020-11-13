@@ -1,5 +1,8 @@
+from collections import defaultdict
+
 import pandas
 
+from analysis.result_agg import aggregate
 from analysis.semantic import SemanticScores
 from csio.result import semantic_results_to_latex
 
@@ -21,4 +24,6 @@ if __name__ == '__main__':
 
                 df = df.append(res, ignore_index=True)
 
-    semantic_results_to_latex(df)
+    aggregate(df)
+
+    # semantic_results_to_latex(df)
