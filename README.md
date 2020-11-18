@@ -21,7 +21,7 @@ Move to the ```componentSemantics``` module, and run the following commands.
     ```
 3. Run similarity measures
     ```commandline
-    python similarity.py
+    python semantic_scores.py
     ```
    
 ## Extra
