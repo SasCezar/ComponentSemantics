@@ -1,15 +1,22 @@
 library(ggplot2)
 library(dplyr)
 
+get_proj_name <- function(x){
+  return(basename(x))
+}
 
-projects <- list("antlr4", "avro", "openj9")
+projects <- list.dirs('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/arcanOutput', recursive=FALSE)
+projects <- lapply(projects, get_proj_name)
 methods <- list("infomap", "leiden")
-embeddings <- list("package", "document", "TFIDF")
+embeddings <- list("package", "document", "TFIDF", "fastText")
+
 
 for (project in projects){
   for (method in methods){
     for (embedding in embeddings){
-      df <- read.csv(sprintf("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/plots/raw_data/TSNE_%s_%s_%s.csv", project, method, embedding))
+      skip_to_next <- FALSE
+      tryCatch(df <- read.csv(sprintf("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data_out/plots/raw_data/TSNE_%s_%s_%s.csv", project, method, embedding)), error = function(e) { skip_to_next <<- TRUE})
+      if(skip_to_next) { next } 
       
       df <- df %>% mutate(y = as.character(y))
       ggplot(df, aes(C1, C2,label = y, color = y)) + 

@@ -1,9 +1,12 @@
 import glob
 import os
+import sys
+import traceback
 
 from tqdm import tqdm
 
-from features.features import TfidfFeatureExtraction, PackageFeatureExtraction, DocumentFeatureExtraction
+from features.features import TfidfFeatureExtraction, PackageFeatureExtraction, DocumentFeatureExtraction, \
+    FastTextExtraction
 from utils import load_stopwords
 
 
@@ -15,9 +18,10 @@ def extract_features(in_path, out_path):
     stopwords = load_stopwords(path)
 
     features = [
-        PackageFeatureExtraction(stopwords=stopwords),
-        TfidfFeatureExtraction(stopwords=stopwords),
-        DocumentFeatureExtraction(stopwords=stopwords)
+        # PackageFeatureExtraction(stopwords=stopwords),
+        # TfidfFeatureExtraction(stopwords=stopwords),
+        # DocumentFeatureExtraction(stopwords=stopwords)
+        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords)
     ]
 
     skipped = 0
@@ -30,6 +34,7 @@ def extract_features(in_path, out_path):
             try:
                 feature.extract(project, filepath, out_path)
             except:
+                traceback.print_exc(file=sys.stdout)
                 print(project)
                 skipped += 1
                 pass

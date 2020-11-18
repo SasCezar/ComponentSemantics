@@ -13,10 +13,15 @@ from tqdm import tqdm
 from csio.graph_load import ArcanGraphLoader
 from utils import check_dir
 
+import fasttext as ft
+
 
 class FeatureExtraction(ABC):
     def __init__(self, model="en_trf_bertbaseuncased_lg", method=None, stopwords=None):
-        self.nlp = spacy.load(model)
+        try:
+            self.nlp = spacy.load(model)
+        except:
+            pass
         self.method = method
         if not stopwords:
             stopwords = set()
@@ -80,7 +85,6 @@ class PackageFeatureExtraction(FeatureExtraction):
 class DocumentFeatureExtraction(FeatureExtraction):
     def __init__(self, model="en_trf_bertbaseuncased_lg", method="document", preprocess=True, stopwords=None):
         super().__init__(model, method, stopwords)
-        self.nlp = spacy.load(model)
         self.scp = sourcy.load("java")
         self.preprocess = preprocess
 
@@ -185,4 +189,26 @@ class WordFrequencies(DocumentFeatureExtraction):
             wc = Counter([token.text for token in doc if token.text.lower() not in self.stopwords])
 
             embedding = wc.most_common()
+            yield path, path, embedding
+
+
+class FastTextExtraction(DocumentFeatureExtraction):
+    def __init__(self, model="wiki.en.bin", method="fastText", preprocess=True, stopwords=None):
+        super().__init__(model, method, stopwords)
+        self.nlp = ft.load_model(model)
+        self.scp = sourcy.load("java")
+        self.preprocess = preprocess
+
+    def get_embeddings(self, graph):
+        for node in tqdm(graph.vs, leave=False):
+            path = node['filePathReal']
+
+            if not os.path.isfile(path):
+                continue
+
+            identifiers = self.get_identifiers(path)
+
+            text = " ".join(identifiers)
+            embedding = self.nlp.get_sentence_vector(text)
+
             yield path, path, embedding

@@ -1,18 +1,19 @@
 import glob
 import os
 import re
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 import igraph
 import numpy as np
 import pandas as pd
-from sklearn.metrics import pairwise, silhouette_score
+from sklearn.manifold import TSNE
+from sklearn import metrics
 
-from utils import load_embeddings
+from utils import load_embeddings, check_dir
 
 
 class SemanticScores:
-    def __init__(self, in_path, out_path):
+    def __init__(self, in_path, out_path, visualize=False):
         self.in_path = in_path
         self.out_path = out_path
 
@@ -23,6 +24,9 @@ class SemanticScores:
 
         self.level = defaultdict(lambda: "filePathReal")
         self.level["package"] = "name"
+        self.visualize = visualize
+        self.raw_out = f"{self.out_path}/plots/raw_data/"
+        check_dir(self.raw_out)
 
     def analyze(self, project, community_algorithm, features_algorithm):
         project_data, skipped = self.load_project(project, community_algorithm, features_algorithm)
@@ -39,9 +43,14 @@ class SemanticScores:
         dep_sim_corr = self.dependency_similarity_corr(dependencies, inter_similarities)
         silhouette = self.silhouette(project_data)
 
-        result = {"cohesion": cohesion[0], "inter_similarity": (mean_intersimilarity, std_intersimilarity)[0],
+        if self.visualize:
+            self.raw_plot(project_data, project, community_algorithm, features_algorithm)
+
+        comm_size = [x[1] for x in Counter(project_data["classes"].tolist()).most_common()]
+        result = {"cohesion": cohesion[0],
+                  "inter_similarity": (mean_intersimilarity, std_intersimilarity)[0],
                   "dep_sim_corr": dep_sim_corr['similarity'][1],
-                  "silhouette": silhouette}
+                  "silhouette": silhouette, "comm_size": comm_size}
 
         return result
 
@@ -56,7 +65,8 @@ class SemanticScores:
                                                     project=project)
 
         embeddings = load_embeddings(features_file)
-
+        if len(embeddings) < 30:
+            raise Exception("Size of graph to small")
         communities = []
         features = []
         skipped = []
@@ -77,7 +87,7 @@ class SemanticScores:
                 features.append(node_features)
                 communities.append(i)
 
-            if not doc_emb:
+            if not doc_emb or len(subcommunity.vs) < 4:
                 skipped.append(i)
 
         project_data = pd.DataFrame(zip(features, communities), columns=["features", "classes"])
@@ -87,7 +97,7 @@ class SemanticScores:
     def cohesion(self, data):
         avgs = []
         for i, community in data.groupby("classes"):
-            comm_feat = pairwise.cosine_similarity(community["features"].tolist())
+            comm_feat = metrics.pairwise.cosine_similarity(community["features"].tolist())
             iterate_indices = np.tril_indices(comm_feat.shape[0])
             tot = 0
             for r, c in zip(*iterate_indices):
@@ -100,18 +110,17 @@ class SemanticScores:
 
     def separation(self, data):
         aggregated_features = self._aggregate(data)
-        intra_simlarities = pairwise.cosine_similarity(
-            np.array(aggregated_features["features"].tolist()))
+        intra_similarities = metrics.pairwise.cosine_similarity(np.array(aggregated_features["features"].tolist()))
 
-        return intra_simlarities
+        return intra_similarities
 
     @staticmethod
     def silhouette(data):
-        cosine_distances = pairwise.cosine_distances(data["features"].tolist())
+        cosine_distances = metrics.pairwise.cosine_distances(data["features"].tolist())
 
-        silhouette = silhouette_score(cosine_distances,
-                                      data['classes'].tolist(),
-                                      metric="precomputed")
+        silhouette = metrics.silhouette_score(cosine_distances,
+                                              data['classes'].tolist(),
+                                              metric="precomputed")
 
         return silhouette
 
@@ -167,3 +176,15 @@ class SemanticScores:
         df = pd.DataFrame(zip(sims, deps), columns=["similarity", "dependency"])
 
         return df
+
+    def raw_plot(self, df, project, method, embedding):
+        embeddings = df["features"].tolist()
+        classes = df["classes"].tolist()
+        cosine_distance = metrics.pairwise.cosine_distances(embeddings)
+        tsne_points = TSNE(n_components=2, metric="precomputed").fit_transform(cosine_distance)
+
+        for dim_technique, points in [("TSNE", tsne_points)]:
+            df = pd.DataFrame(points, columns=["C1", "C2"])
+            df["y"] = classes
+            df.to_csv(os.path.join(self.raw_out, f"{dim_technique}_{project}_{method}_{embedding}.csv"),
+                      encoding="utf8")

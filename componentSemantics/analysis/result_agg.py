@@ -1,5 +1,6 @@
 from collections import defaultdict, Counter
 import numpy as np
+import pandas as pd
 
 
 def best_algorithm(df, metric, level, inverse=False):
@@ -46,17 +47,67 @@ def aggregate(df):
         for column in columns:
             overall_metrics[metric][column[0]][column[1]] = pivot[column].tolist()
 
+    agg_list = []
+    best = defaultdict(list)
     for metric in overall_metrics:
         invert = metric_sign[metric]
         for level in overall_metrics[metric]:
             scores = best_algorithm(overall_metrics, metric, level, invert)
-
+            best[metric].append(scores)
             count = Counter(scores)
+            count_leiden = count["leiden"]
+            count_infomap = count["infomap"]
+            values_leiden = {"agg_metric": f"best {metric}", "feature_algorithm": level, "comm_algorithm": "leiden",
+                             metric: count_leiden}
+            values_infomap = {"agg_metric": f"best {metric}", "feature_algorithm": level, "comm_algorithm": "leiden",
+                              metric: count_infomap}
+
+            agg_list.append(values_leiden)
+
+            agg_list.append(values_infomap)
+
             print(metric, level, count.most_common())
 
-    for level in ["package", "document", "TFIDF"]:
+    dist = []
+    for level in ["package", "document", "fastText", "TFIDF"]:
         for algorithm in ["leiden", "infomap"]:
             scores, distances = best_algorithm_self(overall_metrics, algorithm, level)
+            dist.extend([{"level": level, "algorithm": algorithm, "dist": x} for x in distances])
+
             count = Counter(scores)
             print("separation", algorithm, level, count.most_common())
-            print("distances", distances, np.mean(distances), np.std(distances))
+            print("Avg distances", np.nanmean(distances), "STD", np.nanstd(distances))
+
+            values = {"agg_metric": "sep_value", "feature_algorithm": level, "comm_algorithm": algorithm,
+                      "Separation": np.nanmean(distances)}
+
+            agg_list.append(values)
+
+    all_distances = pd.DataFrame(dist)
+    all_distances.to_csv("distances.csv", index=False)
+
+    agg_results = pd.DataFrame(agg_list)  # , columns=["agg_metric", "metric",
+    #          "feature_algorithm", "comm_algorithm", "value"])
+    scores_agreement = []
+    mapping = {
+        ('infomap', 'infomap', 'infomap', 'infomap'): "I4-L0",
+        ('infomap', 'infomap', 'infomap', 'leiden'): "I3-L1",
+        ('infomap', 'infomap', 'leiden', 'leiden'): "I2-L2",
+        ('infomap', 'leiden', 'leiden', 'leiden'): "I1-L3",
+        ('leiden', 'leiden', 'leiden', 'leiden'): "I0-L4"
+
+    }
+    for metric in overall_metrics:
+        levels = Counter([tuple(sorted(t)) for t in zip(*best[metric])])
+        res = {"metric": metric}
+        for key, num in levels.most_common():
+            res[mapping[key]] = num
+
+        scores_agreement.append(res)
+
+        print("agreement", metric, levels.most_common())
+
+    df_agreement = pd.DataFrame(scores_agreement)
+    df_agreement.to_csv("agreement.csv", index=False)
+
+    return agg_results, scores_agreement
