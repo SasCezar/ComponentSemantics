@@ -9,10 +9,10 @@ from analysis.semantic import SemanticScores
 
 if __name__ == '__main__':
     in_path = "../data/"
-    out_path = "../data_out/"
+    out_path = "../data/"
     methods = ["leiden", "infomap"]
     embeddings = ["package", "document", "fastText", "TFIDF"]
-    analysis = SemanticScores(in_path, out_path, visualize=True)
+    analysis = SemanticScores(in_path, out_path, visualize=False)
     df = pandas.DataFrame()
 
     arc_in = os.listdir(os.path.join(in_path, "arcanOutput"))

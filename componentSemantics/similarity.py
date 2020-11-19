@@ -24,7 +24,7 @@ sns.set_theme(style="ticks")
 """
 Deprecated:
 The new file to get the results is semantic_scores.py - However, it has no plotting implemented yet
-Keeping this file untile then
+Keeping this file until then
 """
 
 def plot_heatmap(maxtrix, project, method, embedding, out):

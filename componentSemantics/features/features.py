@@ -19,7 +19,7 @@ import fasttext as ft
 class FeatureExtraction(ABC):
     def __init__(self, model="en_trf_bertbaseuncased_lg", method=None, stopwords=None):
         try:
-            self.nlp = spacy.load(model)
+            self.nlp = spacy.load(model, disable=["ner", "textcat", "parser"])
         except:
             pass
         self.method = method
@@ -212,3 +212,37 @@ class FastTextExtraction(DocumentFeatureExtraction):
             embedding = self.nlp.get_sentence_vector(text)
 
             yield path, path, embedding
+
+
+class VocabCountFeatureExtraction(DocumentFeatureExtraction):
+    def __init__(self, model="en_trf_bertbaseuncased_lg", method="VocabCount", stopwords=None):
+        super().__init__(model, method, stopwords)
+
+    def get_embeddings(self, graph):
+        vocab = set()
+        for node in tqdm(graph.vs, leave=False):
+            path = node['filePathReal']
+            if not os.path.isfile(path):
+                continue
+
+            identifiers = self.get_identifiers(path)
+
+            doc = self.nlp(" ".join(identifiers))
+
+            vocab.update([token.lemma_ for token in doc])
+
+        return vocab
+
+    def extract(self, project_name, graph_path, out_path):
+        graph = ArcanGraphLoader().load(graph_path)
+        features_out = os.path.join(out_path, "embeddings", self.method)
+        vocab = self.get_embeddings(graph)
+        check_dir(features_out)
+        features_name = f"{project_name}.vec"
+        self.save_features(vocab, features_out, features_name)
+
+    @staticmethod
+    def save_features(features, path, file):
+        out = os.path.join(path, file)
+        with open(out, "wt", encoding="utf8") as outf:
+            outf.write(str(len(features)))

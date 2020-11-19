@@ -18,9 +18,9 @@ def extract_features(in_path, out_path):
     stopwords = load_stopwords(path)
 
     features = [
-        # PackageFeatureExtraction(stopwords=stopwords),
-        # TfidfFeatureExtraction(stopwords=stopwords),
-        # DocumentFeatureExtraction(stopwords=stopwords)
+        PackageFeatureExtraction(stopwords=stopwords),
+        TfidfFeatureExtraction(stopwords=stopwords),
+        DocumentFeatureExtraction(stopwords=stopwords),
         FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords)
     ]
 
@@ -43,4 +43,4 @@ def extract_features(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_features("../data/arcanOutput/", "../data/")
+    extract_features("../data/arcanOutput/", "../data_out/")
