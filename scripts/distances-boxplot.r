@@ -6,7 +6,7 @@ df$level[df$level=="package"] <- "BERT-Pack"
 df$level[df$level=="document"] <- "BERT-Doc"
 df$level[df$level=="TFIDF"] <- "TF-IDF"
 
-df$level = factor(df$level, levels=c("BERT-Pack", "BERT-Doc", "TF-IDF", "fastText"))
+df$level = factor(df$level, levels=c("BERT-Pack", "BERT-Doc", "TF-IDF", "fastText", "code2vec"))
 df$algorithm = factor(df$algorithm, levels=c("leiden", "infomap")) 
 
 ggplot(df, aes(x = level, y = dist, color = algorithm)) +

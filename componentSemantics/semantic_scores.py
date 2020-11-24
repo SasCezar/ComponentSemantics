@@ -11,7 +11,7 @@ if __name__ == '__main__':
     in_path = "../data/"
     out_path = "../data/"
     methods = ["leiden", "infomap"]
-    embeddings = ["package", "document", "fastText", "TFIDF"]
+    embeddings = ["code2vec", "package", "document", "fastText", "TFIDF"]
     analysis = SemanticScores(in_path, out_path, visualize=False)
     df = pandas.DataFrame()
 

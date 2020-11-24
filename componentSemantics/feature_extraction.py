@@ -1,12 +1,8 @@
 import glob
-import os
 import sys
 import traceback
 
-from tqdm import tqdm
-
-from features.features import TfidfFeatureExtraction, PackageFeatureExtraction, DocumentFeatureExtraction, \
-    FastTextExtraction
+from features.features import *
 from utils import load_stopwords
 
 
@@ -21,7 +17,8 @@ def extract_features(in_path, out_path):
         PackageFeatureExtraction(stopwords=stopwords),
         TfidfFeatureExtraction(stopwords=stopwords),
         DocumentFeatureExtraction(stopwords=stopwords),
-        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords)
+        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords),
+        Code2VecExtraction(model="../data/models/code2vec/token_vecs.txt", stopwords=stopwords)
     ]
 
     skipped = 0

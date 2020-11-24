@@ -69,7 +69,7 @@ def aggregate(df):
             print(metric, level, count.most_common())
 
     dist = []
-    for level in ["package", "document", "fastText", "TFIDF"]:
+    for level in ["code2vec", "package", "document", "fastText", "TFIDF"]:
         for algorithm in ["leiden", "infomap"]:
             scores, distances = best_algorithm_self(overall_metrics, algorithm, level)
             dist.extend([{"level": level, "algorithm": algorithm, "dist": x} for x in distances])
@@ -90,11 +90,12 @@ def aggregate(df):
     #          "feature_algorithm", "comm_algorithm", "value"])
     scores_agreement = []
     mapping = {
-        ('infomap', 'infomap', 'infomap', 'infomap'): "I4-L0",
-        ('infomap', 'infomap', 'infomap', 'leiden'): "I3-L1",
-        ('infomap', 'infomap', 'leiden', 'leiden'): "I2-L2",
-        ('infomap', 'leiden', 'leiden', 'leiden'): "I1-L3",
-        ('leiden', 'leiden', 'leiden', 'leiden'): "I0-L4"
+        ('infomap', 'infomap', 'infomap', 'infomap', 'infomap'): "I5-L0",
+        ('infomap', 'infomap', 'infomap', 'infomap', 'leiden'): "I4-L1",
+        ('infomap', 'infomap', 'infomap', 'leiden', 'leiden'): "I3-L2",
+        ('infomap', 'infomap', 'leiden', 'leiden', 'leiden'): "I2-L3",
+        ('infomap', 'leiden', 'leiden', 'leiden', 'leiden'): "I1-L4",
+        ('leiden', 'leiden', 'leiden', 'leiden', 'leiden'): "I0-L5"
 
     }
     for metric in overall_metrics:

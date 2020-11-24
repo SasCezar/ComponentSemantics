@@ -6,6 +6,7 @@ from collections import Counter
 import numpy as np
 import sourcy
 import spacy
+from gensim.models import KeyedVectors
 from more_itertools import flatten
 from sklearn.feature_extraction.text import TfidfVectorizer
 from tqdm import tqdm
@@ -98,7 +99,7 @@ class DocumentFeatureExtraction(FeatureExtraction):
             identifiers = self.get_identifiers(path)
 
             text = " ".join(identifiers)
-            embedding = self.nlp(text).vector
+            embedding = self._create_embedding(text)
 
             yield path, path, embedding
 
@@ -119,10 +120,14 @@ class DocumentFeatureExtraction(FeatureExtraction):
 
         return ids
 
+    def _create_embedding(self, text):
+        return self.nlp(text).vector
+
 
 class TfidfFeatureExtraction(DocumentFeatureExtraction):
-    def __init__(self, model="en_trf_bertbaseuncased_lg", method="TFIDF", stopwords=None):
+    def __init__(self, model="en_core_web_sm", method="TFIDF", stopwords=None):
         super().__init__(model, method, stopwords)
+        self.nlp = spacy.load(model)
         self.vectorizer = TfidfVectorizer(max_features=1000)
 
     def get_embeddings(self, graph):
@@ -246,3 +251,29 @@ class VocabCountFeatureExtraction(DocumentFeatureExtraction):
         out = os.path.join(path, file)
         with open(out, "wt", encoding="utf8") as outf:
             outf.write(str(len(features)))
+
+
+class Code2VecExtraction(DocumentFeatureExtraction):
+    def __init__(self, model="code2vec.vec", method="code2vec", preprocess=True, stopwords=None):
+        super().__init__(model, method, stopwords)
+        self.nlp = KeyedVectors.load_word2vec_format(model)
+        self.scp = sourcy.load("java")
+        self.preprocess = preprocess
+
+    def _create_embedding(self, text):
+        words = text.split(" ")
+        embeddings = [self.nlp.get_vector(x) for x in words]
+
+        doc_representation = np.mean(embeddings, axis=0)
+
+        return doc_representation
+
+    def get_identifiers(self, path):
+        text = self.read_file(path)
+
+        doc = self.scp(text)
+
+        ids = [x.token.lower() for x in doc.identifiers if x.token.lower() not in self.stopwords]
+        ids = [x for x in set(ids) if x and x in self.nlp.vocab]
+
+        return ids
