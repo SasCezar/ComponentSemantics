@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 
 import igraph
+import numpy
 import pandas
 
 

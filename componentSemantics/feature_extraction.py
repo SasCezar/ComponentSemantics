@@ -40,4 +40,4 @@ def extract_features(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_features("../data/arcanOutput/", "../data_out/")
+    extract_features("../data/arcanOutput/", "../data_hierarchy/")
