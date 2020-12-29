@@ -12,14 +12,15 @@ class GraphLoader(ABC):
 
 
 class ArcanGraphLoader(GraphLoader):
-    def __init__(self):
+    def __init__(self, clean=True):
         self.clean_edges = ["isChildOf", "isImplementationOf", "nestedTo",
                             "belongsTo", "implementedBy", "definedBy",
                             "containerIsAfferentOf", "unitIsAfferentOf"]
+        self.clean = clean
 
     def load(self, path):
         graph = igraph.Graph.Read_GraphML(path)
-        graph = self._clean_graph(graph)
+        graph = self._clean_graph(graph) if self.clean else graph
         return graph
 
     def _clean_graph(self, graph):

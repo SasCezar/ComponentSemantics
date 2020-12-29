@@ -48,12 +48,12 @@ class FeatureExtraction(ABC):
                 line = name + " " + rep + "\n"
                 outf.write(line)
 
-    def extract(self, project_name, graph_path, out_path):
-        graph = ArcanGraphLoader().load(graph_path)
+    def extract(self, project_name, graph_path, out_path, sha=None, num=None, clean_graph=False):
+        graph = ArcanGraphLoader(clean=clean_graph).load(graph_path)
         features_out = os.path.join(out_path, "embeddings", self.method)
         features = self.get_embeddings(graph)
         check_dir(features_out)
-        features_name = f"{project_name}.vec"
+        features_name = f"{project_name}-{num}-{sha}.vec" if sha and num else f"{project_name}.vec"
         self.save_features(features, features_out, features_name)
 
 
@@ -216,7 +216,7 @@ class FastTextExtraction(DocumentFeatureExtraction):
             text = " ".join(identifiers)
             embedding = self.nlp.get_sentence_vector(text)
 
-            yield path, path, embedding
+            yield node['filePathRelative'], path, embedding
 
 
 class VocabCountFeatureExtraction(DocumentFeatureExtraction):
