@@ -10,18 +10,19 @@ features = {
     "package": "PackageFeatureExtraction(stopwords=stopwords)",
     "tfidf": "TfidfFeatureExtraction(stopwords=stopwords)",
     "BERT": "DocumentFeatureExtraction(stopwords=stopwords)",
-    "fastText": "FastTextExtraction(model='../data/models/fastText/wiki.en.bin', stopwords=stopwords)",
+    "fasttext": "FastTextExtraction(model='../data/models/fastText/wiki.en.bin', stopwords=stopwords)",
     # "Code2VecExtraction(model='../data/models/code2vec/token_vecs.txt', stopwords=stopwords)"
 }
 
 
 def git_checkout(repo_path, project, sha):
+    p = subprocess.Popen(["rm", "--force", "./.git/index.lock"], cwd=os.path.join(repo_path, project))
     p = subprocess.Popen(["git", "checkout", "--force", sha], cwd=os.path.join(repo_path, project))
     p.wait()
     return
 
 
-def extract(repo_path, feature_name, in_path, out_path, projects):
+def extract(repo_path, feature_name, in_path, out_path, clean_graph, projects):
     stopwords = load_stopwords("resources/java/stopwords.txt")
     feature = eval(features[feature_name])
 
@@ -38,7 +39,7 @@ def extract(repo_path, feature_name, in_path, out_path, projects):
                 sha = filename.split("-")[-1]
                 num = filename.split("-")[-2]
                 git_checkout(repo_path, project, sha)
-                feature.extract(project, filepath, out_path, sha=sha, num=num)
+                feature.extract(project, filepath, out_path, sha=sha, num=num, clean_graph=clean_graph)
             except:
                 traceback.print_exc(file=sys.stdout)
                 print(project)
