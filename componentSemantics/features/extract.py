@@ -17,6 +17,7 @@ features = {
 
 def git_checkout(repo_path, project, sha):
     p = subprocess.Popen(["rm", "--force", "./.git/index.lock"], cwd=os.path.join(repo_path, project))
+    p.wait()
     p = subprocess.Popen(["git", "checkout", "--force", sha], cwd=os.path.join(repo_path, project))
     p.wait()
     return

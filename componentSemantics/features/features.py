@@ -3,18 +3,16 @@ import re
 from abc import abstractmethod, ABC
 from collections import Counter
 
+import fasttext as ft
 import numpy as np
 import sourcy
 import spacy
 from gensim.models import KeyedVectors
 from more_itertools import flatten
 from sklearn.feature_extraction.text import TfidfVectorizer
-from tqdm import tqdm
 
 from csio.graph_load import ArcanGraphLoader
 from utils import check_dir
-
-import fasttext as ft
 
 
 class FeatureExtraction(ABC):
@@ -63,7 +61,7 @@ class PackageFeatureExtraction(FeatureExtraction):
         self.nlp = spacy.load(model)
 
     def get_embeddings(self, graph):
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             name = node['name']
             name, clean = self.name_to_sentence(name)
 
@@ -90,7 +88,7 @@ class DocumentFeatureExtraction(FeatureExtraction):
         self.preprocess = preprocess
 
     def get_embeddings(self, graph):
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             path = node['filePathReal']
 
             if not os.path.isfile(path):
@@ -133,7 +131,7 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
     def get_embeddings(self, graph):
         documents = []
         files = []
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             path = node['filePathReal']
             if not os.path.isfile(path):
                 continue
@@ -182,7 +180,7 @@ class WordFrequencies(DocumentFeatureExtraction):
         super().__init__(model, method, stopwords)
 
     def get_embeddings(self, graph):
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             path = node['filePathReal']
             if not os.path.isfile(path):
                 continue
@@ -205,7 +203,7 @@ class FastTextExtraction(DocumentFeatureExtraction):
         self.preprocess = preprocess
 
     def get_embeddings(self, graph):
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             path = node['filePathReal']
 
             if not os.path.isfile(path):
@@ -225,7 +223,7 @@ class VocabCountFeatureExtraction(DocumentFeatureExtraction):
 
     def get_embeddings(self, graph):
         vocab = set()
-        for node in tqdm(graph.vs, leave=False):
+        for node in graph.vs:
             path = node['filePathReal']
             if not os.path.isfile(path):
                 continue

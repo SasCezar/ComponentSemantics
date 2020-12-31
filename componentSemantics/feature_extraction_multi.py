@@ -27,8 +27,4 @@ if __name__ == '__main__':
     out_path = sys.argv[3]
     feature = sys.argv[4]
     splits = int(sys.argv[5])
-    extract_features("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics2/data/arcanOutput",
-                     "/media/cezarsas/Data/PyCharmProjects/ComponentSemantics2/data/repositories/",
-                     "../data_test/",
-                     feature,
-                     splits)
+    extract_features(arcan_path, repo_path, out_path, feature, splits)
