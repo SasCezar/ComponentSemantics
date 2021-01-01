@@ -11,7 +11,7 @@ features = {
     "tfidf": "TfidfFeatureExtraction(stopwords=stopwords)",
     "BERT": "DocumentFeatureExtraction(stopwords=stopwords)",
     "fasttext": "FastTextExtraction(model='../data/models/fastText/wiki.en.bin', stopwords=stopwords)",
-    # "Code2VecExtraction(model='../data/models/code2vec/token_vecs.txt', stopwords=stopwords)"
+    "code2vec": "Code2VecExtraction(model='../data/models/code2vec/token_vecs.txt', stopwords=stopwords)"
 }
 
 
