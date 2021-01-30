@@ -42,4 +42,6 @@ comm_sizes <- ggplot(df, aes(x = algorithm, y = size, color = algorithm)) +
         axis.text=element_text(size=12),
         axis.title=element_text(size=14))
 
-ggsave("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/componentSemantics/num_comm_sizes.pdf", arrangeGrob(num_comm, comm_sizes, ncol=2), width = 6, height = 5)
+ggsave("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/componentSemantics/num_comm_sizes.pdf",
+       arrangeGrob(num_comm, comm_sizes, ncol=2), width = 6, height = 5,
+       device=cairo_pdf())

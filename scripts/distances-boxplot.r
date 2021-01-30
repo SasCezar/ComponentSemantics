@@ -15,13 +15,14 @@ ggplot(df, aes(x = level, y = dist, color = algorithm)) +
   theme_linedraw() +
   theme(legend.title = element_blank(),
         legend.position = c(0.15, 0.9),
-        legend.text = element_text(size=18),
+        legend.text = element_text(size=14),
         legend.background = element_rect(fill=alpha('white', 0)),
         panel.grid.major.y = element_line(color = "grey80"),
         panel.grid.major.x = element_line(color = "grey80"),
         panel.grid.minor.x = element_blank(),
         panel.grid.minor.y = element_blank(),
-        axis.text=element_text(size=18),
-        axis.title=element_text(size=18))
+        axis.text=element_text(size=14),
+        axis.title=element_text(size=14))
 
-ggsave("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/componentSemantics/distances.pdf", width = 8, height = 6)
+ggsave("/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/componentSemantics/distances.pdf",
+       width = 8, height = 6, device=cairo_pdf())

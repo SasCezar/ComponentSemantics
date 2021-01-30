@@ -1,8 +1,10 @@
 import glob
+import shutil
 import subprocess
 import sys
 import traceback
 
+import utils
 from features.features import *
 from utils import load_stopwords
 
@@ -28,7 +30,7 @@ def extract(repo_path, feature_name, in_path, out_path, clean_graph, projects):
     feature = eval(features[feature_name])
 
     skipped = 0
-    print("Doing stuff", projects)
+    print("Processing: ", projects)
     for project in projects:
         filepaths = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))
         if not filepaths:
@@ -48,3 +50,16 @@ def extract(repo_path, feature_name, in_path, out_path, clean_graph, projects):
                 pass
 
     return skipped
+
+
+def rename(in_path, out_path, projects):
+    utils.check_dir(out_path)
+    for project in projects:
+        filepaths = glob.glob(os.path.join(in_path, project, "dep-graph-*.graphml"))
+        if not filepaths:
+            continue
+        for filepath in filepaths:
+            filename = os.path.basename(filepath)
+            shutil.copy(filepath, os.path.join(out_path, filename.replace("dep-graph", project)))
+
+    return 0

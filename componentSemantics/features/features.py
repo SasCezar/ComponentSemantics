@@ -99,7 +99,7 @@ class DocumentFeatureExtraction(FeatureExtraction):
             text = " ".join(identifiers)
             embedding = self._create_embedding(text)
 
-            yield path, path, embedding
+            yield node['filePathRelative'], path, embedding
 
     @staticmethod
     def read_file(filename):
@@ -114,7 +114,7 @@ class DocumentFeatureExtraction(FeatureExtraction):
         doc = self.scp(text)
 
         ids = [self.split_camel(x.token) for x in doc.identifiers]
-        ids = [x.lower() for x in set(flatten(ids)) if x.lower() not in self.stopwords]
+        ids = [x.lower() for x in flatten(ids) if x.lower() not in self.stopwords]
 
         return ids
 
@@ -145,7 +145,7 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
 
         X = self.vectorizer.fit_transform(documents).todense()
         for file, vector in zip(files, X):
-            yield file, file, np.array(vector.tolist()[0])
+            yield node['filePathRelative'], file, np.array(vector.tolist()[0])
 
 
 class DocumentAndCommentsFeatureExtraction(DocumentFeatureExtraction):
@@ -192,7 +192,7 @@ class WordFrequencies(DocumentFeatureExtraction):
             wc = Counter([token.text for token in doc if token.text.lower() not in self.stopwords])
 
             embedding = wc.most_common()
-            yield path, path, embedding
+            yield node['filePathRelative'], path, embedding
 
 
 class FastTextExtraction(DocumentFeatureExtraction):
@@ -272,6 +272,6 @@ class Code2VecExtraction(DocumentFeatureExtraction):
         doc = self.scp(text)
 
         ids = [x.token.lower() for x in doc.identifiers if x.token.lower() not in self.stopwords]
-        ids = [x for x in set(ids) if x and x in self.nlp.vocab]
+        ids = [x for x in ids if x and x in self.nlp.vocab]
 
         return ids
