@@ -86,10 +86,12 @@ class DocumentFeatureExtraction(FeatureExtraction):
         super().__init__(model, method, stopwords)
         self.scp = sourcy.load("java")
         self.preprocess = preprocess
+        self.repositories = '/home/sasce/PycharmProjects/ComponentSemantics/data/repositories/'
 
     def get_embeddings(self, graph):
         for node in graph.vs:
-            path = node['filePathReal']
+            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                                                self.repositories)
 
             if not os.path.isfile(path):
                 continue
@@ -169,7 +171,7 @@ class DocumentAndCommentsFeatureExtraction(DocumentFeatureExtraction):
             clean_comments.extend(clean_comment)
 
         ids = [self.split_camel(x.token) for x in doc.identifiers]
-        ids = [x.lower() for x in set(flatten(ids)) if x.lower() not in self.stopwords]
+        ids = [x.lower() for x in flatten(ids) if x.lower() not in self.stopwords]
         clean_comments.extend(ids)
 
         return clean_comments
@@ -201,10 +203,12 @@ class FastTextExtraction(DocumentFeatureExtraction):
         self.nlp = ft.load_model(model)
         self.scp = sourcy.load("java")
         self.preprocess = preprocess
+        self.repositories = '/home/sasce/PycharmProjects/ComponentSemantics/data/repositories/'
 
     def get_embeddings(self, graph):
         for node in graph.vs:
-            path = node['filePathReal']
+            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                                                self.repositories)
 
             if not os.path.isfile(path):
                 continue
@@ -257,10 +261,11 @@ class Code2VecExtraction(DocumentFeatureExtraction):
         self.nlp = KeyedVectors.load_word2vec_format(model)
         self.scp = sourcy.load("java")
         self.preprocess = preprocess
+        self.repositories = '/home/sasce/PycharmProjects/ComponentSemantics/data/repositories/'
 
     def _create_embedding(self, text):
         words = text.split(" ")
-        embeddings = [self.nlp.get_vector(x) for x in words]
+        embeddings = [self.nlp.get_vector(x) for x in words if x in self.nlp]
 
         doc_representation = np.mean(embeddings, axis=0)
 
@@ -275,3 +280,30 @@ class Code2VecExtraction(DocumentFeatureExtraction):
         ids = [x for x in ids if x and x in self.nlp.vocab]
 
         return ids
+
+
+class IdentifierEmbeddings(DocumentFeatureExtraction):
+    def __init__(self, model="code2vec", method="id-code2vec", preprocess=None, stopwords=None):
+        super().__init__(model, method, stopwords)
+        self.nlp = KeyedVectors.load_word2vec_format(model)
+        self.scp = sourcy.load("java")
+        self.preprocess = preprocess
+        self.repositories = '/home/sasce/PycharmProjects/ComponentSemantics/data/repositories/'
+
+    def get_embeddings(self, graph):
+        identifiers = Counter()
+        for node in graph.vs:
+            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                                                self.repositories)
+            if not os.path.isfile(path):
+                continue
+
+            doc_identifiers = self.get_identifiers(path)
+
+            identifiers.update(doc_identifiers)
+
+        for identifier in identifiers:
+            if identifier in self.nlp:
+                feature = [identifiers[identifier]]
+                feature.extend(self.nlp[identifier])
+                yield identifier, identifier, feature

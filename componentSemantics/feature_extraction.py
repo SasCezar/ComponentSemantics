@@ -2,6 +2,8 @@ import glob
 import sys
 import traceback
 
+from tqdm import tqdm
+
 from features.features import *
 from utils import load_stopwords
 
@@ -12,13 +14,15 @@ def extract_features(in_path, out_path):
 
     path = "resources/java/stopwords.txt"
     stopwords = load_stopwords(path)
+    path = "resources/java/stopwords.txt"
+    stopwords.update(load_stopwords(path))
 
     features = [
-        PackageFeatureExtraction(stopwords=stopwords),
-        TfidfFeatureExtraction(stopwords=stopwords),
-        DocumentFeatureExtraction(stopwords=stopwords),
-        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords),
-        Code2VecExtraction(model="../data/models/code2vec/token_vecs.txt", stopwords=stopwords)
+        #PackageFeatureExtraction(stopwords=stopwords),
+        #TfidfFeatureExtraction(stopwords=stopwords),
+        #DocumentFeatureExtraction(stopwords=stopwords),
+        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords, method='fastText-multi'),
+        Code2VecExtraction(model="../data/models/code2vec/token_vecs.txt", stopwords=stopwords, method='code2vec-multi')
     ]
 
     skipped = 0
@@ -40,4 +44,4 @@ def extract_features(in_path, out_path):
 
 
 if __name__ == '__main__':
-    extract_features("../data/arcanOutput/", "../data_hierarchy/")
+    extract_features("../data/arcanOutput/", "../data/")

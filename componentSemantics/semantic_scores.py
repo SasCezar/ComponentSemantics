@@ -9,7 +9,7 @@ from analysis.semantic import SemanticScores
 
 if __name__ == '__main__':
     in_path = "../data/"
-    out_path = "../data/"
+    out_path = "../data_test/"
     methods = ["leiden", "infomap"]
     embeddings = ["code2vec", "package", "document", "fastText", "TFIDF"]
     analysis = SemanticScores(in_path, out_path, visualize=False)

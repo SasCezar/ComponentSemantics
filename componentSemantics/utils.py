@@ -18,8 +18,8 @@ def load_stopwords(path):
     return stopwords
 
 
-def load_embeddings(path):
-    embeddings = {}
+def load_embeddings(path) -> dict:
+    embeddings = dict()
     with open(path, "rt", encoding="utf8") as inf:
         for line in inf:
             splitLines = line.split()
