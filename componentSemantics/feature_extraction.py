@@ -14,15 +14,17 @@ def extract_features(in_path, out_path):
 
     path = "resources/java/stopwords.txt"
     stopwords = load_stopwords(path)
-    path = "resources/java/stopwords.txt"
+    path = "resources/en/stopwords.txt"
     stopwords.update(load_stopwords(path))
 
     features = [
         #PackageFeatureExtraction(stopwords=stopwords),
         #TfidfFeatureExtraction(stopwords=stopwords),
         #DocumentFeatureExtraction(stopwords=stopwords),
-        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords, method='fastText-multi'),
-        Code2VecExtraction(model="../data/models/code2vec/token_vecs.txt", stopwords=stopwords, method='code2vec-multi')
+        FastTextExtraction(model="../data/models/fastText/wiki.en.bin", stopwords=stopwords,
+                           method='fastText-multi-stop'),
+        # Code2VecExtraction(model="../data/models/code2vec/token_vecs.txt", stopwords=stopwords,
+        #                   method='code2vec-multi-stop')
     ]
 
     skipped = 0

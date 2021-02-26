@@ -13,7 +13,7 @@ if __name__ == '__main__':
     out_path = "../data/"
     methods = ["leiden", "infomap"]
     #embeddings = ["code2vec", "package", "document", "fastText", "TFIDF"]
-    embeddings = ["code2vec-multi"]#, "package", "document", "fastText", "TFIDF"]
+    embeddings = ["fastText-multi-stop"]#, "package", "document", "fastText", "TFIDF"]
     analysis = ComponentVectors(in_path, out_path, visualize=False)
     df = pandas.DataFrame()
     embeddings_path = os.path.join(out_path, 'components_embeddings')

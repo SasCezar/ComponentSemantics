@@ -18,7 +18,8 @@ from utils import check_dir
 class FeatureExtraction(ABC):
     def __init__(self, model="en_trf_bertbaseuncased_lg", method=None, stopwords=None):
         try:
-            self.nlp = spacy.load(model, disable=["ner", "textcat", "parser"])
+            if model:
+                self.nlp = spacy.load(model, disable=["ner", "textcat", "parser"])
         except:
             pass
         self.method = method
@@ -90,8 +91,9 @@ class DocumentFeatureExtraction(FeatureExtraction):
 
     def get_embeddings(self, graph):
         for node in graph.vs:
-            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
-                                                self.repositories)
+            path = node['filePathReal'].replace(
+                '/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                self.repositories)
 
             if not os.path.isfile(path):
                 continue
@@ -116,7 +118,8 @@ class DocumentFeatureExtraction(FeatureExtraction):
         doc = self.scp(text)
 
         ids = [self.split_camel(x.token) for x in doc.identifiers]
-        ids = [x.lower() for x in flatten(ids) if x.lower() not in self.stopwords]
+        ids = [x.lower() for x in flatten(ids)
+               if x.lower() not in self.stopwords and len(x) > 1]
 
         return ids
 
@@ -207,8 +210,9 @@ class FastTextExtraction(DocumentFeatureExtraction):
 
     def get_embeddings(self, graph):
         for node in graph.vs:
-            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
-                                                self.repositories)
+            path = node['filePathReal'].replace(
+                '/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                self.repositories)
 
             if not os.path.isfile(path):
                 continue
@@ -276,7 +280,8 @@ class Code2VecExtraction(DocumentFeatureExtraction):
 
         doc = self.scp(text)
 
-        ids = [x.token.lower() for x in doc.identifiers if x.token.lower() not in self.stopwords]
+        ids = [x.token.lower() for x in doc.identifiers
+               if (x.token.lower() not in self.stopwords and len(x.token) > 1)]
         ids = [x for x in ids if x and x in self.nlp.vocab]
 
         return ids
@@ -293,8 +298,9 @@ class IdentifierEmbeddings(DocumentFeatureExtraction):
     def get_embeddings(self, graph):
         identifiers = Counter()
         for node in graph.vs:
-            path = node['filePathReal'].replace('/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
-                                                self.repositories)
+            path = node['filePathReal'].replace(
+                '/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                self.repositories)
             if not os.path.isfile(path):
                 continue
 
@@ -307,3 +313,28 @@ class IdentifierEmbeddings(DocumentFeatureExtraction):
                 feature = [identifiers[identifier]]
                 feature.extend(self.nlp[identifier])
                 yield identifier, identifier, feature
+
+
+class AllTermCount(DocumentFeatureExtraction):
+    def __init__(self, model=None, method="terms-count", preprocess=None, stopwords=None):
+        super().__init__(model, method, stopwords)
+        self.preprocess = preprocess
+        self.repositories = '/home/sasce/PycharmProjects/ComponentSemantics/data/repositories/'
+        self.counter = Counter()
+
+    def get_embeddings(self, graph):
+        identifiers = Counter()
+        for node in graph.vs:
+            path = node['filePathReal'].replace(
+                '/media/cezarsas/Data/PyCharmProjects/ComponentSemantics/data/repositories/',
+                self.repositories)
+            if not os.path.isfile(path):
+                continue
+
+            doc_identifiers = self.get_identifiers(path)
+            self.counter.update(doc_identifiers)
+            identifiers.update(doc_identifiers)
+
+        for identifier, count in identifiers.most_common():
+            feature = [count]
+            yield identifier, identifier, feature

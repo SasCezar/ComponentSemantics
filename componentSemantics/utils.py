@@ -1,7 +1,7 @@
 import os
 
 import numpy
-
+import pandas
 
 def check_dir(path):
     project_path = os.path.join(path)
@@ -18,9 +18,11 @@ def load_stopwords(path):
     return stopwords
 
 
-def load_embeddings(path) -> dict:
+def load_embeddings(path, skip=0) -> dict:
     embeddings = dict()
     with open(path, "rt", encoding="utf8") as inf:
+        if skip:
+            next(inf)
         for line in inf:
             splitLines = line.split()
             word = splitLines[0]
@@ -28,3 +30,18 @@ def load_embeddings(path) -> dict:
             embeddings[word] = embedding
 
     return embeddings
+
+
+def load_projects(path, filename):
+    df = pandas.read_csv(os.path.join(path, filename))
+    data = pandas.DataFrame()
+    data['names'] = df["project.link"].apply(lambda x: x.strip("/").split("/")[-1])
+    data['labels'] = df['category.name'].fillna("NA")
+    data = data.dropna()
+    data = data[~data['names'].duplicated(keep="first")]
+
+    categorical = pandas.Categorical(data["labels"], ordered=False)
+    data["labels_id"] = categorical.codes
+    mapping = dict(zip(data["labels"], data["labels_id"]))
+
+    return data, mapping
