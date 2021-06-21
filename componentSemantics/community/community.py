@@ -37,11 +37,12 @@ class Infomap(AbstractCommunityDetection):
 
         im.run()
 
-        unsorted_communitites = []
-        for node in im.tree:
-            if node.is_leaf:
-                unsorted_communitites.append((node.node_id, node.module_id))
-        min_id = min([x[1] for x in unsorted_communitites])
-        communities = [x[1] - min_id for x in sorted(unsorted_communitites, key=lambda x: x[0])]
+        unsorted_communitites = [
+            (node.node_id, node.module_id) for node in im.tree if node.is_leaf
+        ]
 
-        return communities
+        min_id = min(x[1] for x in unsorted_communitites)
+        return [
+            x[1] - min_id
+            for x in sorted(unsorted_communitites, key=lambda x: x[0])
+        ]

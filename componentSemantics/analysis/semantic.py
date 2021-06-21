@@ -47,12 +47,10 @@ class SemanticScores:
             self.raw_plot(project_data, project, community_algorithm, features_algorithm)
 
         comm_size = [x[1] for x in Counter(project_data["classes"].tolist()).most_common()]
-        result = {"cohesion": cohesion[0],
+        return {"cohesion": cohesion[0],
                   "inter_similarity": (mean_intersimilarity, std_intersimilarity)[0],
                   "dep_sim_corr": dep_sim_corr['similarity'][1],
                   "silhouette": silhouette, "comm_size": comm_size}
-
-        return result
 
     def load_project(self, project, community_algorithm, features_algorithm):
         graph_folder = self.graph_path.format(community_algorithm=community_algorithm,
@@ -99,10 +97,7 @@ class SemanticScores:
         for i, community in data.groupby("classes"):
             comm_feat = metrics.pairwise.cosine_similarity(community["features"].tolist())
             iterate_indices = np.tril_indices(comm_feat.shape[0])
-            tot = 0
-            for r, c in zip(*iterate_indices):
-                tot += comm_feat[r, c]
-
+            tot = sum(comm_feat[r, c] for r, c in zip(*iterate_indices))
             mean = tot / len(iterate_indices[0])
             avgs.append(mean)
 
@@ -110,25 +105,21 @@ class SemanticScores:
 
     def separation(self, data):
         aggregated_features = self._aggregate(data)
-        intra_similarities = metrics.pairwise.cosine_similarity(np.array(aggregated_features["features"].tolist()))
-
-        return intra_similarities
+        return metrics.pairwise.cosine_similarity(
+            np.array(aggregated_features["features"].tolist())
+        )
 
     @staticmethod
     def silhouette(data):
         cosine_distances = metrics.pairwise.cosine_distances(data["features"].tolist())
 
-        silhouette = metrics.silhouette_score(cosine_distances,
+        return metrics.silhouette_score(cosine_distances,
                                               data['classes'].tolist(),
                                               metric="precomputed")
 
-        return silhouette
-
     def dependency_similarity_corr(self, dependencies, similarities):
         dep_sim_df = self._align_dep_sim(dependencies, similarities)
-        corr = dep_sim_df.corr(method="pearson")
-
-        return corr
+        return dep_sim_df.corr(method="pearson")
 
     @staticmethod
     def _load_dependencies(path, skipped):
@@ -173,9 +164,7 @@ class SemanticScores:
             deps.append(total_dependency)
             sims.append(similarities[i, j])
 
-        df = pd.DataFrame(zip(sims, deps), columns=["similarity", "dependency"])
-
-        return df
+        return pd.DataFrame(zip(sims, deps), columns=["similarity", "dependency"])
 
     def raw_plot(self, df, project, method, embedding):
         embeddings = df["features"].tolist()

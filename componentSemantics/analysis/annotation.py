@@ -29,8 +29,10 @@ class IdentifiersTokens:
 
         similarities, weighted_similarities = self.get_similarities(terms, self.labels, count)
 
-        result = {'similarities': similarities, 'weighted_similarities': weighted_similarities}
-        return result
+        return {
+            'similarities': similarities,
+            'weighted_similarities': weighted_similarities,
+        }
 
     def load_project(self, project, features_algorithm):
         features_file = self.embeddings_path.format(features_algorithm=features_algorithm,

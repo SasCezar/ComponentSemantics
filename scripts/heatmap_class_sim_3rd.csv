@@ -1,0 +1,2279 @@
+SRC,TRG,Value
+Bean Mapping,Bean Mapping,1.0000000000000002
+Bean Mapping,Build,0.2225217929846445
+Bean Mapping,Bytecode Manipulation,0.16003286664962746
+Bean Mapping,Caching,0.158071120464701
+Bean Mapping,CLI,0.09948767868943253
+Bean Mapping,Cluster Management,0.09537035055552959
+Bean Mapping,Code Analysis,0.09441659601267463
+Bean Mapping,Code Coverage,0.22947904087283436
+Bean Mapping,Code Generators,0.31855346417172087
+Bean Mapping,Compiler Compiler,0.13597346675027272
+Bean Mapping,Configuration,0.19014502520399137
+Bean Mapping,Constraint Satisfaction Problem Solver,0.21819478026732841
+Bean Mapping,CSV,0.29804741653263594
+Bean Mapping,Data Structures,0.32937596149352877
+Bean Mapping,Database,0.128070353580259
+Bean Mapping,Date and Time,0.17172106742439738
+Bean Mapping,Dependency Injection,0.2696333556101881
+Bean Mapping,Development,0.2522602365506279
+Bean Mapping,Distributed Applications,0.14934131653454688
+Bean Mapping,Distributed Transactions,0.18550547145709434
+Bean Mapping,Distribution,0.17626747125853362
+Bean Mapping,Document Processing,0.23025351780327602
+Bean Mapping,Financial,0.10584562381229758
+Bean Mapping,Formal Verification,0.0861120890332249
+Bean Mapping,Functional Programming,0.13622026533460369
+Bean Mapping,Game Development,0.058236553071491226
+Bean Mapping,Geospatial,0.07013085596465941
+Bean Mapping,High Performance,0.1085284734244798
+Bean Mapping,HTTP Clients,0.13405512137920236
+Bean Mapping,Hypermedia Types,0.23306050434865444
+Bean Mapping,Imagery,0.11916825282873832
+Bean Mapping,Introspection,0.16214536251602313
+Bean Mapping,Job Scheduling,0.05182065802087035
+Bean Mapping,JSON,0.2865212360300612
+Bean Mapping,JVM and JDK,0.0986229267706208
+Bean Mapping,Logging,0.31851123665320563
+Bean Mapping,Machine Learning,0.16073039402239422
+Bean Mapping,Messaging,0.025107396339966805
+Bean Mapping,Microservice,0.30829128761579816
+Bean Mapping,Miscellaneous,0.3812902207687055
+Bean Mapping,Monitoring,0.18903984889397377
+Bean Mapping,Native,0.2253126652581603
+Bean Mapping,Natural Language Processing,0.2249103206265927
+Bean Mapping,Networking,0.09968395922785633
+Bean Mapping,ORM,0.4119093026323453
+Bean Mapping,PDF,0.0898231474989483
+Bean Mapping,Performance analysis,0.13897610232036237
+Bean Mapping,Apache Commons,0.3210582421704038
+Bean Mapping,Other,0.3058935384638533
+Bean Mapping,Processes,0.06769549455789436
+Bean Mapping,Reactive libraries,0.054064533377900195
+Bean Mapping,REST Frameworks,0.30276572369408206
+Bean Mapping,Science,0.03733014750337
+Bean Mapping,Search,0.2292645393350525
+Bean Mapping,Security,0.10188927452759189
+Bean Mapping,Serialization,0.2317989901999238
+Bean Mapping,Server,0.2906923337725312
+Bean Mapping,Template Engine,0.1949579087223041
+Bean Mapping,Asynchronous,0.21730933332023866
+Bean Mapping,BDD,0.26624306630414385
+Bean Mapping,Fixtures,0.343254968921825
+Bean Mapping,Frameworks,0.38649060042337063
+Bean Mapping,Matchers,0.3129960723747124
+Bean Mapping,Mocking,0.30106933151118964
+Bean Mapping,Utility,0.1879265661370099
+Bean Mapping,Web Crawling,0.08619627543718858
+Bean Mapping,Web Frameworks,0.3153678005916082
+Build,Build,1.0000000000000004
+Build,Bytecode Manipulation,0.1907519318603593
+Build,Caching,0.24088671612236767
+Build,CLI,0.17413953632541393
+Build,Cluster Management,0.2613023358089594
+Build,Code Analysis,0.12265103463492591
+Build,Code Coverage,0.3253188166354475
+Build,Code Generators,0.3357569703741136
+Build,Compiler Compiler,0.31558077355517083
+Build,Configuration,0.35358549054958793
+Build,Constraint Satisfaction Problem Solver,0.13831616521434448
+Build,CSV,0.13557905036421294
+Build,Data Structures,0.2007897191043646
+Build,Database,0.131058424176866
+Build,Date and Time,0.09462843962527007
+Build,Dependency Injection,0.30671173233884486
+Build,Development,0.2882058217722882
+Build,Distributed Applications,0.21292137690412608
+Build,Distributed Transactions,0.23732833701084818
+Build,Distribution,0.3577839907301173
+Build,Document Processing,0.22974116030010444
+Build,Financial,0.08722105400667816
+Build,Formal Verification,0.12033976613144118
+Build,Functional Programming,0.15183913018077183
+Build,Game Development,0.08170573217953052
+Build,Geospatial,0.11609203476610265
+Build,High Performance,0.15625335313965552
+Build,HTTP Clients,0.1726760616741299
+Build,Hypermedia Types,0.16958567039498806
+Build,Imagery,0.18472496319977036
+Build,Introspection,0.3276529321707868
+Build,Job Scheduling,0.06064869469040919
+Build,JSON,0.20897926369650582
+Build,JVM and JDK,0.17158076106327835
+Build,Logging,0.2671963785965378
+Build,Machine Learning,0.24465984475439911
+Build,Messaging,0.06463943155148573
+Build,Microservice,0.3659710985570228
+Build,Miscellaneous,0.4736998254216271
+Build,Monitoring,0.20628650539168075
+Build,Native,0.17552509961091833
+Build,Natural Language Processing,0.2900288521640157
+Build,Networking,0.1256745201455756
+Build,ORM,0.26448893833218967
+Build,PDF,0.08087512090477156
+Build,Performance analysis,0.20586718220917183
+Build,Apache Commons,0.40204791046387306
+Build,Other,0.2824539511839191
+Build,Processes,0.14327678895900903
+Build,Reactive libraries,0.043617359154976575
+Build,REST Frameworks,0.31889993768187647
+Build,Science,0.03258029488331128
+Build,Search,0.19532252949557072
+Build,Security,0.11610666081145492
+Build,Serialization,0.18012603277610645
+Build,Server,0.30440752497825885
+Build,Template Engine,0.18812449910408893
+Build,Asynchronous,0.311160424006648
+Build,BDD,0.26364134947052104
+Build,Fixtures,0.3437427401105233
+Build,Frameworks,0.41527778481478217
+Build,Matchers,0.17639274529195986
+Build,Mocking,0.28863282252411454
+Build,Utility,0.3252196630267223
+Build,Web Crawling,0.12114936296727831
+Build,Web Frameworks,0.37136869830831604
+Bytecode Manipulation,Bytecode Manipulation,1.0000000000000002
+Bytecode Manipulation,Caching,0.11684389900629892
+Bytecode Manipulation,CLI,0.11827192468999216
+Bytecode Manipulation,Cluster Management,0.09076899400900978
+Bytecode Manipulation,Code Analysis,0.16332978969927026
+Bytecode Manipulation,Code Coverage,0.17286904740924425
+Bytecode Manipulation,Code Generators,0.29024550445003244
+Bytecode Manipulation,Compiler Compiler,0.19836879832712226
+Bytecode Manipulation,Configuration,0.15325595851049081
+Bytecode Manipulation,Constraint Satisfaction Problem Solver,0.10994696247718799
+Bytecode Manipulation,CSV,0.15304772785425894
+Bytecode Manipulation,Data Structures,0.20132692966040605
+Bytecode Manipulation,Database,0.06263215921544378
+Bytecode Manipulation,Date and Time,0.0443083398342225
+Bytecode Manipulation,Dependency Injection,0.272038050893956
+Bytecode Manipulation,Development,0.2646753783583541
+Bytecode Manipulation,Distributed Applications,0.11686008519035743
+Bytecode Manipulation,Distributed Transactions,0.12843155026121633
+Bytecode Manipulation,Distribution,0.2150142151809041
+Bytecode Manipulation,Document Processing,0.14955809711605378
+Bytecode Manipulation,Financial,0.05582583254703773
+Bytecode Manipulation,Formal Verification,0.21053983694776493
+Bytecode Manipulation,Functional Programming,0.09166441287156081
+Bytecode Manipulation,Game Development,0.0491521875963053
+Bytecode Manipulation,Geospatial,0.054111673618384336
+Bytecode Manipulation,High Performance,0.09993820429002438
+Bytecode Manipulation,HTTP Clients,0.1311978098670954
+Bytecode Manipulation,Hypermedia Types,0.08828520759000077
+Bytecode Manipulation,Imagery,0.11289671707061551
+Bytecode Manipulation,Introspection,0.22465360814080532
+Bytecode Manipulation,Job Scheduling,0.048282158865444125
+Bytecode Manipulation,JSON,0.18387717254775615
+Bytecode Manipulation,JVM and JDK,0.09824991694425371
+Bytecode Manipulation,Logging,0.22780881555480145
+Bytecode Manipulation,Machine Learning,0.15487185510589596
+Bytecode Manipulation,Messaging,0.013248927160214035
+Bytecode Manipulation,Microservice,0.21006508450624292
+Bytecode Manipulation,Miscellaneous,0.30951140699465646
+Bytecode Manipulation,Monitoring,0.15516688917179244
+Bytecode Manipulation,Native,0.16395083619789222
+Bytecode Manipulation,Natural Language Processing,0.21317918498778662
+Bytecode Manipulation,Networking,0.08155580194847782
+Bytecode Manipulation,ORM,0.20505569315290162
+Bytecode Manipulation,PDF,0.060936886316846836
+Bytecode Manipulation,Performance analysis,0.15473002933539243
+Bytecode Manipulation,Apache Commons,0.261433784234238
+Bytecode Manipulation,Other,0.20018269771327987
+Bytecode Manipulation,Processes,0.06979343968011344
+Bytecode Manipulation,Reactive libraries,0.0270021896141031
+Bytecode Manipulation,REST Frameworks,0.20298777558778772
+Bytecode Manipulation,Science,0.023130590414987405
+Bytecode Manipulation,Search,0.11454684827188993
+Bytecode Manipulation,Security,0.07143419808530474
+Bytecode Manipulation,Serialization,0.1291263941353446
+Bytecode Manipulation,Server,0.20767396478888095
+Bytecode Manipulation,Template Engine,0.09573320156892338
+Bytecode Manipulation,Asynchronous,0.12542086875115246
+Bytecode Manipulation,BDD,0.17939299142289686
+Bytecode Manipulation,Fixtures,0.2973127861004499
+Bytecode Manipulation,Frameworks,0.302751259732874
+Bytecode Manipulation,Matchers,0.20363988964418314
+Bytecode Manipulation,Mocking,0.26996348649387825
+Bytecode Manipulation,Utility,0.20061758320717366
+Bytecode Manipulation,Web Crawling,0.06144638354831004
+Bytecode Manipulation,Web Frameworks,0.27351438338822487
+Caching,Caching,1.0
+Caching,CLI,0.06488592910999035
+Caching,Cluster Management,0.22840703692223321
+Caching,Code Analysis,0.08657195566784066
+Caching,Code Coverage,0.1871830189092567
+Caching,Code Generators,0.16993663928178024
+Caching,Compiler Compiler,0.17233854328180567
+Caching,Configuration,0.35718353789022683
+Caching,Constraint Satisfaction Problem Solver,0.1215952504859489
+Caching,CSV,0.10853014985182288
+Caching,Data Structures,0.1400794704214197
+Caching,Database,0.10430924983310767
+Caching,Date and Time,0.09298468492210682
+Caching,Dependency Injection,0.2716343360323437
+Caching,Development,0.27332835004192774
+Caching,Distributed Applications,0.35956021137108485
+Caching,Distributed Transactions,0.30316273478696004
+Caching,Distribution,0.1694792271376662
+Caching,Document Processing,0.20447594049915296
+Caching,Financial,0.061808539733338635
+Caching,Formal Verification,0.09649865656836297
+Caching,Functional Programming,0.12441163681195866
+Caching,Game Development,0.08160831311863065
+Caching,Geospatial,0.026063082404235778
+Caching,High Performance,0.11515541313318482
+Caching,HTTP Clients,0.16794180331205502
+Caching,Hypermedia Types,0.24950304453726468
+Caching,Imagery,0.1356572869187195
+Caching,Introspection,0.167706804209475
+Caching,Job Scheduling,0.1049449435119409
+Caching,JSON,0.19270764884211414
+Caching,JVM and JDK,0.09406203860073797
+Caching,Logging,0.20178724272389859
+Caching,Machine Learning,0.23132321365341285
+Caching,Messaging,0.03084400925180294
+Caching,Microservice,0.3415111664197691
+Caching,Miscellaneous,0.41775943675296645
+Caching,Monitoring,0.2685940805796232
+Caching,Native,0.16078629702224015
+Caching,Natural Language Processing,0.20233066474427822
+Caching,Networking,0.13681471371017484
+Caching,ORM,0.23207039752905223
+Caching,PDF,0.059804439830866335
+Caching,Performance analysis,0.1999081487714978
+Caching,Apache Commons,0.3759499707602453
+Caching,Other,0.23880472072352757
+Caching,Processes,0.10996176914235334
+Caching,Reactive libraries,0.03351134838631677
+Caching,REST Frameworks,0.29178125362771373
+Caching,Science,0.08866708930890595
+Caching,Search,0.2615800608142479
+Caching,Security,0.10577106114558067
+Caching,Serialization,0.17339411859801723
+Caching,Server,0.3528572098258675
+Caching,Template Engine,0.1545267059218825
+Caching,Asynchronous,0.21973158429447742
+Caching,BDD,0.18250393444270147
+Caching,Fixtures,0.2622984758055523
+Caching,Frameworks,0.2704719332715947
+Caching,Matchers,0.10928482510273502
+Caching,Mocking,0.21773226965827278
+Caching,Utility,0.2890823002628476
+Caching,Web Crawling,0.1432057444072063
+Caching,Web Frameworks,0.38411987546625864
+CLI,CLI,0.9999999999999999
+CLI,Cluster Management,0.09843353309101391
+CLI,Code Analysis,0.05546078571215516
+CLI,Code Coverage,0.18017553630557928
+CLI,Code Generators,0.20920333418735557
+CLI,Compiler Compiler,0.25211718924963594
+CLI,Configuration,0.16275926974373187
+CLI,Constraint Satisfaction Problem Solver,0.04199357923984392
+CLI,CSV,0.1602001007787985
+CLI,Data Structures,0.1456871773984346
+CLI,Database,0.07027360008942267
+CLI,Date and Time,0.051501558711658235
+CLI,Dependency Injection,0.12743463587941606
+CLI,Development,0.1512876885068981
+CLI,Distributed Applications,0.11647589473647857
+CLI,Distributed Transactions,0.10315049030383901
+CLI,Distribution,0.24185130688112466
+CLI,Document Processing,0.17194064454677485
+CLI,Financial,0.0623220828327943
+CLI,Formal Verification,0.06357281157884871
+CLI,Functional Programming,0.1481359808442335
+CLI,Game Development,0.05485788293086761
+CLI,Geospatial,0.022827816677095422
+CLI,High Performance,0.08946025270824207
+CLI,HTTP Clients,0.10154032780451966
+CLI,Hypermedia Types,0.07842625152214709
+CLI,Imagery,0.1328280279031439
+CLI,Introspection,0.18468535098855418
+CLI,Job Scheduling,0.03793905980280272
+CLI,JSON,0.11173145802606663
+CLI,JVM and JDK,0.14484899888055625
+CLI,Logging,0.5914376587312675
+CLI,Machine Learning,0.14816985513330028
+CLI,Messaging,0.0489593211488598
+CLI,Microservice,0.14082626149756783
+CLI,Miscellaneous,0.27944399614412735
+CLI,Monitoring,0.09999694959219389
+CLI,Native,0.11378616072902126
+CLI,Natural Language Processing,0.14603846839608242
+CLI,Networking,0.07116444143173864
+CLI,ORM,0.14394060654396135
+CLI,PDF,0.09197058328824981
+CLI,Performance analysis,0.15500551740640023
+CLI,Apache Commons,0.1985660343763042
+CLI,Other,0.1447029195354649
+CLI,Processes,0.11012133369663867
+CLI,Reactive libraries,0.02736474439033428
+CLI,REST Frameworks,0.1491948214466267
+CLI,Science,0.028983162899209602
+CLI,Search,0.07712977004798612
+CLI,Security,0.15912459959352174
+CLI,Serialization,0.09386474086151915
+CLI,Server,0.1038442608318664
+CLI,Template Engine,0.09616221632026901
+CLI,Asynchronous,0.17684550920892572
+CLI,BDD,0.13448195411437702
+CLI,Fixtures,0.15230186590110767
+CLI,Frameworks,0.21070656717796904
+CLI,Matchers,0.103220417136527
+CLI,Mocking,0.16070537798315093
+CLI,Utility,0.22013512708945226
+CLI,Web Crawling,0.06132055314309293
+CLI,Web Frameworks,0.17588083222132986
+Cluster Management,Cluster Management,0.9999999999999998
+Cluster Management,Code Analysis,0.05622939648451634
+Cluster Management,Code Coverage,0.1491324107264998
+Cluster Management,Code Generators,0.20790022750184392
+Cluster Management,Compiler Compiler,0.1282453182363533
+Cluster Management,Configuration,0.22884247748320455
+Cluster Management,Constraint Satisfaction Problem Solver,0.07115847962948947
+Cluster Management,CSV,0.0846965183210049
+Cluster Management,Data Structures,0.13878724182704452
+Cluster Management,Database,0.13314236136238217
+Cluster Management,Date and Time,0.0711215306272421
+Cluster Management,Dependency Injection,0.2512498846232783
+Cluster Management,Development,0.19466736442860907
+Cluster Management,Distributed Applications,0.28909660621626454
+Cluster Management,Distributed Transactions,0.32293834726938325
+Cluster Management,Distribution,0.16865902193151078
+Cluster Management,Document Processing,0.15434480349463012
+Cluster Management,Financial,0.14316485722089875
+Cluster Management,Formal Verification,0.08634086893897235
+Cluster Management,Functional Programming,0.1437647562339783
+Cluster Management,Game Development,0.058234471601357876
+Cluster Management,Geospatial,0.03754505678718015
+Cluster Management,High Performance,0.13766863873768778
+Cluster Management,HTTP Clients,0.37810471379244914
+Cluster Management,Hypermedia Types,0.13436515305807076
+Cluster Management,Imagery,0.12914316255510244
+Cluster Management,Introspection,0.1777907325295625
+Cluster Management,Job Scheduling,0.2051108680351125
+Cluster Management,JSON,0.14410569760875738
+Cluster Management,JVM and JDK,0.08169599526559423
+Cluster Management,Logging,0.21078619653793187
+Cluster Management,Machine Learning,0.15326670613897983
+Cluster Management,Messaging,0.07890976015390133
+Cluster Management,Microservice,0.37487823155847766
+Cluster Management,Miscellaneous,0.29079028588557887
+Cluster Management,Monitoring,0.2713253512336861
+Cluster Management,Native,0.12298705742442481
+Cluster Management,Natural Language Processing,0.16988060105190453
+Cluster Management,Networking,0.1751275059194552
+Cluster Management,ORM,0.18064268522567892
+Cluster Management,PDF,0.055680482898041034
+Cluster Management,Performance analysis,0.1315650020923226
+Cluster Management,Apache Commons,0.26357881439423114
+Cluster Management,Other,0.36851727219286884
+Cluster Management,Processes,0.1423222975648202
+Cluster Management,Reactive libraries,0.02219104153052209
+Cluster Management,REST Frameworks,0.44902194126027994
+Cluster Management,Science,0.017993541453302505
+Cluster Management,Search,0.2779236124606978
+Cluster Management,Security,0.10330341627145863
+Cluster Management,Serialization,0.11298244949903641
+Cluster Management,Server,0.26496451106556007
+Cluster Management,Template Engine,0.10141928135761373
+Cluster Management,Asynchronous,0.39260888237209307
+Cluster Management,BDD,0.16041857254779213
+Cluster Management,Fixtures,0.2047084790862418
+Cluster Management,Frameworks,0.30561167859062544
+Cluster Management,Matchers,0.11038263354168933
+Cluster Management,Mocking,0.45125775788601485
+Cluster Management,Utility,0.2273604090493005
+Cluster Management,Web Crawling,0.14053557041301465
+Cluster Management,Web Frameworks,0.41500640788932036
+Code Analysis,Code Analysis,1.0
+Code Analysis,Code Coverage,0.11102304949716468
+Code Analysis,Code Generators,0.2158005762403902
+Code Analysis,Compiler Compiler,0.20649464694035227
+Code Analysis,Configuration,0.09745575521768496
+Code Analysis,Constraint Satisfaction Problem Solver,0.08726084704033223
+Code Analysis,CSV,0.0769685108305445
+Code Analysis,Data Structures,0.09869101928024003
+Code Analysis,Database,0.05514215601116205
+Code Analysis,Date and Time,0.036535000373024824
+Code Analysis,Dependency Injection,0.1507390517121002
+Code Analysis,Development,0.30578670024356214
+Code Analysis,Distributed Applications,0.0801034534407371
+Code Analysis,Distributed Transactions,0.09755884361391928
+Code Analysis,Distribution,0.11690109681327453
+Code Analysis,Document Processing,0.12591800927076577
+Code Analysis,Financial,0.041264984520808665
+Code Analysis,Formal Verification,0.10906223988336357
+Code Analysis,Functional Programming,0.0582835801399931
+Code Analysis,Game Development,0.03347815120091963
+Code Analysis,Geospatial,0.03096664567379451
+Code Analysis,High Performance,0.06610384865325361
+Code Analysis,HTTP Clients,0.08346781633259362
+Code Analysis,Hypermedia Types,0.07580451464142005
+Code Analysis,Imagery,0.07835486691806964
+Code Analysis,Introspection,0.10450892292082883
+Code Analysis,Job Scheduling,0.03670634254451371
+Code Analysis,JSON,0.09589090247238019
+Code Analysis,JVM and JDK,0.05805662959826392
+Code Analysis,Logging,0.10621744567230819
+Code Analysis,Machine Learning,0.10126502545879075
+Code Analysis,Messaging,0.016250271922771377
+Code Analysis,Microservice,0.12431105083835715
+Code Analysis,Miscellaneous,0.198947450402254
+Code Analysis,Monitoring,0.07965960184797903
+Code Analysis,Native,0.10786073912899061
+Code Analysis,Natural Language Processing,0.12245031835292824
+Code Analysis,Networking,0.05488965342886522
+Code Analysis,ORM,0.19134971748879648
+Code Analysis,PDF,0.05331480575958991
+Code Analysis,Performance analysis,0.09656144009633931
+Code Analysis,Apache Commons,0.1711982962362553
+Code Analysis,Other,0.12157445971849513
+Code Analysis,Processes,0.04936313333194282
+Code Analysis,Reactive libraries,0.014552536781817525
+Code Analysis,REST Frameworks,0.11801724654266402
+Code Analysis,Science,0.030092274884343927
+Code Analysis,Search,0.07843841586537366
+Code Analysis,Security,0.0440256494206307
+Code Analysis,Serialization,0.07656126479424294
+Code Analysis,Server,0.11938070582145391
+Code Analysis,Template Engine,0.07895219246832146
+Code Analysis,Asynchronous,0.08224386001581732
+Code Analysis,BDD,0.09133917739347197
+Code Analysis,Fixtures,0.12558123438899849
+Code Analysis,Frameworks,0.16983002281173726
+Code Analysis,Matchers,0.0928641353425094
+Code Analysis,Mocking,0.13030293234806326
+Code Analysis,Utility,0.12548472252311682
+Code Analysis,Web Crawling,0.07010136228936134
+Code Analysis,Web Frameworks,0.16035730723288744
+Code Coverage,Code Coverage,1.0000000000000002
+Code Coverage,Code Generators,0.2512189164035817
+Code Coverage,Compiler Compiler,0.32461090548637866
+Code Coverage,Configuration,0.3181918595833726
+Code Coverage,Constraint Satisfaction Problem Solver,0.12468700491568886
+Code Coverage,CSV,0.3641453061485929
+Code Coverage,Data Structures,0.376746431189967
+Code Coverage,Database,0.1445323814167437
+Code Coverage,Date and Time,0.09962015870018302
+Code Coverage,Dependency Injection,0.24668427605217533
+Code Coverage,Development,0.370711697316084
+Code Coverage,Distributed Applications,0.23142764469795782
+Code Coverage,Distributed Transactions,0.29299645930366713
+Code Coverage,Distribution,0.4228857388487565
+Code Coverage,Document Processing,0.34891066504372653
+Code Coverage,Financial,0.055595680746489615
+Code Coverage,Formal Verification,0.20047247934560242
+Code Coverage,Functional Programming,0.11291816251986407
+Code Coverage,Game Development,0.08432129440566682
+Code Coverage,Geospatial,0.04607168346957343
+Code Coverage,High Performance,0.11598134639587568
+Code Coverage,HTTP Clients,0.16198487290656852
+Code Coverage,Hypermedia Types,0.1647042788286434
+Code Coverage,Imagery,0.25638518086319273
+Code Coverage,Introspection,0.4210232770610075
+Code Coverage,Job Scheduling,0.05630934263346878
+Code Coverage,JSON,0.2207984478011203
+Code Coverage,JVM and JDK,0.17802680874908466
+Code Coverage,Logging,0.3269835078627909
+Code Coverage,Machine Learning,0.2681568507422413
+Code Coverage,Messaging,0.044014762254770225
+Code Coverage,Microservice,0.3619145895372958
+Code Coverage,Miscellaneous,0.4795747172018382
+Code Coverage,Monitoring,0.26340772882967733
+Code Coverage,Native,0.2285308848725342
+Code Coverage,Natural Language Processing,0.2848160810849566
+Code Coverage,Networking,0.15931388050925188
+Code Coverage,ORM,0.33050436414165024
+Code Coverage,PDF,0.1349764156217293
+Code Coverage,Performance analysis,0.25885296310122274
+Code Coverage,Apache Commons,0.4874659027891682
+Code Coverage,Other,0.25749496346251266
+Code Coverage,Processes,0.1469441368757561
+Code Coverage,Reactive libraries,0.042035483674834305
+Code Coverage,REST Frameworks,0.29280171100243774
+Code Coverage,Science,0.06849774264978499
+Code Coverage,Search,0.1682946130213629
+Code Coverage,Security,0.1088949741701513
+Code Coverage,Serialization,0.3118393369162408
+Code Coverage,Server,0.29945897946917444
+Code Coverage,Template Engine,0.19021484094829338
+Code Coverage,Asynchronous,0.2753719276832165
+Code Coverage,BDD,0.296647159759867
+Code Coverage,Fixtures,0.3968334670708171
+Code Coverage,Frameworks,0.4100551221517109
+Code Coverage,Matchers,0.18124823904681353
+Code Coverage,Mocking,0.23545941008014926
+Code Coverage,Utility,0.3920945239475016
+Code Coverage,Web Crawling,0.1599492301398896
+Code Coverage,Web Frameworks,0.32600867044582665
+Code Generators,Code Generators,1.0
+Code Generators,Compiler Compiler,0.31139723026452504
+Code Generators,Configuration,0.2834699543569769
+Code Generators,Constraint Satisfaction Problem Solver,0.25360690701555444
+Code Generators,CSV,0.3016380130601756
+Code Generators,Data Structures,0.2849649675057173
+Code Generators,Database,0.15974963961587596
+Code Generators,Date and Time,0.10304429645538907
+Code Generators,Dependency Injection,0.4598061876167163
+Code Generators,Development,0.43815888997025754
+Code Generators,Distributed Applications,0.17646507300134512
+Code Generators,Distributed Transactions,0.20991811993378476
+Code Generators,Distribution,0.2300497551310842
+Code Generators,Document Processing,0.25968612743469316
+Code Generators,Financial,0.0973213680029199
+Code Generators,Formal Verification,0.15571309968426142
+Code Generators,Functional Programming,0.2760149731867385
+Code Generators,Game Development,0.07487104109102252
+Code Generators,Geospatial,0.1153012367878504
+Code Generators,High Performance,0.26220743555329673
+Code Generators,HTTP Clients,0.1846158003563536
+Code Generators,Hypermedia Types,0.2722274268293762
+Code Generators,Imagery,0.18426898854946108
+Code Generators,Introspection,0.2847135648802899
+Code Generators,Job Scheduling,0.05376295362961122
+Code Generators,JSON,0.36502472567392935
+Code Generators,JVM and JDK,0.1324531920726144
+Code Generators,Logging,0.3345081417750363
+Code Generators,Machine Learning,0.19613394031213743
+Code Generators,Messaging,0.049615681734858336
+Code Generators,Microservice,0.3889489247137444
+Code Generators,Miscellaneous,0.4572569579220947
+Code Generators,Monitoring,0.24442125065081982
+Code Generators,Native,0.21572797770720087
+Code Generators,Natural Language Processing,0.31778142048403396
+Code Generators,Networking,0.11307228684226334
+Code Generators,ORM,0.37723150809162287
+Code Generators,PDF,0.1320357047726013
+Code Generators,Performance analysis,0.20646136584981034
+Code Generators,Apache Commons,0.4120582575757274
+Code Generators,Other,0.3541738691689625
+Code Generators,Processes,0.09664596053285913
+Code Generators,Reactive libraries,0.03989960068882257
+Code Generators,REST Frameworks,0.36117897939357674
+Code Generators,Science,0.043174000817118564
+Code Generators,Search,0.2040984800325196
+Code Generators,Security,0.16450820448951847
+Code Generators,Serialization,0.2674821008487574
+Code Generators,Server,0.3160813784915144
+Code Generators,Template Engine,0.3145576414839818
+Code Generators,Asynchronous,0.2540197483360101
+Code Generators,BDD,0.27867183767555614
+Code Generators,Fixtures,0.3271334694131489
+Code Generators,Frameworks,0.44401071449106466
+Code Generators,Matchers,0.26901010347365
+Code Generators,Mocking,0.3310821119460295
+Code Generators,Utility,0.2964748925713686
+Code Generators,Web Crawling,0.14106115614832423
+Code Generators,Web Frameworks,0.40812598491573276
+Compiler Compiler,Compiler Compiler,1.0
+Compiler Compiler,Configuration,0.257888065627814
+Compiler Compiler,Constraint Satisfaction Problem Solver,0.15450981678266268
+Compiler Compiler,CSV,0.18081021321298718
+Compiler Compiler,Data Structures,0.2333673297660879
+Compiler Compiler,Database,0.09342014942465879
+Compiler Compiler,Date and Time,0.0903395909116219
+Compiler Compiler,Dependency Injection,0.14359920795178927
+Compiler Compiler,Development,0.4007825992114217
+Compiler Compiler,Distributed Applications,0.18530981609963432
+Compiler Compiler,Distributed Transactions,0.26501993464276796
+Compiler Compiler,Distribution,0.4141011442679252
+Compiler Compiler,Document Processing,0.27351476268949254
+Compiler Compiler,Financial,0.0746661865955268
+Compiler Compiler,Formal Verification,0.15042237062690406
+Compiler Compiler,Functional Programming,0.17421498439674635
+Compiler Compiler,Game Development,0.09643840755049873
+Compiler Compiler,Geospatial,0.04212252467477576
+Compiler Compiler,High Performance,0.14664965189966028
+Compiler Compiler,HTTP Clients,0.14680838782307098
+Compiler Compiler,Hypermedia Types,0.20047844205583748
+Compiler Compiler,Imagery,0.272559938644009
+Compiler Compiler,Introspection,0.2342983168641947
+Compiler Compiler,Job Scheduling,0.07321131213167424
+Compiler Compiler,JSON,0.23488904009583836
+Compiler Compiler,JVM and JDK,0.22625808967539618
+Compiler Compiler,Logging,0.30182048974488707
+Compiler Compiler,Machine Learning,0.34769393933830517
+Compiler Compiler,Messaging,0.030762253667204677
+Compiler Compiler,Microservice,0.21436776419628145
+Compiler Compiler,Miscellaneous,0.4704943611495741
+Compiler Compiler,Monitoring,0.1422565925331458
+Compiler Compiler,Native,0.17368804242909563
+Compiler Compiler,Natural Language Processing,0.3288453825717694
+Compiler Compiler,Networking,0.10891586915823231
+Compiler Compiler,ORM,0.22766617319693183
+Compiler Compiler,PDF,0.1398338618888321
+Compiler Compiler,Performance analysis,0.29181849991822245
+Compiler Compiler,Apache Commons,0.4595158886643863
+Compiler Compiler,Other,0.18014093746179857
+Compiler Compiler,Processes,0.12753823588159752
+Compiler Compiler,Reactive libraries,0.03427696004608281
+Compiler Compiler,REST Frameworks,0.19947654344805568
+Compiler Compiler,Science,0.06684164193864707
+Compiler Compiler,Search,0.19318142261568486
+Compiler Compiler,Security,0.10311784595593665
+Compiler Compiler,Serialization,0.18018592146994442
+Compiler Compiler,Server,0.18571058511668187
+Compiler Compiler,Template Engine,0.18524975823151157
+Compiler Compiler,Asynchronous,0.20412230542889337
+Compiler Compiler,BDD,0.17402494161321044
+Compiler Compiler,Fixtures,0.26936358756217055
+Compiler Compiler,Frameworks,0.3402080371684841
+Compiler Compiler,Matchers,0.12135612323840823
+Compiler Compiler,Mocking,0.2075575470116592
+Compiler Compiler,Utility,0.3960535247266737
+Compiler Compiler,Web Crawling,0.1813166693703863
+Compiler Compiler,Web Frameworks,0.26683202842847104
+Configuration,Configuration,1.0
+Configuration,Constraint Satisfaction Problem Solver,0.08938770385337706
+Configuration,CSV,0.155638219212814
+Configuration,Data Structures,0.21187582418863138
+Configuration,Database,0.11392842684491344
+Configuration,Date and Time,0.08556393761021443
+Configuration,Dependency Injection,0.34286580253038673
+Configuration,Development,0.2813438794405562
+Configuration,Distributed Applications,0.34801340696418454
+Configuration,Distributed Transactions,0.2993914938511385
+Configuration,Distribution,0.3120855924837394
+Configuration,Document Processing,0.22703596345065483
+Configuration,Financial,0.07618678693435962
+Configuration,Formal Verification,0.13825659616766217
+Configuration,Functional Programming,0.1940698164601278
+Configuration,Game Development,0.07841452663576469
+Configuration,Geospatial,0.04476258044800817
+Configuration,High Performance,0.12829686051444297
+Configuration,HTTP Clients,0.29659260705880014
+Configuration,Hypermedia Types,0.2991722280261875
+Configuration,Imagery,0.16419177493876794
+Configuration,Introspection,0.3088452829634864
+Configuration,Job Scheduling,0.07117160672357245
+Configuration,JSON,0.3908917216736817
+Configuration,JVM and JDK,0.13744877243685874
+Configuration,Logging,0.3193975646155623
+Configuration,Machine Learning,0.19562918685248393
+Configuration,Messaging,0.05322244023935579
+Configuration,Microservice,0.4880031103504782
+Configuration,Miscellaneous,0.49660016721705313
+Configuration,Monitoring,0.33835509414118886
+Configuration,Native,0.16339669828295508
+Configuration,Natural Language Processing,0.26261730373338205
+Configuration,Networking,0.16199089335724406
+Configuration,ORM,0.2710723198655603
+Configuration,PDF,0.1214923509113021
+Configuration,Performance analysis,0.23104999569800883
+Configuration,Apache Commons,0.3739534022433741
+Configuration,Other,0.33966914600665976
+Configuration,Processes,0.13241750890578605
+Configuration,Reactive libraries,0.04489057335114777
+Configuration,REST Frameworks,0.39388156562193244
+Configuration,Science,0.037883853398179755
+Configuration,Search,0.2009622506176486
+Configuration,Security,0.10104378924589413
+Configuration,Serialization,0.18619357750922175
+Configuration,Server,0.3126065232866097
+Configuration,Template Engine,0.16615010966406316
+Configuration,Asynchronous,0.5072914921421657
+Configuration,BDD,0.2138507681794201
+Configuration,Fixtures,0.29114499476334676
+Configuration,Frameworks,0.3602524257879157
+Configuration,Matchers,0.1568158036628067
+Configuration,Mocking,0.34296573327183055
+Configuration,Utility,0.300607794952687
+Configuration,Web Crawling,0.11978753210291677
+Configuration,Web Frameworks,0.39275238857337114
+Constraint Satisfaction Problem Solver,Constraint Satisfaction Problem Solver,1.0000000000000002
+Constraint Satisfaction Problem Solver,CSV,0.08724040269445116
+Constraint Satisfaction Problem Solver,Data Structures,0.08699429620191708
+Constraint Satisfaction Problem Solver,Database,0.05688733731832724
+Constraint Satisfaction Problem Solver,Date and Time,0.06758167542919141
+Constraint Satisfaction Problem Solver,Dependency Injection,0.13640006303583022
+Constraint Satisfaction Problem Solver,Development,0.22481804209015746
+Constraint Satisfaction Problem Solver,Distributed Applications,0.09738939176448363
+Constraint Satisfaction Problem Solver,Distributed Transactions,0.1308154412530769
+Constraint Satisfaction Problem Solver,Distribution,0.1620179855022572
+Constraint Satisfaction Problem Solver,Document Processing,0.12272917459532948
+Constraint Satisfaction Problem Solver,Financial,0.1882423672856568
+Constraint Satisfaction Problem Solver,Formal Verification,0.15889992051080015
+Constraint Satisfaction Problem Solver,Functional Programming,0.10353142004779976
+Constraint Satisfaction Problem Solver,Game Development,0.0555905987414339
+Constraint Satisfaction Problem Solver,Geospatial,0.024907773443916554
+Constraint Satisfaction Problem Solver,High Performance,0.061162979841922226
+Constraint Satisfaction Problem Solver,HTTP Clients,0.0740264585787073
+Constraint Satisfaction Problem Solver,Hypermedia Types,0.08713989218568839
+Constraint Satisfaction Problem Solver,Imagery,0.07463675115127258
+Constraint Satisfaction Problem Solver,Introspection,0.07581294173320242
+Constraint Satisfaction Problem Solver,Job Scheduling,0.03729700298693687
+Constraint Satisfaction Problem Solver,JSON,0.11552206487701215
+Constraint Satisfaction Problem Solver,JVM and JDK,0.07707578641864994
+Constraint Satisfaction Problem Solver,Logging,0.11026210500585444
+Constraint Satisfaction Problem Solver,Machine Learning,0.16054259236056878
+Constraint Satisfaction Problem Solver,Messaging,0.01485240141739578
+Constraint Satisfaction Problem Solver,Microservice,0.1682934719518457
+Constraint Satisfaction Problem Solver,Miscellaneous,0.25701686558505116
+Constraint Satisfaction Problem Solver,Monitoring,0.09215073930606457
+Constraint Satisfaction Problem Solver,Native,0.10236973488047035
+Constraint Satisfaction Problem Solver,Natural Language Processing,0.2116387252165598
+Constraint Satisfaction Problem Solver,Networking,0.048813268355782154
+Constraint Satisfaction Problem Solver,ORM,0.13187825471813028
+Constraint Satisfaction Problem Solver,PDF,0.05559820847334598
+Constraint Satisfaction Problem Solver,Performance analysis,0.12383184407161799
+Constraint Satisfaction Problem Solver,Apache Commons,0.19918058688587018
+Constraint Satisfaction Problem Solver,Other,0.15172236355462382
+Constraint Satisfaction Problem Solver,Processes,0.02779414406395997
+Constraint Satisfaction Problem Solver,Reactive libraries,0.0130609650934473
+Constraint Satisfaction Problem Solver,REST Frameworks,0.16986396467509984
+Constraint Satisfaction Problem Solver,Science,0.04180658515489795
+Constraint Satisfaction Problem Solver,Search,0.09450514686327754
+Constraint Satisfaction Problem Solver,Security,0.043741083164834146
+Constraint Satisfaction Problem Solver,Serialization,0.07136176000918473
+Constraint Satisfaction Problem Solver,Server,0.1985310891605474
+Constraint Satisfaction Problem Solver,Template Engine,0.3475244997094466
+Constraint Satisfaction Problem Solver,Asynchronous,0.09961821250478028
+Constraint Satisfaction Problem Solver,BDD,0.12474626505581608
+Constraint Satisfaction Problem Solver,Fixtures,0.14975649618956777
+Constraint Satisfaction Problem Solver,Frameworks,0.17715357833321302
+Constraint Satisfaction Problem Solver,Matchers,0.049320466539627975
+Constraint Satisfaction Problem Solver,Mocking,0.1167908629243426
+Constraint Satisfaction Problem Solver,Utility,0.2259740665270901
+Constraint Satisfaction Problem Solver,Web Crawling,0.09239711442191963
+Constraint Satisfaction Problem Solver,Web Frameworks,0.19620731179206455
+CSV,CSV,1.0
+CSV,Data Structures,0.5254807296382777
+CSV,Database,0.1750366409900994
+CSV,Date and Time,0.15969475580530976
+CSV,Dependency Injection,0.1919882302731267
+CSV,Development,0.21071251022631532
+CSV,Distributed Applications,0.12327898129119223
+CSV,Distributed Transactions,0.19217338277796278
+CSV,Distribution,0.20955631544068848
+CSV,Document Processing,0.37776484051623554
+CSV,Financial,0.06289333509632382
+CSV,Formal Verification,0.12542099040125052
+CSV,Functional Programming,0.10176313205966038
+CSV,Game Development,0.06214085220245092
+CSV,Geospatial,0.08498261326479219
+CSV,High Performance,0.10091245930107529
+CSV,HTTP Clients,0.16864888375051942
+CSV,Hypermedia Types,0.16429993506071558
+CSV,Imagery,0.20777491988116173
+CSV,Introspection,0.176538508427185
+CSV,Job Scheduling,0.058571699166557856
+CSV,JSON,0.3396053787647573
+CSV,JVM and JDK,0.09791633807936088
+CSV,Logging,0.3842121412059079
+CSV,Machine Learning,0.15665153557282277
+CSV,Messaging,0.038527561609189145
+CSV,Microservice,0.26269922542768204
+CSV,Miscellaneous,0.345669539954631
+CSV,Monitoring,0.18917389043842628
+CSV,Native,0.21913926608892498
+CSV,Natural Language Processing,0.24689836621648234
+CSV,Networking,0.15214608544710778
+CSV,ORM,0.30936609351419436
+CSV,PDF,0.106221720502855
+CSV,Performance analysis,0.15418545635883812
+CSV,Apache Commons,0.37737896151910083
+CSV,Other,0.25447982411664394
+CSV,Processes,0.11340992860284564
+CSV,Reactive libraries,0.052716969365434505
+CSV,REST Frameworks,0.2781894681266324
+CSV,Science,0.05476801405880123
+CSV,Search,0.20388068796709113
+CSV,Security,0.0895206395431464
+CSV,Serialization,0.29539022330975695
+CSV,Server,0.2018701021593958
+CSV,Template Engine,0.16052382847354754
+CSV,Asynchronous,0.19896039870568297
+CSV,BDD,0.18960497291907527
+CSV,Fixtures,0.22088376594873513
+CSV,Frameworks,0.28449220189550095
+CSV,Matchers,0.19629066686195368
+CSV,Mocking,0.24703599269220078
+CSV,Utility,0.2590469844208548
+CSV,Web Crawling,0.12094584414715907
+CSV,Web Frameworks,0.2803885017256523
+Data Structures,Data Structures,1.0000000000000007
+Data Structures,Database,0.3631698781956956
+Data Structures,Date and Time,0.11531670177653384
+Data Structures,Dependency Injection,0.2179097703297044
+Data Structures,Development,0.307635010801744
+Data Structures,Distributed Applications,0.2377431340372516
+Data Structures,Distributed Transactions,0.2645183034157894
+Data Structures,Distribution,0.33052204104300276
+Data Structures,Document Processing,0.35401662289515173
+Data Structures,Financial,0.0696729799860075
+Data Structures,Formal Verification,0.1505953671801404
+Data Structures,Functional Programming,0.1405352485450581
+Data Structures,Game Development,0.08520924035040363
+Data Structures,Geospatial,0.25838489530194475
+Data Structures,High Performance,0.14987847683155806
+Data Structures,HTTP Clients,0.22341791219235702
+Data Structures,Hypermedia Types,0.2070693244301799
+Data Structures,Imagery,0.23781868930715014
+Data Structures,Introspection,0.29341261253267487
+Data Structures,Job Scheduling,0.06627795994665925
+Data Structures,JSON,0.40468938006294536
+Data Structures,JVM and JDK,0.11431139012809452
+Data Structures,Logging,0.45331605683069587
+Data Structures,Machine Learning,0.20985949819958805
+Data Structures,Messaging,0.12649546770389383
+Data Structures,Microservice,0.3127061789478061
+Data Structures,Miscellaneous,0.40915333421812855
+Data Structures,Monitoring,0.3152667133064317
+Data Structures,Native,0.30206997873352626
+Data Structures,Natural Language Processing,0.30123254355648055
+Data Structures,Networking,0.17966626896927504
+Data Structures,ORM,0.32014385933262945
+Data Structures,PDF,0.12038648548093868
+Data Structures,Performance analysis,0.1363783806637429
+Data Structures,Apache Commons,0.48606290296182225
+Data Structures,Other,0.274414746630356
+Data Structures,Processes,0.13440893415793487
+Data Structures,Reactive libraries,0.14426272423283912
+Data Structures,REST Frameworks,0.3748208682471087
+Data Structures,Science,0.048420375302764655
+Data Structures,Search,0.2528487916944376
+Data Structures,Security,0.12313556000792672
+Data Structures,Serialization,0.4453361902169716
+Data Structures,Server,0.24540990494220066
+Data Structures,Template Engine,0.13550037717431226
+Data Structures,Asynchronous,0.2495386158193688
+Data Structures,BDD,0.21971109692763954
+Data Structures,Fixtures,0.28750736410376154
+Data Structures,Frameworks,0.38752248520306315
+Data Structures,Matchers,0.37197356226527173
+Data Structures,Mocking,0.28905492307217
+Data Structures,Utility,0.29673388160433334
+Data Structures,Web Crawling,0.16023694837732796
+Data Structures,Web Frameworks,0.4040476436210099
+Database,Database,1.0000000000000002
+Database,Date and Time,0.046709383255201686
+Database,Dependency Injection,0.1612109573625824
+Database,Development,0.16590758311806886
+Database,Distributed Applications,0.15207727456880202
+Database,Distributed Transactions,0.1912655869245718
+Database,Distribution,0.13815310704206799
+Database,Document Processing,0.219020656482399
+Database,Financial,0.05451069135363119
+Database,Formal Verification,0.07700562593473978
+Database,Functional Programming,0.08665535040493476
+Database,Game Development,0.04887165695173291
+Database,Geospatial,0.08822415960229069
+Database,High Performance,0.11623207772463588
+Database,HTTP Clients,0.15251358976566848
+Database,Hypermedia Types,0.1061594959037092
+Database,Imagery,0.16471541933458655
+Database,Introspection,0.10671835429442234
+Database,Job Scheduling,0.046918043763445376
+Database,JSON,0.12950364669689476
+Database,JVM and JDK,0.05754149476664341
+Database,Logging,0.19847207640539358
+Database,Machine Learning,0.1092961316522784
+Database,Messaging,0.2586849981894381
+Database,Microservice,0.20856550520241013
+Database,Miscellaneous,0.2078981770522029
+Database,Monitoring,0.18870059878251116
+Database,Native,0.12946798738059564
+Database,Natural Language Processing,0.14774905897615356
+Database,Networking,0.15963606882398065
+Database,ORM,0.2055786575053786
+Database,PDF,0.07300986229741023
+Database,Performance analysis,0.08677770743749995
+Database,Apache Commons,0.2827636692919634
+Database,Other,0.1618328285292955
+Database,Processes,0.09140677970319794
+Database,Reactive libraries,0.16217478511248629
+Database,REST Frameworks,0.18451025862755932
+Database,Science,0.030966069000672017
+Database,Search,0.1464788256881668
+Database,Security,0.0758257800079517
+Database,Serialization,0.16734762918001547
+Database,Server,0.13475523990096455
+Database,Template Engine,0.08279407909222905
+Database,Asynchronous,0.1301220324032355
+Database,BDD,0.10965676075427838
+Database,Fixtures,0.12644011134288216
+Database,Frameworks,0.19123832316161896
+Database,Matchers,0.1613420282895869
+Database,Mocking,0.14756676392028661
+Database,Utility,0.1555062769274751
+Database,Web Crawling,0.08292360287703512
+Database,Web Frameworks,0.22827383924973588
+Date and Time,Date and Time,1.0000000000000004
+Date and Time,Dependency Injection,0.08682421033955204
+Date and Time,Development,0.1056007611350123
+Date and Time,Distributed Applications,0.08029933805813204
+Date and Time,Distributed Transactions,0.11149631586344587
+Date and Time,Distribution,0.0893445227256161
+Date and Time,Document Processing,0.14159349976908864
+Date and Time,Financial,0.08120370560333635
+Date and Time,Formal Verification,0.035505210370817684
+Date and Time,Functional Programming,0.08739603430209252
+Date and Time,Game Development,0.037035436608119095
+Date and Time,Geospatial,0.047756737130841165
+Date and Time,High Performance,0.06590936527303878
+Date and Time,HTTP Clients,0.09470382340107668
+Date and Time,Hypermedia Types,0.07984998985688596
+Date and Time,Imagery,0.10901339131288658
+Date and Time,Introspection,0.05343482567597388
+Date and Time,Job Scheduling,0.09066062155700748
+Date and Time,JSON,0.17847787644261318
+Date and Time,JVM and JDK,0.07790844931315505
+Date and Time,Logging,0.19886785178049593
+Date and Time,Machine Learning,0.09487302019112928
+Date and Time,Messaging,0.013287042631938887
+Date and Time,Microservice,0.14622119034662542
+Date and Time,Miscellaneous,0.17282185314467477
+Date and Time,Monitoring,0.10323561230779703
+Date and Time,Native,0.12638135957985883
+Date and Time,Natural Language Processing,0.12364677142882607
+Date and Time,Networking,0.07459657863250978
+Date and Time,ORM,0.17687906754754734
+Date and Time,PDF,0.061711858406056704
+Date and Time,Performance analysis,0.07448240180194635
+Date and Time,Apache Commons,0.2293465223515369
+Date and Time,Other,0.1370574701722177
+Date and Time,Processes,0.05905390183388427
+Date and Time,Reactive libraries,0.012317157393568152
+Date and Time,REST Frameworks,0.14402081478836756
+Date and Time,Science,0.03352242590891088
+Date and Time,Search,0.10820182369204066
+Date and Time,Security,0.06712645250015695
+Date and Time,Serialization,0.07072672409424176
+Date and Time,Server,0.18241139070008902
+Date and Time,Template Engine,0.1338728597558904
+Date and Time,Asynchronous,0.10620753423853978
+Date and Time,BDD,0.10761856374533045
+Date and Time,Fixtures,0.14219693930930768
+Date and Time,Frameworks,0.17108257833904644
+Date and Time,Matchers,0.062476173186546094
+Date and Time,Mocking,0.09219466428922396
+Date and Time,Utility,0.10747779100643058
+Date and Time,Web Crawling,0.0816620746217636
+Date and Time,Web Frameworks,0.16763583477773053
+Dependency Injection,Dependency Injection,1.0000000000000002
+Dependency Injection,Development,0.26228117404770107
+Dependency Injection,Distributed Applications,0.24561955022707416
+Dependency Injection,Distributed Transactions,0.29180558298706144
+Dependency Injection,Distribution,0.20946649733381084
+Dependency Injection,Document Processing,0.20655534793435132
+Dependency Injection,Financial,0.07318255348461074
+Dependency Injection,Formal Verification,0.14701615786710098
+Dependency Injection,Functional Programming,0.12522662147997884
+Dependency Injection,Game Development,0.07987066896162898
+Dependency Injection,Geospatial,0.05956199991262192
+Dependency Injection,High Performance,0.11979589433488932
+Dependency Injection,HTTP Clients,0.2290629580653827
+Dependency Injection,Hypermedia Types,0.1700792629408096
+Dependency Injection,Imagery,0.16017706393607692
+Dependency Injection,Introspection,0.2763251443972906
+Dependency Injection,Job Scheduling,0.07218941240947
+Dependency Injection,JSON,0.23902653320081427
+Dependency Injection,JVM and JDK,0.10878110296832684
+Dependency Injection,Logging,0.29749340594778995
+Dependency Injection,Machine Learning,0.18862070921130542
+Dependency Injection,Messaging,0.07055143118830252
+Dependency Injection,Microservice,0.45970405007165865
+Dependency Injection,Miscellaneous,0.4042304195249882
+Dependency Injection,Monitoring,0.2875513434270091
+Dependency Injection,Native,0.16715036910167425
+Dependency Injection,Natural Language Processing,0.3101123213387239
+Dependency Injection,Networking,0.12720247398487905
+Dependency Injection,ORM,0.34701315512267794
+Dependency Injection,PDF,0.07500828163671229
+Dependency Injection,Performance analysis,0.2767915345147576
+Dependency Injection,Apache Commons,0.3523193230285358
+Dependency Injection,Other,0.39490766293652396
+Dependency Injection,Processes,0.10491142525082216
+Dependency Injection,Reactive libraries,0.042974122310300705
+Dependency Injection,REST Frameworks,0.4463975999264016
+Dependency Injection,Science,0.0284913705556325
+Dependency Injection,Search,0.17487676569165675
+Dependency Injection,Security,0.14764139030733028
+Dependency Injection,Serialization,0.15574176921071467
+Dependency Injection,Server,0.4002111095923246
+Dependency Injection,Template Engine,0.1280785471240942
+Dependency Injection,Asynchronous,0.2736780696694124
+Dependency Injection,BDD,0.286628678133868
+Dependency Injection,Fixtures,0.3726981084703558
+Dependency Injection,Frameworks,0.4640086013437534
+Dependency Injection,Matchers,0.18858483626415715
+Dependency Injection,Mocking,0.2965975593436352
+Dependency Injection,Utility,0.23852211210788699
+Dependency Injection,Web Crawling,0.09452252288577388
+Dependency Injection,Web Frameworks,0.4951769353206617
+Development,Development,1.0000000000000002
+Development,Distributed Applications,0.24093307553130874
+Development,Distributed Transactions,0.22937442678998216
+Development,Distribution,0.30433921259914165
+Development,Document Processing,0.361117784372194
+Development,Financial,0.10726755239463107
+Development,Formal Verification,0.14972146250857823
+Development,Functional Programming,0.3507415810789464
+Development,Game Development,0.09891058412161115
+Development,Geospatial,0.0985874491998679
+Development,High Performance,0.4299195764297124
+Development,HTTP Clients,0.17829149264505684
+Development,Hypermedia Types,0.28695480483536856
+Development,Imagery,0.19721871850301045
+Development,Introspection,0.42106644213771216
+Development,Job Scheduling,0.05669975345347805
+Development,JSON,0.333857776857802
+Development,JVM and JDK,0.14114597369611626
+Development,Logging,0.2978848204896943
+Development,Machine Learning,0.26828898243853966
+Development,Messaging,0.04488855365351098
+Development,Microservice,0.37384291395252556
+Development,Miscellaneous,0.5041570552785228
+Development,Monitoring,0.2573957525722828
+Development,Native,0.28837647424882035
+Development,Natural Language Processing,0.3571940028205885
+Development,Networking,0.139654610490037
+Development,ORM,0.32920319792289426
+Development,PDF,0.12261230461923522
+Development,Performance analysis,0.2717070172091163
+Development,Apache Commons,0.5207714989779754
+Development,Other,0.31485272839136796
+Development,Processes,0.1363654684660591
+Development,Reactive libraries,0.047537542465837655
+Development,REST Frameworks,0.3179575848265189
+Development,Science,0.09450734329556937
+Development,Search,0.22255851856677883
+Development,Security,0.14020733632458898
+Development,Serialization,0.37531433500307976
+Development,Server,0.3363036994373344
+Development,Template Engine,0.2707269409252258
+Development,Asynchronous,0.26327334075735526
+Development,BDD,0.24471514599431657
+Development,Fixtures,0.3126497552418679
+Development,Frameworks,0.4178910016075119
+Development,Matchers,0.2399436065218975
+Development,Mocking,0.2966019316017064
+Development,Utility,0.33095778707460705
+Development,Web Crawling,0.22847111940988651
+Development,Web Frameworks,0.4067559187174414
+Distributed Applications,Distributed Applications,1.0000000000000002
+Distributed Applications,Distributed Transactions,0.41083545134958027
+Distributed Applications,Distribution,0.2536507754860059
+Distributed Applications,Document Processing,0.22297324020716658
+Distributed Applications,Financial,0.11103319366632627
+Distributed Applications,Formal Verification,0.1342796791327459
+Distributed Applications,Functional Programming,0.15668854610244803
+Distributed Applications,Game Development,0.08873743810986653
+Distributed Applications,Geospatial,0.03834143556999056
+Distributed Applications,High Performance,0.15046671046944346
+Distributed Applications,HTTP Clients,0.37141290715416875
+Distributed Applications,Hypermedia Types,0.17739861454248745
+Distributed Applications,Imagery,0.16717966297729808
+Distributed Applications,Introspection,0.21521813524358893
+Distributed Applications,Job Scheduling,0.10942710072762994
+Distributed Applications,JSON,0.18515836416934922
+Distributed Applications,JVM and JDK,0.11479659939048502
+Distributed Applications,Logging,0.2652213025299695
+Distributed Applications,Machine Learning,0.21197384038308886
+Distributed Applications,Messaging,0.08340298655033121
+Distributed Applications,Microservice,0.431827908008603
+Distributed Applications,Miscellaneous,0.41534921911948613
+Distributed Applications,Monitoring,0.30712386005861153
+Distributed Applications,Native,0.2031023290171977
+Distributed Applications,Natural Language Processing,0.18425091594586884
+Distributed Applications,Networking,0.261406359858076
+Distributed Applications,ORM,0.23127992387934426
+Distributed Applications,PDF,0.07290819714074388
+Distributed Applications,Performance analysis,0.23484190261971438
+Distributed Applications,Apache Commons,0.3621787701188049
+Distributed Applications,Other,0.3464259958364202
+Distributed Applications,Processes,0.1715031135803065
+Distributed Applications,Reactive libraries,0.08824644692246614
+Distributed Applications,REST Frameworks,0.4419695372427005
+Distributed Applications,Science,0.049911920822147474
+Distributed Applications,Search,0.2661386633351862
+Distributed Applications,Security,0.11820710998825268
+Distributed Applications,Serialization,0.2506754369115276
+Distributed Applications,Server,0.34776444990014665
+Distributed Applications,Template Engine,0.13111821560005896
+Distributed Applications,Asynchronous,0.37090117947395834
+Distributed Applications,BDD,0.15750082104171884
+Distributed Applications,Fixtures,0.21887420315908965
+Distributed Applications,Frameworks,0.34921223183475647
+Distributed Applications,Matchers,0.13871234385800524
+Distributed Applications,Mocking,0.34538911114589
+Distributed Applications,Utility,0.2788519318110223
+Distributed Applications,Web Crawling,0.15225864011562731
+Distributed Applications,Web Frameworks,0.42657455293675495
+Distributed Transactions,Distributed Transactions,1.0
+Distributed Transactions,Distribution,0.3027533575520148
+Distributed Transactions,Document Processing,0.2432138781051728
+Distributed Transactions,Financial,0.15271321373592972
+Distributed Transactions,Formal Verification,0.17759986121612625
+Distributed Transactions,Functional Programming,0.1198989969145451
+Distributed Transactions,Game Development,0.10430400019866283
+Distributed Transactions,Geospatial,0.035234597752868364
+Distributed Transactions,High Performance,0.10247894501356175
+Distributed Transactions,HTTP Clients,0.4524051912003231
+Distributed Transactions,Hypermedia Types,0.15382863801251606
+Distributed Transactions,Imagery,0.19013470489105597
+Distributed Transactions,Introspection,0.2727902040092964
+Distributed Transactions,Job Scheduling,0.20312769222391563
+Distributed Transactions,JSON,0.2010745311544579
+Distributed Transactions,JVM and JDK,0.1453205960419413
+Distributed Transactions,Logging,0.31601189811708186
+Distributed Transactions,Machine Learning,0.22973099445918457
+Distributed Transactions,Messaging,0.08866281560309788
+Distributed Transactions,Microservice,0.5073197618193451
+Distributed Transactions,Miscellaneous,0.4588354810643642
+Distributed Transactions,Monitoring,0.3781890645462749
+Distributed Transactions,Native,0.19452206984770684
+Distributed Transactions,Natural Language Processing,0.2691764883338713
+Distributed Transactions,Networking,0.3541017371700105
+Distributed Transactions,ORM,0.39935210567933876
+Distributed Transactions,PDF,0.08426529920958166
+Distributed Transactions,Performance analysis,0.20877094709479943
+Distributed Transactions,Apache Commons,0.41700030744647115
+Distributed Transactions,Other,0.5245441703907807
+Distributed Transactions,Processes,0.239860633600555
+Distributed Transactions,Reactive libraries,0.06808391340849332
+Distributed Transactions,REST Frameworks,0.5488299991733251
+Distributed Transactions,Science,0.028338899925839194
+Distributed Transactions,Search,0.2710748246922467
+Distributed Transactions,Security,0.14626583644144
+Distributed Transactions,Serialization,0.2710585455102547
+Distributed Transactions,Server,0.5009184523534551
+Distributed Transactions,Template Engine,0.1663185184619481
+Distributed Transactions,Asynchronous,0.4228857338932721
+Distributed Transactions,BDD,0.2588210776936255
+Distributed Transactions,Fixtures,0.2710039187789734
+Distributed Transactions,Frameworks,0.45061277851560083
+Distributed Transactions,Matchers,0.11691179145624717
+Distributed Transactions,Mocking,0.40694417774317115
+Distributed Transactions,Utility,0.2899543564369052
+Distributed Transactions,Web Crawling,0.13889515169271502
+Distributed Transactions,Web Frameworks,0.48260500323014505
+Distribution,Distribution,1.0
+Distribution,Document Processing,0.34204919810278706
+Distribution,Financial,0.07719015366767254
+Distribution,Formal Verification,0.300774148453939
+Distribution,Functional Programming,0.1469016227111364
+Distribution,Game Development,0.1307993813745085
+Distribution,Geospatial,0.06832990827279439
+Distribution,High Performance,0.11630850563681937
+Distribution,HTTP Clients,0.1976893215276976
+Distribution,Hypermedia Types,0.13988763392005885
+Distribution,Imagery,0.29894452620753725
+Distribution,Introspection,0.38672574669980303
+Distribution,Job Scheduling,0.1023043893822353
+Distribution,JSON,0.19393130816686396
+Distribution,JVM and JDK,0.3501951625834031
+Distribution,Logging,0.39540545147117495
+Distribution,Machine Learning,0.5246529077565546
+Distribution,Messaging,0.06524125791590711
+Distribution,Microservice,0.2982210853682722
+Distribution,Miscellaneous,0.5565353670080282
+Distribution,Monitoring,0.2481462977015142
+Distribution,Native,0.26479457132041606
+Distribution,Natural Language Processing,0.33271920782799086
+Distribution,Networking,0.1363376588216167
+Distribution,ORM,0.24434842540605128
+Distribution,PDF,0.15066063961981085
+Distribution,Performance analysis,0.3538115185917823
+Distribution,Apache Commons,0.5046258330849955
+Distribution,Other,0.3035264759505683
+Distribution,Processes,0.21401905177797062
+Distribution,Reactive libraries,0.06129032297088614
+Distribution,REST Frameworks,0.3353878820270527
+Distribution,Science,0.05024764737727536
+Distribution,Search,0.18360113756147692
+Distribution,Security,0.11518301148188079
+Distribution,Serialization,0.23519006481147312
+Distribution,Server,0.2938982800888794
+Distribution,Template Engine,0.18266488517380888
+Distribution,Asynchronous,0.3261786138964612
+Distribution,BDD,0.23784902387095216
+Distribution,Fixtures,0.2802667096922653
+Distribution,Frameworks,0.4796197041748487
+Distribution,Matchers,0.17035052447044394
+Distribution,Mocking,0.27858981582775055
+Distribution,Utility,0.6456106515580368
+Distribution,Web Crawling,0.19518203227835237
+Distribution,Web Frameworks,0.39384303123829556
+Document Processing,Document Processing,1.0000000000000002
+Document Processing,Financial,0.07303785689776002
+Document Processing,Formal Verification,0.16388561282549946
+Document Processing,Functional Programming,0.18297536617315732
+Document Processing,Game Development,0.11166297979036337
+Document Processing,Geospatial,0.05335536341936904
+Document Processing,High Performance,0.2236092139476421
+Document Processing,HTTP Clients,0.21295694425468628
+Document Processing,Hypermedia Types,0.18068568709260435
+Document Processing,Imagery,0.3428949292874075
+Document Processing,Introspection,0.25157648352071427
+Document Processing,Job Scheduling,0.0917953310556508
+Document Processing,JSON,0.266196449034755
+Document Processing,JVM and JDK,0.22032516331085053
+Document Processing,Logging,0.3514824224758724
+Document Processing,Machine Learning,0.2721099109666181
+Document Processing,Messaging,0.0837331652397998
+Document Processing,Microservice,0.26583265583506577
+Document Processing,Miscellaneous,0.4548952634946484
+Document Processing,Monitoring,0.22878132744448157
+Document Processing,Native,0.23535992093851557
+Document Processing,Natural Language Processing,0.31927343439184047
+Document Processing,Networking,0.13142688737386937
+Document Processing,ORM,0.29479567918868677
+Document Processing,PDF,0.2472522306089493
+Document Processing,Performance analysis,0.2484481882164971
+Document Processing,Apache Commons,0.527425469740443
+Document Processing,Other,0.2715909928141059
+Document Processing,Processes,0.1375721788872476
+Document Processing,Reactive libraries,0.051564287406135015
+Document Processing,REST Frameworks,0.28985120113625407
+Document Processing,Science,0.08024037964773827
+Document Processing,Search,0.20621831478007122
+Document Processing,Security,0.14146640903052052
+Document Processing,Serialization,0.2311814450650156
+Document Processing,Server,0.25615179869935967
+Document Processing,Template Engine,0.2423507004523949
+Document Processing,Asynchronous,0.27687328719827625
+Document Processing,BDD,0.2206252903239873
+Document Processing,Fixtures,0.2574208503214987
+Document Processing,Frameworks,0.33751626176429217
+Document Processing,Matchers,0.157479763650291
+Document Processing,Mocking,0.24969899353336206
+Document Processing,Utility,0.3315261454758454
+Document Processing,Web Crawling,0.18455196284170822
+Document Processing,Web Frameworks,0.3719846335309296
+Financial,Financial,1.0
+Financial,Formal Verification,0.08223445062752256
+Financial,Functional Programming,0.06441745466437651
+Financial,Game Development,0.035649292778989504
+Financial,Geospatial,0.02714513254905848
+Financial,High Performance,0.06210973775870726
+Financial,HTTP Clients,0.1601442665487047
+Financial,Hypermedia Types,0.04909676518947209
+Financial,Imagery,0.07515852094833855
+Financial,Introspection,0.06483282773694386
+Financial,Job Scheduling,0.03813048660948588
+Financial,JSON,0.0626010957478189
+Financial,JVM and JDK,0.04571573517325034
+Financial,Logging,0.09168484021622765
+Financial,Machine Learning,0.06768805854533873
+Financial,Messaging,0.04376632242076364
+Financial,Microservice,0.14979508755944468
+Financial,Miscellaneous,0.147455048146205
+Financial,Monitoring,0.09594984615680269
+Financial,Native,0.09652019584461514
+Financial,Natural Language Processing,0.08269583673254703
+Financial,Networking,0.07641900667262438
+Financial,ORM,0.09157286340635384
+Financial,PDF,0.030887109655069925
+Financial,Performance analysis,0.05917881398321131
+Financial,Apache Commons,0.13526449253083525
+Financial,Other,0.1514009247730298
+Financial,Processes,0.035974032467063016
+Financial,Reactive libraries,0.017054859760165086
+Financial,REST Frameworks,0.16544145914920563
+Financial,Science,0.011897819508974969
+Financial,Search,0.10688861512992043
+Financial,Security,0.08991468787556937
+Financial,Serialization,0.05484604398269908
+Financial,Server,0.10370624892201084
+Financial,Template Engine,0.06434944964363405
+Financial,Asynchronous,0.18033834176384458
+Financial,BDD,0.06259643383937574
+Financial,Fixtures,0.07894847162043406
+Financial,Frameworks,0.1408891450226446
+Financial,Matchers,0.06877616855013215
+Financial,Mocking,0.17162235616179491
+Financial,Utility,0.08801280546784292
+Financial,Web Crawling,0.06521971510193948
+Financial,Web Frameworks,0.15004413684029314
+Formal Verification,Formal Verification,1.0000000000000002
+Formal Verification,Functional Programming,0.06745353222367807
+Formal Verification,Game Development,0.06656822470935424
+Formal Verification,Geospatial,0.01402288348782627
+Formal Verification,High Performance,0.07503512830564661
+Formal Verification,HTTP Clients,0.08166208368416744
+Formal Verification,Hypermedia Types,0.07362076688068173
+Formal Verification,Imagery,0.13557087780375393
+Formal Verification,Introspection,0.13380814150973874
+Formal Verification,Job Scheduling,0.04843399563654734
+Formal Verification,JSON,0.13961546542559916
+Formal Verification,JVM and JDK,0.1222403660360902
+Formal Verification,Logging,0.17726166198676616
+Formal Verification,Machine Learning,0.2338165538240258
+Formal Verification,Messaging,0.010909309303242356
+Formal Verification,Microservice,0.14927766130135525
+Formal Verification,Miscellaneous,0.28442100063973963
+Formal Verification,Monitoring,0.13753650655791075
+Formal Verification,Native,0.10868078470775548
+Formal Verification,Natural Language Processing,0.09345835390939732
+Formal Verification,Networking,0.11298530046249962
+Formal Verification,ORM,0.19673428459981282
+Formal Verification,PDF,0.06388863538021232
+Formal Verification,Performance analysis,0.17791689529806096
+Formal Verification,Apache Commons,0.23159133501531115
+Formal Verification,Other,0.12045951124732711
+Formal Verification,Processes,0.1201500171653753
+Formal Verification,Reactive libraries,0.016224856751000848
+Formal Verification,REST Frameworks,0.11375028260779822
+Formal Verification,Science,0.058826256495011886
+Formal Verification,Search,0.08126274315374823
+Formal Verification,Security,0.04052448944490785
+Formal Verification,Serialization,0.09863784009942876
+Formal Verification,Server,0.11304006732828657
+Formal Verification,Template Engine,0.06604309250122531
+Formal Verification,Asynchronous,0.13278439571336328
+Formal Verification,BDD,0.09479786556295829
+Formal Verification,Fixtures,0.12102348173307578
+Formal Verification,Frameworks,0.20704197362991714
+Formal Verification,Matchers,0.10616728675299938
+Formal Verification,Mocking,0.1327532140944214
+Formal Verification,Utility,0.2633683202236619
+Formal Verification,Web Crawling,0.054505364327513635
+Formal Verification,Web Frameworks,0.17241662733252103
+Functional Programming,Functional Programming,1.0
+Functional Programming,Game Development,0.0771102415307922
+Functional Programming,Geospatial,0.03435424393561108
+Functional Programming,High Performance,0.4315634909467641
+Functional Programming,HTTP Clients,0.1477490516034868
+Functional Programming,Hypermedia Types,0.08859937327254795
+Functional Programming,Imagery,0.11827779634538133
+Functional Programming,Introspection,0.1220899515314815
+Functional Programming,Job Scheduling,0.03653137461475746
+Functional Programming,JSON,0.18068580239275733
+Functional Programming,JVM and JDK,0.07221944967735487
+Functional Programming,Logging,0.18217503831595974
+Functional Programming,Machine Learning,0.1543797202457951
+Functional Programming,Messaging,0.02977248794419953
+Functional Programming,Microservice,0.1958287151637035
+Functional Programming,Miscellaneous,0.22584359704890639
+Functional Programming,Monitoring,0.11313127476076379
+Functional Programming,Native,0.10165634598303697
+Functional Programming,Natural Language Processing,0.11456616279812051
+Functional Programming,Networking,0.10105964949726343
+Functional Programming,ORM,0.18107330344143766
+Functional Programming,PDF,0.0590352775683396
+Functional Programming,Performance analysis,0.08098718508246382
+Functional Programming,Apache Commons,0.2481335601737773
+Functional Programming,Other,0.16230732138657863
+Functional Programming,Processes,0.07409409907596036
+Functional Programming,Reactive libraries,0.022879618541998055
+Functional Programming,REST Frameworks,0.16275640955775375
+Functional Programming,Science,0.06222921426106818
+Functional Programming,Search,0.1323893477839166
+Functional Programming,Security,0.06790997977555054
+Functional Programming,Serialization,0.10179626831126269
+Functional Programming,Server,0.13412420127904418
+Functional Programming,Template Engine,0.14746556293077218
+Functional Programming,Asynchronous,0.11643945726060578
+Functional Programming,BDD,0.13648470182374084
+Functional Programming,Fixtures,0.1671061230052429
+Functional Programming,Frameworks,0.2334234534511713
+Functional Programming,Matchers,0.11402578583007227
+Functional Programming,Mocking,0.14874178710249114
+Functional Programming,Utility,0.18767113071783434
+Functional Programming,Web Crawling,0.09516554620028987
+Functional Programming,Web Frameworks,0.21311073703159963
+Game Development,Game Development,1.0000000000000002
+Game Development,Geospatial,0.020524780670011535
+Game Development,High Performance,0.05652970608758023
+Game Development,HTTP Clients,0.08547718481223596
+Game Development,Hypermedia Types,0.06489005625268565
+Game Development,Imagery,0.13656829784766936
+Game Development,Introspection,0.0620861406334982
+Game Development,Job Scheduling,0.03830388700929214
+Game Development,JSON,0.07108123891001837
+Game Development,JVM and JDK,0.1349974533529021
+Game Development,Logging,0.11333209325291577
+Game Development,Machine Learning,0.13835872841228272
+Game Development,Messaging,0.014615224024508554
+Game Development,Microservice,0.10080345586235852
+Game Development,Miscellaneous,0.1854479322545072
+Game Development,Monitoring,0.08388701413828743
+Game Development,Native,0.1589522886452511
+Game Development,Natural Language Processing,0.07606567605945544
+Game Development,Networking,0.059614682483297134
+Game Development,ORM,0.09719434934367938
+Game Development,PDF,0.06969051510751985
+Game Development,Performance analysis,0.1437578247350938
+Game Development,Apache Commons,0.14880111201509483
+Game Development,Other,0.1074276622095374
+Game Development,Processes,0.048445929233835575
+Game Development,Reactive libraries,0.015199300674627204
+Game Development,REST Frameworks,0.12128134419759636
+Game Development,Science,0.03437504788923754
+Game Development,Search,0.06376032625875211
+Game Development,Security,0.03490535744452696
+Game Development,Serialization,0.09041191217449622
+Game Development,Server,0.1024942160353378
+Game Development,Template Engine,0.055923417477779284
+Game Development,Asynchronous,0.07414918611240136
+Game Development,BDD,0.08201156248730364
+Game Development,Fixtures,0.0974267168701939
+Game Development,Frameworks,0.12541346449316226
+Game Development,Matchers,0.03620143935603827
+Game Development,Mocking,0.08726065541430852
+Game Development,Utility,0.1756870087396569
+Game Development,Web Crawling,0.06162765448271528
+Game Development,Web Frameworks,0.13906002026280034
+Geospatial,Geospatial,1.0
+Geospatial,High Performance,0.02540893421450058
+Geospatial,HTTP Clients,0.025121680719883112
+Geospatial,Hypermedia Types,0.0495152347434402
+Geospatial,Imagery,0.029464042552323
+Geospatial,Introspection,0.03917061893806634
+Geospatial,Job Scheduling,0.010038201313797734
+Geospatial,JSON,0.05277722396496442
+Geospatial,JVM and JDK,0.04566299728857385
+Geospatial,Logging,0.048813084243684954
+Geospatial,Machine Learning,0.06771783343242699
+Geospatial,Messaging,0.017645254076538826
+Geospatial,Microservice,0.11197589741921697
+Geospatial,Miscellaneous,0.14377160355512988
+Geospatial,Monitoring,0.05307915230723094
+Geospatial,Native,0.044706804585232046
+Geospatial,Natural Language Processing,0.08714665436215908
+Geospatial,Networking,0.030861967947493518
+Geospatial,ORM,0.18822366159739243
+Geospatial,PDF,0.043017671001011476
+Geospatial,Performance analysis,0.03706924812204372
+Geospatial,Apache Commons,0.08805030769848028
+Geospatial,Other,0.10895659417288579
+Geospatial,Processes,0.01890441419923888
+Geospatial,Reactive libraries,0.03902621282925865
+Geospatial,REST Frameworks,0.12761312826151114
+Geospatial,Science,0.009478511602934501
+Geospatial,Search,0.024362402115782802
+Geospatial,Security,0.028820050985981546
+Geospatial,Serialization,0.01694747600454822
+Geospatial,Server,0.13309336670708768
+Geospatial,Template Engine,0.05332266402841094
+Geospatial,Asynchronous,0.04716898550994609
+Geospatial,BDD,0.041798323021475195
+Geospatial,Fixtures,0.05449123283555006
+Geospatial,Frameworks,0.14147802492308809
+Geospatial,Matchers,0.1666561558288613
+Geospatial,Mocking,0.047694585148921304
+Geospatial,Utility,0.08052864491373604
+Geospatial,Web Crawling,0.07665113358953528
+Geospatial,Web Frameworks,0.0743157204495587
+High Performance,High Performance,1.0
+High Performance,HTTP Clients,0.1176765514967723
+High Performance,Hypermedia Types,0.08470328517908932
+High Performance,Imagery,0.1567865514427117
+High Performance,Introspection,0.1165088645062856
+High Performance,Job Scheduling,0.03639284681364014
+High Performance,JSON,0.1512417888684175
+High Performance,JVM and JDK,0.05431370336386061
+High Performance,Logging,0.13912902487573042
+High Performance,Machine Learning,0.13304783767659273
+High Performance,Messaging,0.050691627831367415
+High Performance,Microservice,0.16929078874058257
+High Performance,Miscellaneous,0.21323515105579224
+High Performance,Monitoring,0.11491185767655814
+High Performance,Native,0.16549584526945313
+High Performance,Natural Language Processing,0.13037119958780582
+High Performance,Networking,0.08400017302567711
+High Performance,ORM,0.18376528944245352
+High Performance,PDF,0.08328391239338027
+High Performance,Performance analysis,0.08332171565978619
+High Performance,Apache Commons,0.27928923605800654
+High Performance,Other,0.15004404842436295
+High Performance,Processes,0.06956691771270479
+High Performance,Reactive libraries,0.02930724444975617
+High Performance,REST Frameworks,0.1376777514625774
+High Performance,Science,0.037681023737624844
+High Performance,Search,0.10446411357944994
+High Performance,Security,0.07439276068762983
+High Performance,Serialization,0.12319270785012545
+High Performance,Server,0.11552556064548182
+High Performance,Template Engine,0.12422878110522573
+High Performance,Asynchronous,0.10579690215026241
+High Performance,BDD,0.11248550014469338
+High Performance,Fixtures,0.17022383258596088
+High Performance,Frameworks,0.2505533570685322
+High Performance,Matchers,0.1475791886775014
+High Performance,Mocking,0.13889953531669155
+High Performance,Utility,0.21039650400703067
+High Performance,Web Crawling,0.06840677626512781
+High Performance,Web Frameworks,0.19914228932007003
+HTTP Clients,HTTP Clients,1.0000000000000004
+HTTP Clients,Hypermedia Types,0.12927801881424547
+HTTP Clients,Imagery,0.14711920071982157
+HTTP Clients,Introspection,0.18364751036048815
+HTTP Clients,Job Scheduling,0.09765534699411657
+HTTP Clients,JSON,0.18842577208453026
+HTTP Clients,JVM and JDK,0.09311190416776463
+HTTP Clients,Logging,0.28176501277795923
+HTTP Clients,Machine Learning,0.15026921302097618
+HTTP Clients,Messaging,0.10309403327728095
+HTTP Clients,Microservice,0.6170434107807253
+HTTP Clients,Miscellaneous,0.3561618462883998
+HTTP Clients,Monitoring,0.3252411404345932
+HTTP Clients,Native,0.17828797244048422
+HTTP Clients,Natural Language Processing,0.22123816653959097
+HTTP Clients,Networking,0.3770773701153922
+HTTP Clients,ORM,0.21563160910329823
+HTTP Clients,PDF,0.06837720386818495
+HTTP Clients,Performance analysis,0.12842200209489713
+HTTP Clients,Apache Commons,0.361325840109627
+HTTP Clients,Other,0.5854071394560513
+HTTP Clients,Processes,0.15983017667489352
+HTTP Clients,Reactive libraries,0.048091889141322765
+HTTP Clients,REST Frameworks,0.6495881866406434
+HTTP Clients,Science,0.023250777081260433
+HTTP Clients,Search,0.2563773247350009
+HTTP Clients,Security,0.14008879197620894
+HTTP Clients,Serialization,0.20833572717560345
+HTTP Clients,Server,0.3549291051575878
+HTTP Clients,Template Engine,0.14878485115562767
+HTTP Clients,Asynchronous,0.6109851363017712
+HTTP Clients,BDD,0.1730480373493137
+HTTP Clients,Fixtures,0.1912922907305953
+HTTP Clients,Frameworks,0.4307112458704306
+HTTP Clients,Matchers,0.08935417938234969
+HTTP Clients,Mocking,0.7061692503370598
+HTTP Clients,Utility,0.22116176358126582
+HTTP Clients,Web Crawling,0.15759396811023002
+HTTP Clients,Web Frameworks,0.602217643137544
+Hypermedia Types,Hypermedia Types,1.0
+Hypermedia Types,Imagery,0.07578267332003366
+Hypermedia Types,Introspection,0.2193814823054732
+Hypermedia Types,Job Scheduling,0.039707536060824083
+Hypermedia Types,JSON,0.6555698559847972
+Hypermedia Types,JVM and JDK,0.10111828484927239
+Hypermedia Types,Logging,0.20830765775175875
+Hypermedia Types,Machine Learning,0.19715476006400748
+Hypermedia Types,Messaging,0.028926866440376883
+Hypermedia Types,Microservice,0.26359713711852906
+Hypermedia Types,Miscellaneous,0.3586085511744943
+Hypermedia Types,Monitoring,0.1499989262268316
+Hypermedia Types,Native,0.10795200415861714
+Hypermedia Types,Natural Language Processing,0.19074486224783674
+Hypermedia Types,Networking,0.07266387253857759
+Hypermedia Types,ORM,0.2425244073474866
+Hypermedia Types,PDF,0.09339473092179792
+Hypermedia Types,Performance analysis,0.11886568474625944
+Hypermedia Types,Apache Commons,0.2909324571055995
+Hypermedia Types,Other,0.18961681619838888
+Hypermedia Types,Processes,0.05062299440116773
+Hypermedia Types,Reactive libraries,0.03101758404635891
+Hypermedia Types,REST Frameworks,0.26395718161771714
+Hypermedia Types,Science,0.0844243152051577
+Hypermedia Types,Search,0.16386993912596143
+Hypermedia Types,Security,0.07976503164618162
+Hypermedia Types,Serialization,0.2246640088515373
+Hypermedia Types,Server,0.21933710879023885
+Hypermedia Types,Template Engine,0.13885067603286394
+Hypermedia Types,Asynchronous,0.33297901020361353
+Hypermedia Types,BDD,0.15771628456065678
+Hypermedia Types,Fixtures,0.20728689590180108
+Hypermedia Types,Frameworks,0.29568644564610136
+Hypermedia Types,Matchers,0.15195177530137183
+Hypermedia Types,Mocking,0.31028343035206635
+Hypermedia Types,Utility,0.24525965868384553
+Hypermedia Types,Web Crawling,0.11091232520729055
+Hypermedia Types,Web Frameworks,0.2735586395295082
+Imagery,Imagery,0.9999999999999999
+Imagery,Introspection,0.17711976176298644
+Imagery,Job Scheduling,0.05461204116581824
+Imagery,JSON,0.1640223782140781
+Imagery,JVM and JDK,0.2713395892946312
+Imagery,Logging,0.23506781901838586
+Imagery,Machine Learning,0.24191694386490947
+Imagery,Messaging,0.07513464561851885
+Imagery,Microservice,0.2079551201944884
+Imagery,Miscellaneous,0.444365635149259
+Imagery,Monitoring,0.1804362304411616
+Imagery,Native,0.22559361016067836
+Imagery,Natural Language Processing,0.2139019764673165
+Imagery,Networking,0.1165923445675773
+Imagery,ORM,0.16529854657307447
+Imagery,PDF,0.21091734090792671
+Imagery,Performance analysis,0.21811368555072527
+Imagery,Apache Commons,0.43582831549665896
+Imagery,Other,0.1853140660493267
+Imagery,Processes,0.09267248549054119
+Imagery,Reactive libraries,0.03968487115598127
+Imagery,REST Frameworks,0.19865841036595616
+Imagery,Science,0.06086881913986805
+Imagery,Search,0.14389006874341334
+Imagery,Security,0.17320193698441688
+Imagery,Serialization,0.1820641126771802
+Imagery,Server,0.1647762376382449
+Imagery,Template Engine,0.12219781699607692
+Imagery,Asynchronous,0.17626264233591807
+Imagery,BDD,0.16464743583372984
+Imagery,Fixtures,0.18826977406318102
+Imagery,Frameworks,0.231939455681823
+Imagery,Matchers,0.12346001334914504
+Imagery,Mocking,0.18540737003788627
+Imagery,Utility,0.2996358143575818
+Imagery,Web Crawling,0.12281331047216161
+Imagery,Web Frameworks,0.25749898251178627
+Introspection,Introspection,1.0000000000000007
+Introspection,Job Scheduling,0.05321997455484771
+Introspection,JSON,0.3134907160113564
+Introspection,JVM and JDK,0.11944281266319565
+Introspection,Logging,0.2693676610310162
+Introspection,Machine Learning,0.18729663092387636
+Introspection,Messaging,0.03462462317711254
+Introspection,Microservice,0.384301263060902
+Introspection,Miscellaneous,0.47897056291889595
+Introspection,Monitoring,0.18715061403026387
+Introspection,Native,0.2548595543663995
+Introspection,Natural Language Processing,0.3013809294662584
+Introspection,Networking,0.12856965331507375
+Introspection,ORM,0.1949786063709291
+Introspection,PDF,0.07104913632743794
+Introspection,Performance analysis,0.18313090437852092
+Introspection,Apache Commons,0.46847507386522774
+Introspection,Other,0.2862572119341983
+Introspection,Processes,0.15186058363091048
+Introspection,Reactive libraries,0.03875948435911473
+Introspection,REST Frameworks,0.38532015951754534
+Introspection,Science,0.026494415688712476
+Introspection,Search,0.16651404071607975
+Introspection,Security,0.14431138625725276
+Introspection,Serialization,0.37508005050614235
+Introspection,Server,0.3406854131906619
+Introspection,Template Engine,0.15229583142491399
+Introspection,Asynchronous,0.37435105536845414
+Introspection,BDD,0.22189594431183826
+Introspection,Fixtures,0.30351559591977945
+Introspection,Frameworks,0.3353878127783212
+Introspection,Matchers,0.240839002120899
+Introspection,Mocking,0.31017340724708353
+Introspection,Utility,0.2464871719255945
+Introspection,Web Crawling,0.1055344234573494
+Introspection,Web Frameworks,0.3868124829869455
+Job Scheduling,Job Scheduling,1.0000000000000002
+Job Scheduling,JSON,0.05648718777684358
+Job Scheduling,JVM and JDK,0.036452199265403766
+Job Scheduling,Logging,0.08504317107973187
+Job Scheduling,Machine Learning,0.07895459114232817
+Job Scheduling,Messaging,0.01282513523435618
+Job Scheduling,Microservice,0.1017378147833835
+Job Scheduling,Miscellaneous,0.12367338721851912
+Job Scheduling,Monitoring,0.09208268428703908
+Job Scheduling,Native,0.058005852800079416
+Job Scheduling,Natural Language Processing,0.04329852169438177
+Job Scheduling,Networking,0.09216921722332178
+Job Scheduling,ORM,0.11939961122196686
+Job Scheduling,PDF,0.023127236683060857
+Job Scheduling,Performance analysis,0.059135517917827604
+Job Scheduling,Apache Commons,0.11656099683671907
+Job Scheduling,Other,0.11683076318779517
+Job Scheduling,Processes,0.059756863524958244
+Job Scheduling,Reactive libraries,0.01722558426637486
+Job Scheduling,REST Frameworks,0.10334708128069488
+Job Scheduling,Science,0.011160508497124728
+Job Scheduling,Search,0.08923937803822882
+Job Scheduling,Security,0.033552516409221196
+Job Scheduling,Serialization,0.06738521453557156
+Job Scheduling,Server,0.11122054507082837
+Job Scheduling,Template Engine,0.04286970644239767
+Job Scheduling,Asynchronous,0.08553202078420738
+Job Scheduling,BDD,0.05911884154546472
+Job Scheduling,Fixtures,0.07971378032294964
+Job Scheduling,Frameworks,0.09725931295523622
+Job Scheduling,Matchers,0.038962618845679295
+Job Scheduling,Mocking,0.08033559674268234
+Job Scheduling,Utility,0.09474348853494703
+Job Scheduling,Web Crawling,0.0418308112967348
+Job Scheduling,Web Frameworks,0.11232738333829528
+JSON,JSON,0.9999999999999999
+JSON,JVM and JDK,0.11192707830781819
+JSON,Logging,0.3091204923158646
+JSON,Machine Learning,0.16834649843430535
+JSON,Messaging,0.03416674765428576
+JSON,Microservice,0.35771107714704986
+JSON,Miscellaneous,0.4083973792806657
+JSON,Monitoring,0.19278541530511115
+JSON,Native,0.20219146461500279
+JSON,Natural Language Processing,0.28370098298458435
+JSON,Networking,0.12792591901792322
+JSON,ORM,0.2967306371989346
+JSON,PDF,0.11053381018001861
+JSON,Performance analysis,0.13291529554237697
+JSON,Apache Commons,0.3774386124907351
+JSON,Other,0.2956517134946255
+JSON,Processes,0.0791232814333794
+JSON,Reactive libraries,0.04189471828573913
+JSON,REST Frameworks,0.3342490498622455
+JSON,Science,0.044343938523299355
+JSON,Search,0.19595900172070446
+JSON,Security,0.11541972344596041
+JSON,Serialization,0.3918573290862412
+JSON,Server,0.27266346057788876
+JSON,Template Engine,0.18137393636422317
+JSON,Asynchronous,0.41328189824131517
+JSON,BDD,0.21760003850397763
+JSON,Fixtures,0.31438841621542385
+JSON,Frameworks,0.321043489234138
+JSON,Matchers,0.18269482794970524
+JSON,Mocking,0.33763828829859227
+JSON,Utility,0.22401009219157614
+JSON,Web Crawling,0.15066903378346044
+JSON,Web Frameworks,0.3460757394924311
+JVM and JDK,JVM and JDK,1.0
+JVM and JDK,Logging,0.1961216093427429
+JVM and JDK,Machine Learning,0.32474147667769965
+JVM and JDK,Messaging,0.023607511144997137
+JVM and JDK,Microservice,0.14563452877727057
+JVM and JDK,Miscellaneous,0.298816682011519
+JVM and JDK,Monitoring,0.11349737191611352
+JVM and JDK,Native,0.15133128775215657
+JVM and JDK,Natural Language Processing,0.18102992324549477
+JVM and JDK,Networking,0.06867548022951457
+JVM and JDK,ORM,0.15455508478918234
+JVM and JDK,PDF,0.16995177742551038
+JVM and JDK,Performance analysis,0.26833725974417266
+JVM and JDK,Apache Commons,0.23423754625829155
+JVM and JDK,Other,0.15315971705413603
+JVM and JDK,Processes,0.06590366347503275
+JVM and JDK,Reactive libraries,0.017873115292162477
+JVM and JDK,REST Frameworks,0.17826993039059125
+JVM and JDK,Science,0.038031722357016524
+JVM and JDK,Search,0.0928796165368035
+JVM and JDK,Security,0.051748103792640415
+JVM and JDK,Serialization,0.11470683498800291
+JVM and JDK,Server,0.15521732403775773
+JVM and JDK,Template Engine,0.09028131670810924
+JVM and JDK,Asynchronous,0.1275826835295209
+JVM and JDK,BDD,0.11311611379241815
+JVM and JDK,Fixtures,0.15405138147854727
+JVM and JDK,Frameworks,0.2542218411313409
+JVM and JDK,Matchers,0.058795218556457335
+JVM and JDK,Mocking,0.1267683771526599
+JVM and JDK,Utility,0.44516379751552854
+JVM and JDK,Web Crawling,0.07626618615691244
+JVM and JDK,Web Frameworks,0.24031384647204776
+Logging,Logging,1.0
+Logging,Machine Learning,0.2930220379342852
+Logging,Messaging,0.08495911682701192
+Logging,Microservice,0.3666744957749085
+Logging,Miscellaneous,0.5237076157037848
+Logging,Monitoring,0.3290584315208468
+Logging,Native,0.2799126465123284
+Logging,Natural Language Processing,0.3351783251798031
+Logging,Networking,0.19100113847998174
+Logging,ORM,0.33555668992291626
+Logging,PDF,0.14332473346652153
+Logging,Performance analysis,0.2689421741434692
+Logging,Apache Commons,0.4838528445486895
+Logging,Other,0.3540719565528931
+Logging,Processes,0.22168076112664933
+Logging,Reactive libraries,0.08291947874369726
+Logging,REST Frameworks,0.36549906196131
+Logging,Science,0.04921395295554331
+Logging,Search,0.2557293711446472
+Logging,Security,0.1558050966619053
+Logging,Serialization,0.31976707520972913
+Logging,Server,0.296016835980264
+Logging,Template Engine,0.19653181124127267
+Logging,Asynchronous,0.3355160242862947
+Logging,BDD,0.30889214185119857
+Logging,Fixtures,0.36074684369381044
+Logging,Frameworks,0.4621537983806745
+Logging,Matchers,0.2784801476761851
+Logging,Mocking,0.3905850378763946
+Logging,Utility,0.3557368928772116
+Logging,Web Crawling,0.13845985341671876
+Logging,Web Frameworks,0.4720893402323824
+Machine Learning,Machine Learning,1.0000000000000002
+Machine Learning,Messaging,0.03379906066736447
+Machine Learning,Microservice,0.24704515274023395
+Machine Learning,Miscellaneous,0.43314506542837
+Machine Learning,Monitoring,0.18937776026008932
+Machine Learning,Native,0.2016917345961642
+Machine Learning,Natural Language Processing,0.2366804532803984
+Machine Learning,Networking,0.11076710873230121
+Machine Learning,ORM,0.2217983717112386
+Machine Learning,PDF,0.14902419878842077
+Machine Learning,Performance analysis,0.3595005016681365
+Machine Learning,Apache Commons,0.3755805327127639
+Machine Learning,Other,0.2720496757223953
+Machine Learning,Processes,0.12553034312393438
+Machine Learning,Reactive libraries,0.035444107913361576
+Machine Learning,REST Frameworks,0.22913185276119666
+Machine Learning,Science,0.08297319630827896
+Machine Learning,Search,0.1892332836626939
+Machine Learning,Security,0.08146297997636734
+Machine Learning,Serialization,0.15802421722492968
+Machine Learning,Server,0.24513597847793686
+Machine Learning,Template Engine,0.18274538929831616
+Machine Learning,Asynchronous,0.2028042072247573
+Machine Learning,BDD,0.207968269873084
+Machine Learning,Fixtures,0.25551757299412076
+Machine Learning,Frameworks,0.4043932514137096
+Machine Learning,Matchers,0.10542586995905041
+Machine Learning,Mocking,0.2004359653675137
+Machine Learning,Utility,0.5559990595630185
+Machine Learning,Web Crawling,0.15368495826664674
+Machine Learning,Web Frameworks,0.2931156954423211
+Messaging,Messaging,1.0
+Messaging,Microservice,0.10323211106729388
+Messaging,Miscellaneous,0.07375117800319224
+Messaging,Monitoring,0.07774698510198853
+Messaging,Native,0.04009734909003605
+Messaging,Natural Language Processing,0.11128575059667906
+Messaging,Networking,0.0499009732317541
+Messaging,ORM,0.03559322703246761
+Messaging,PDF,0.02833638951836406
+Messaging,Performance analysis,0.020813050875131668
+Messaging,Apache Commons,0.1377378486285437
+Messaging,Other,0.06841483111479975
+Messaging,Processes,0.05266043172566873
+Messaging,Reactive libraries,0.09448683785434954
+Messaging,REST Frameworks,0.08888018300155762
+Messaging,Science,0.005041586563088915
+Messaging,Search,0.05267140326391206
+Messaging,Security,0.029684427827646916
+Messaging,Serialization,0.05856097244436159
+Messaging,Server,0.05842076525772326
+Messaging,Template Engine,0.024854106504842707
+Messaging,Asynchronous,0.07298040609644496
+Messaging,BDD,0.033886580887260064
+Messaging,Fixtures,0.04671855849301866
+Messaging,Frameworks,0.10632209774369908
+Messaging,Matchers,0.04556163280093804
+Messaging,Mocking,0.07603621640937983
+Messaging,Utility,0.05587325084531743
+Messaging,Web Crawling,0.03144575541515179
+Messaging,Web Frameworks,0.11338821676399946
+Microservice,Microservice,1.0
+Microservice,Miscellaneous,0.5422245129073987
+Microservice,Monitoring,0.399647728010279
+Microservice,Native,0.25751408945480836
+Microservice,Natural Language Processing,0.3266324297659523
+Microservice,Networking,0.3300006888734674
+Microservice,ORM,0.3647361960338755
+Microservice,PDF,0.10888352782096164
+Microservice,Performance analysis,0.2525378456480885
+Microservice,Apache Commons,0.4701294965431164
+Microservice,Other,0.6278961326563804
+Microservice,Processes,0.18276040356177506
+Microservice,Reactive libraries,0.08348026287447521
+Microservice,REST Frameworks,0.6952387137899739
+Microservice,Science,0.04088530499592415
+Microservice,Search,0.3054407001619778
+Microservice,Security,0.19447929359112776
+Microservice,Serialization,0.3225188693263814
+Microservice,Server,0.5604418251053392
+Microservice,Template Engine,0.2301453617600339
+Microservice,Asynchronous,0.5862176594776115
+Microservice,BDD,0.31064305723349256
+Microservice,Fixtures,0.35410576962166895
+Microservice,Frameworks,0.5815841385129255
+Microservice,Matchers,0.2116094122016418
+Microservice,Mocking,0.6099752319215125
+Microservice,Utility,0.31218311185061
+Microservice,Web Crawling,0.1699748174264578
+Microservice,Web Frameworks,0.6418941425425454
+Miscellaneous,Miscellaneous,0.9999999999999999
+Miscellaneous,Monitoring,0.35536948022620457
+Miscellaneous,Native,0.3473147823902609
+Miscellaneous,Natural Language Processing,0.4838619907540586
+Miscellaneous,Networking,0.24769081598885886
+Miscellaneous,ORM,0.4497142481712416
+Miscellaneous,PDF,0.18883344051595433
+Miscellaneous,Performance analysis,0.3596052158312523
+Miscellaneous,Apache Commons,0.7382538040670336
+Miscellaneous,Other,0.4993059007453488
+Miscellaneous,Processes,0.21194654991618392
+Miscellaneous,Reactive libraries,0.0729143235487125
+Miscellaneous,REST Frameworks,0.5514473893791689
+Miscellaneous,Science,0.09586503913768958
+Miscellaneous,Search,0.33623995999332357
+Miscellaneous,Security,0.19854114274273857
+Miscellaneous,Serialization,0.351581591968877
+Miscellaneous,Server,0.5171782225252087
+Miscellaneous,Template Engine,0.360539814002618
+Miscellaneous,Asynchronous,0.49911745822365544
+Miscellaneous,BDD,0.3944888784312691
+Miscellaneous,Fixtures,0.46163477317958246
+Miscellaneous,Frameworks,0.6063783310706553
+Miscellaneous,Matchers,0.2811120950368773
+Miscellaneous,Mocking,0.48898879191664163
+Miscellaneous,Utility,0.5232329537081793
+Miscellaneous,Web Crawling,0.26682334083521114
+Miscellaneous,Web Frameworks,0.6176597128688889
+Monitoring,Monitoring,1.0000000000000002
+Monitoring,Native,0.20005394728410617
+Monitoring,Natural Language Processing,0.21167333957877982
+Monitoring,Networking,0.2098974098759414
+Monitoring,ORM,0.27932419859489027
+Monitoring,PDF,0.07864761164663289
+Monitoring,Performance analysis,0.19248917869659843
+Monitoring,Apache Commons,0.36484967132714885
+Monitoring,Other,0.3510311167445793
+Monitoring,Processes,0.125055390079226
+Monitoring,Reactive libraries,0.057935966625435445
+Monitoring,REST Frameworks,0.3709406023470285
+Monitoring,Science,0.03281620087714037
+Monitoring,Search,0.24070461823309744
+Monitoring,Security,0.10432738778125415
+Monitoring,Serialization,0.2306095434317024
+Monitoring,Server,0.32269319806668423
+Monitoring,Template Engine,0.13732655867564184
+Monitoring,Asynchronous,0.31430697631691945
+Monitoring,BDD,0.18844491282371092
+Monitoring,Fixtures,0.23832454030164707
+Monitoring,Frameworks,0.3493744116144832
+Monitoring,Matchers,0.17184007757212877
+Monitoring,Mocking,0.32424171916239747
+Monitoring,Utility,0.2613102087870547
+Monitoring,Web Crawling,0.13994929650782745
+Monitoring,Web Frameworks,0.3998783203387639
+Native,Native,0.9999999999999999
+Native,Natural Language Processing,0.1831761958973538
+Native,Networking,0.12396246956420473
+Native,ORM,0.21418965425484868
+Native,PDF,0.10538061069008219
+Native,Performance analysis,0.1694430763030362
+Native,Apache Commons,0.3582727110158341
+Native,Other,0.22623404460679328
+Native,Processes,0.1254230291925999
+Native,Reactive libraries,0.04487260480486548
+Native,REST Frameworks,0.2513972062514023
+Native,Science,0.0320053653480218
+Native,Search,0.1761752657903037
+Native,Security,0.13245185662091666
+Native,Serialization,0.2944933573549763
+Native,Server,0.23304764612730813
+Native,Template Engine,0.11856113539082377
+Native,Asynchronous,0.18382855873088622
+Native,BDD,0.15408736091376912
+Native,Fixtures,0.23171134258271797
+Native,Frameworks,0.27848513999088936
+Native,Matchers,0.19277907007515566
+Native,Mocking,0.21374672314013043
+Native,Utility,0.21865436297760008
+Native,Web Crawling,0.1093240526869574
+Native,Web Frameworks,0.29346302473499036
+Natural Language Processing,Natural Language Processing,1.0000000000000002
+Natural Language Processing,Networking,0.1362950808919993
+Natural Language Processing,ORM,0.25748564746644675
+Natural Language Processing,PDF,0.12648403496468585
+Natural Language Processing,Performance analysis,0.21323082238849564
+Natural Language Processing,Apache Commons,0.5018284534879058
+Natural Language Processing,Other,0.3211963202959306
+Natural Language Processing,Processes,0.1697017103889457
+Natural Language Processing,Reactive libraries,0.03407021321163337
+Natural Language Processing,REST Frameworks,0.4172354322618887
+Natural Language Processing,Science,0.04109579183999679
+Natural Language Processing,Search,0.16801587828010014
+Natural Language Processing,Security,0.20783309070564274
+Natural Language Processing,Serialization,0.23146513892535633
+Natural Language Processing,Server,0.33226223608190414
+Natural Language Processing,Template Engine,0.27193639995751456
+Natural Language Processing,Asynchronous,0.2569963401314941
+Natural Language Processing,BDD,0.33320905338980916
+Natural Language Processing,Fixtures,0.31213970385711176
+Natural Language Processing,Frameworks,0.40955206111597187
+Natural Language Processing,Matchers,0.13211768814869299
+Natural Language Processing,Mocking,0.26903049427377324
+Natural Language Processing,Utility,0.3101438200347145
+Natural Language Processing,Web Crawling,0.24081904269458448
+Natural Language Processing,Web Frameworks,0.5190610072814351
+Networking,Networking,0.9999999999999999
+Networking,ORM,0.3148056295336038
+Networking,PDF,0.04689199802555847
+Networking,Performance analysis,0.1013407030134388
+Networking,Apache Commons,0.26679573085866953
+Networking,Other,0.29644941770732613
+Networking,Processes,0.14009427373500855
+Networking,Reactive libraries,0.03820375511139497
+Networking,REST Frameworks,0.30591194190696136
+Networking,Science,0.02426177981574287
+Networking,Search,0.14422267369115319
+Networking,Security,0.1024084743909415
+Networking,Serialization,0.14163426440199284
+Networking,Server,0.23779574765907824
+Networking,Template Engine,0.09063428001825395
+Networking,Asynchronous,0.24273588306911545
+Networking,BDD,0.11995167778248542
+Networking,Fixtures,0.12619743308913398
+Networking,Frameworks,0.2405402558929098
+Networking,Matchers,0.06614313930911524
+Networking,Mocking,0.2699084984909155
+Networking,Utility,0.165788005098849
+Networking,Web Crawling,0.08833409945467834
+Networking,Web Frameworks,0.29017369987178976
+ORM,ORM,1.0000000000000002
+ORM,PDF,0.1334876545415159
+ORM,Performance analysis,0.21997926601583803
+ORM,Apache Commons,0.42591526632504023
+ORM,Other,0.39619852253557347
+ORM,Processes,0.11820154788694046
+ORM,Reactive libraries,0.052487723215026254
+ORM,REST Frameworks,0.37553975614321977
+ORM,Science,0.052624981509755954
+ORM,Search,0.23375415144602496
+ORM,Security,0.14113882124287316
+ORM,Serialization,0.1875592568333569
+ORM,Server,0.39716596478040567
+ORM,Template Engine,0.19812232700435983
+ORM,Asynchronous,0.23788261811213826
+ORM,BDD,0.23325431508004274
+ORM,Fixtures,0.28364472608544716
+ORM,Frameworks,0.39607303556881346
+ORM,Matchers,0.17742803755874983
+ORM,Mocking,0.2750312047636864
+ORM,Utility,0.30762448305645557
+ORM,Web Crawling,0.1487330117146421
+ORM,Web Frameworks,0.38220897205832527
+PDF,PDF,1.0000000000000002
+PDF,Performance analysis,0.1514872499701258
+PDF,Apache Commons,0.17953570262731633
+PDF,Other,0.10308159661463823
+PDF,Processes,0.0405404081157381
+PDF,Reactive libraries,0.017979055722106233
+PDF,REST Frameworks,0.1148782194324249
+PDF,Science,0.03660987385958782
+PDF,Search,0.06751911351231203
+PDF,Security,0.049985282975159015
+PDF,Serialization,0.07132106929600032
+PDF,Server,0.09850950097655042
+PDF,Template Engine,0.07573320670687542
+PDF,Asynchronous,0.08632971285790117
+PDF,BDD,0.11012888505574321
+PDF,Fixtures,0.1070306736538514
+PDF,Frameworks,0.15257909851677465
+PDF,Matchers,0.05890561309634667
+PDF,Mocking,0.08815093572030082
+PDF,Utility,0.20029195735075797
+PDF,Web Crawling,0.07125605472254268
+PDF,Web Frameworks,0.1694804613194831
+Performance analysis,Performance analysis,0.9999999999999998
+Performance analysis,Apache Commons,0.29804737971632095
+Performance analysis,Other,0.19783639988344573
+Performance analysis,Processes,0.13357260191828352
+Performance analysis,Reactive libraries,0.020314009282774343
+Performance analysis,REST Frameworks,0.19808358474248755
+Performance analysis,Science,0.049721853254191956
+Performance analysis,Search,0.13646387936597607
+Performance analysis,Security,0.06743288283575127
+Performance analysis,Serialization,0.09453582264475845
+Performance analysis,Server,0.1923386411555874
+Performance analysis,Template Engine,0.14602056350273596
+Performance analysis,Asynchronous,0.20469210699817397
+Performance analysis,BDD,0.22430774540463524
+Performance analysis,Fixtures,0.22058715533195608
+Performance analysis,Frameworks,0.3287909610287016
+Performance analysis,Matchers,0.09433063199787453
+Performance analysis,Mocking,0.18445605218146216
+Performance analysis,Utility,0.42739709242032203
+Performance analysis,Web Crawling,0.11411976568526436
+Performance analysis,Web Frameworks,0.2502265158894725
+Apache Commons,Apache Commons,0.9999999999999997
+Apache Commons,Other,0.42291655868528644
+Apache Commons,Processes,0.2036257332707264
+Apache Commons,Reactive libraries,0.07063841681118865
+Apache Commons,REST Frameworks,0.43433277803953035
+Apache Commons,Science,0.10168041346888676
+Apache Commons,Search,0.32837196536290375
+Apache Commons,Security,0.19052848014826892
+Apache Commons,Serialization,0.3951455840257958
+Apache Commons,Server,0.4326556205408632
+Apache Commons,Template Engine,0.29024814708340985
+Apache Commons,Asynchronous,0.3803894598651738
+Apache Commons,BDD,0.32627848939674464
+Apache Commons,Fixtures,0.43510920500218936
+Apache Commons,Frameworks,0.5295435702836975
+Apache Commons,Matchers,0.2701746911725325
+Apache Commons,Mocking,0.40731149617376416
+Apache Commons,Utility,0.4606781391863835
+Apache Commons,Web Crawling,0.28284817868241413
+Apache Commons,Web Frameworks,0.6100897414306816
+Other,Other,1.0
+Other,Processes,0.15974214535164724
+Other,Reactive libraries,0.05594097438971999
+Other,REST Frameworks,0.6673595560335018
+Other,Science,0.028547421759612477
+Other,Search,0.251036803437195
+Other,Security,0.1670070598848033
+Other,Serialization,0.2338089502395092
+Other,Server,0.5372910735563131
+Other,Template Engine,0.24768466773399975
+Other,Asynchronous,0.544166921490126
+Other,BDD,0.2803203309571958
+Other,Fixtures,0.2793709648018375
+Other,Frameworks,0.5529088304952638
+Other,Matchers,0.1873961847124482
+Other,Mocking,0.5796641945893295
+Other,Utility,0.3008778325970821
+Other,Web Crawling,0.1830687117140956
+Other,Web Frameworks,0.6297879711125072
+Processes,Processes,1.0
+Processes,Reactive libraries,0.0331103463431293
+Processes,REST Frameworks,0.17029761462309934
+Processes,Science,0.013807542760799393
+Processes,Search,0.10925659870021531
+Processes,Security,0.05600741614582204
+Processes,Serialization,0.1869372793824573
+Processes,Server,0.16490906343281087
+Processes,Template Engine,0.07675771514059195
+Processes,Asynchronous,0.1478033921470546
+Processes,BDD,0.1082325839973496
+Processes,Fixtures,0.1600945236254423
+Processes,Frameworks,0.1931425345551409
+Processes,Matchers,0.05964011402432703
+Processes,Mocking,0.13901845121353198
+Processes,Utility,0.15272579193013444
+Processes,Web Crawling,0.10608469632077687
+Processes,Web Frameworks,0.1854837445655251
+Reactive libraries,Reactive libraries,1.0000000000000002
+Reactive libraries,REST Frameworks,0.074980115918689
+Reactive libraries,Science,0.005383742789487289
+Reactive libraries,Search,0.11623324786781598
+Reactive libraries,Security,0.02530130686327569
+Reactive libraries,Serialization,0.09155389173053043
+Reactive libraries,Server,0.04478101381197899
+Reactive libraries,Template Engine,0.022334356491028395
+Reactive libraries,Asynchronous,0.04799551758549181
+Reactive libraries,BDD,0.03204453329991939
+Reactive libraries,Fixtures,0.038488855738365406
+Reactive libraries,Frameworks,0.07142077018595096
+Reactive libraries,Matchers,0.07238686598836883
+Reactive libraries,Mocking,0.05910334019836206
+Reactive libraries,Utility,0.041295146749402434
+Reactive libraries,Web Crawling,0.02535291897806938
+Reactive libraries,Web Frameworks,0.08222055282127416
+REST Frameworks,REST Frameworks,0.9999999999999998
+REST Frameworks,Science,0.032679599070016475
+REST Frameworks,Search,0.32866341227272117
+REST Frameworks,Security,0.22612867535021094
+REST Frameworks,Serialization,0.28044395795333155
+REST Frameworks,Server,0.5818728876215414
+REST Frameworks,Template Engine,0.2487650751980572
+REST Frameworks,Asynchronous,0.6626783868147993
+REST Frameworks,BDD,0.32584839149517336
+REST Frameworks,Fixtures,0.3511910449106911
+REST Frameworks,Frameworks,0.5712331418298122
+REST Frameworks,Matchers,0.18530141241102724
+REST Frameworks,Mocking,0.6970775875724601
+REST Frameworks,Utility,0.3221440819449141
+REST Frameworks,Web Crawling,0.20598324779578345
+REST Frameworks,Web Frameworks,0.7189384297398385
+Science,Science,1.0000000000000002
+Science,Search,0.04942874701015873
+Science,Security,0.015904381089781462
+Science,Serialization,0.026165433538476113
+Science,Server,0.03972485189569073
+Science,Template Engine,0.04703283763513928
+Science,Asynchronous,0.03140676363013349
+Science,BDD,0.036717254839212655
+Science,Fixtures,0.04725150389913722
+Science,Frameworks,0.04985759706821552
+Science,Matchers,0.017718452885740806
+Science,Mocking,0.0355726103029018
+Science,Utility,0.12222825771747593
+Science,Web Crawling,0.03882715556015982
+Science,Web Frameworks,0.05379534767608826
+Search,Search,0.9999999999999996
+Search,Security,0.08848700228025103
+Search,Serialization,0.20845601535748817
+Search,Server,0.24154087213967712
+Search,Template Engine,0.1486500317655359
+Search,Asynchronous,0.3016340931268537
+Search,BDD,0.145607399796501
+Search,Fixtures,0.20198639709937208
+Search,Frameworks,0.27245239221259104
+Search,Matchers,0.17030285549924856
+Search,Mocking,0.31736705247300506
+Search,Utility,0.2239528600363848
+Search,Web Crawling,0.1417938477306726
+Search,Web Frameworks,0.3508506178445316
+Security,Security,1.0000000000000002
+Security,Serialization,0.13343214888739788
+Security,Server,0.1511327296155774
+Security,Template Engine,0.08776751595398785
+Security,Asynchronous,0.16021063815509987
+Security,BDD,0.1361482581111788
+Security,Fixtures,0.1523759891349525
+Security,Frameworks,0.17978468026426508
+Security,Matchers,0.07747335007371255
+Security,Mocking,0.1757237800710625
+Security,Utility,0.09964354483994582
+Security,Web Crawling,0.07431434062060731
+Security,Web Frameworks,0.20431068440440198
+Serialization,Serialization,1.0
+Serialization,Server,0.21844726444725393
+Serialization,Template Engine,0.12028711567645246
+Serialization,Asynchronous,0.19396529726998962
+Serialization,BDD,0.1628701826740739
+Serialization,Fixtures,0.2428956622669159
+Serialization,Frameworks,0.27513456876676756
+Serialization,Matchers,0.296876176913714
+Serialization,Mocking,0.2563999912585549
+Serialization,Utility,0.18138695530762058
+Serialization,Web Crawling,0.1349757798028795
+Serialization,Web Frameworks,0.3402743458716625
+Server,Server,0.9999999999999998
+Server,Template Engine,0.28251886462188136
+Server,Asynchronous,0.38816214106481356
+Server,BDD,0.27259971808677275
+Server,Fixtures,0.2985133017185686
+Server,Frameworks,0.5193955865591634
+Server,Matchers,0.14093507494664448
+Server,Mocking,0.40310966743836546
+Server,Utility,0.31035142736686794
+Server,Web Crawling,0.19431068923999567
+Server,Web Frameworks,0.5657350050085097
+Template Engine,Template Engine,1.0
+Template Engine,Asynchronous,0.18406223533165644
+Template Engine,BDD,0.1719968206151551
+Template Engine,Fixtures,0.2149919229546462
+Template Engine,Frameworks,0.23747513474767468
+Template Engine,Matchers,0.08838006363669147
+Template Engine,Mocking,0.23155568867858256
+Template Engine,Utility,0.2627849496135285
+Template Engine,Web Crawling,0.13471880085193966
+Template Engine,Web Frameworks,0.30329572743512606
+Asynchronous,Asynchronous,1.0000000000000002
+Asynchronous,BDD,0.3183600218235501
+Asynchronous,Fixtures,0.25327585460271196
+Asynchronous,Frameworks,0.4766255113154272
+Asynchronous,Matchers,0.14357198323151438
+Asynchronous,Mocking,0.671491722413396
+Asynchronous,Utility,0.28721300225183766
+Asynchronous,Web Crawling,0.18134631018415173
+Asynchronous,Web Frameworks,0.57452173818883
+BDD,BDD,1.0
+BDD,Fixtures,0.47757468653440877
+BDD,Frameworks,0.451170244239768
+BDD,Matchers,0.1730020913808174
+BDD,Mocking,0.2752751154235787
+BDD,Utility,0.22950232650054644
+BDD,Web Crawling,0.17873790793287148
+BDD,Web Frameworks,0.34113150757523125
+Fixtures,Fixtures,1.0000000000000002
+Fixtures,Frameworks,0.5537470402813187
+Fixtures,Matchers,0.22027348614515177
+Fixtures,Mocking,0.30434144161382237
+Fixtures,Utility,0.2941681551410563
+Fixtures,Web Crawling,0.09847219322314749
+Fixtures,Web Frameworks,0.37121630563791624
+Frameworks,Frameworks,1.0
+Frameworks,Matchers,0.2804104262722375
+Frameworks,Mocking,0.553483297159127
+Frameworks,Utility,0.4623658891582124
+Frameworks,Web Crawling,0.16228191535139322
+Frameworks,Web Frameworks,0.6023274807462986
+Matchers,Matchers,1.0000000000000002
+Matchers,Mocking,0.25723989980474726
+Matchers,Utility,0.15320584592221104
+Matchers,Web Crawling,0.05743715664757394
+Matchers,Web Frameworks,0.2175195002652568
+Mocking,Mocking,0.9999999999999999
+Mocking,Utility,0.2881981116654102
+Mocking,Web Crawling,0.15804067944203226
+Mocking,Web Frameworks,0.6410695050169493
+Utility,Utility,1.0
+Utility,Web Crawling,0.160276558361218
+Utility,Web Frameworks,0.4032579332509816
+Web Crawling,Web Crawling,1.0
+Web Crawling,Web Frameworks,0.23551461977765653
+Web Frameworks,Web Frameworks,1.0000000000000002

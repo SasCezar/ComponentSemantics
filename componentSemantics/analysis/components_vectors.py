@@ -1,13 +1,11 @@
 import glob
 import os
 import re
-from collections import defaultdict, Counter
+from collections import defaultdict
 
 import igraph
 import numpy as np
 import pandas as pd
-from sklearn.manifold import TSNE
-from sklearn import metrics
 
 from utils import load_embeddings, check_dir
 
@@ -126,6 +124,4 @@ class ComponentVectors:
             deps.append(total_dependency)
             sims.append(similarities[i, j])
 
-        df = pd.DataFrame(zip(sims, deps), columns=["similarity", "dependency"])
-
-        return df
+        return pd.DataFrame(zip(sims, deps), columns=["similarity", "dependency"])

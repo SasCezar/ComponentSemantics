@@ -1,17 +1,16 @@
 from abc import ABC, abstractmethod
 
 import igraph
-import numpy
 import pandas
 
 
-class GraphLoader(ABC):
+class ProjectLoader(ABC):
     @abstractmethod
     def load(self, path):
         raise NotImplemented
 
 
-class ArcanGraphLoader(GraphLoader):
+class ArcanGraphLoader(ProjectLoader):
     def __init__(self, clean=True):
         self.clean_edges = ["isChildOf", "isImplementationOf", "nestedTo",
                             "belongsTo", "implementedBy", "definedBy",
@@ -35,8 +34,9 @@ class ArcanGraphLoader(GraphLoader):
         return graph
 
 
-class UnderstandGraphLoader(GraphLoader):
+class UnderstandGraphLoader(ProjectLoader):
     def load(self, path):
         df = pandas.read_csv(path)
-        graph = igraph.Graph.TupleList(df.itertuples(index=False), directed=True, weights=True)
-        return graph
+        return igraph.Graph.TupleList(
+            df.itertuples(index=False), directed=True, weights=True
+        )

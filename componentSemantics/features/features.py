@@ -33,8 +33,9 @@ class FeatureExtraction(ABC):
 
     @staticmethod
     def split_camel(name):
-        splitted = re.sub('([A-Z][a-z]+)|_', r' \1', re.sub('([A-Z]+)', r' \1', name)).split()
-        return splitted
+        return re.sub(
+            '([A-Z][a-z]+)|_', r' \1', re.sub('([A-Z]+)', r' \1', name)
+        ).split()
 
     @staticmethod
     def save_features(features, path, file):
@@ -43,7 +44,7 @@ class FeatureExtraction(ABC):
             for name, cleanded, embedding in features:
                 if not isinstance(embedding, list):
                     embedding = embedding.tolist()
-                rep = " ".join([str(x) for x in embedding])
+                rep = " ".join(str(x) for x in embedding)
                 line = name + " " + rep + "\n"
                 outf.write(line)
 
@@ -145,7 +146,7 @@ class TfidfFeatureExtraction(DocumentFeatureExtraction):
 
             doc = self.nlp(" ".join(identifiers))
 
-            documents.append(" ".join([token.lemma_ for token in doc]))
+            documents.append(" ".join(token.lemma_ for token in doc))
             files.append(path)
 
         X = self.vectorizer.fit_transform(documents).todense()
@@ -271,9 +272,7 @@ class Code2VecExtraction(DocumentFeatureExtraction):
         words = text.split(" ")
         embeddings = [self.nlp.get_vector(x) for x in words if x in self.nlp]
 
-        doc_representation = np.mean(embeddings, axis=0)
-
-        return doc_representation
+        return np.mean(embeddings, axis=0)
 
     def get_identifiers(self, path):
         text = self.read_file(path)
@@ -310,8 +309,7 @@ class IdentifierEmbeddings(DocumentFeatureExtraction):
 
         for identifier in identifiers:
             if identifier in self.nlp:
-                feature = [identifiers[identifier]]
-                feature.extend(self.nlp[identifier])
+                feature = [identifiers[identifier], *self.nlp[identifier]]
                 yield identifier, identifier, feature
 
 

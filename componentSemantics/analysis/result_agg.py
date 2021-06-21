@@ -12,9 +12,7 @@ def best_algorithm(df, metric, level, inverse=False):
     if inverse:
         result = ~result
 
-    best_method = ["leiden" if x else "infomap" for x in result]
-
-    return best_method
+    return ["leiden" if x else "infomap" for x in result]
 
 
 def best_algorithm_self(df, algorithm, level, inverse=False):

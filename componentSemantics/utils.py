@@ -45,3 +45,17 @@ def load_projects(path, filename):
     mapping = dict(zip(data["labels"], data["labels_id"]))
 
     return data, mapping
+
+def load_projects_new(path, filename, level='1st level'):
+    df = pandas.read_csv(os.path.join(path, filename))
+    data = pandas.DataFrame()
+    data['names'] = df["project.link"].apply(lambda x: x.strip("/").split("/")[-1])
+    data['labels'] = df[level].fillna("NA")
+    data = data.dropna()
+    data = data[~data['names'].duplicated(keep="first")]
+
+    categorical = pandas.Categorical(data["labels"], ordered=False)
+    data["labels_id"] = categorical.codes
+    mapping = dict(zip(data["labels"], data["labels_id"]))
+
+    return data, mapping
