@@ -1,21 +1,29 @@
 import matplotlib
 import numpy as np
 from openpyxl import load_workbook
-import fasttext as ft
+from transformers import AutoTokenizer, AutoModel
+import torch
 from sklearn import metrics
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 wb2 = load_workbook('DatasetsLabels.xlsx')
-model = 'fasttext'
-fastext = ft.load_model('/home/sasce/PycharmProjects/ComponentSemantics/data/models/fastText/wiki.en.bin')
+
+tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
+model = AutoModel.from_pretrained("microsoft/codebert-base")
+
+#fastext = ft.load_model('/home/sasce/PycharmProjects/ComponentSemantics/data/models/fastText/wiki.en.bin')
 
 
 def get_embeddings(terms):
     embeddings = []
     for term in terms:
-        embedding = fastext.get_sentence_vector(term)
-        embeddings.append(embedding)
+        nl_tokens = tokenizer.tokenize(term)
+        tokens = [tokenizer.cls_token] + nl_tokens + [tokenizer.sep_token]
+        tokens_ids = tokenizer.convert_tokens_to_ids(tokens)
+        context_embeddings = model(torch.tensor(tokens_ids)[None, :])[0]
+        sentence_embedding = torch.mean(context_embeddings, dim=1).squeeze()
+        embeddings.append(list(sentence_embedding.detach().numpy()))
 
     return embeddings
 
@@ -27,7 +35,7 @@ matplotlib.rc('font', **font)
 
 raw_data = []
 raw_labl = []
-raw_tupl = []
+
 for name in wb2.sheetnames:
     terms = []
     ws = wb2[name]
@@ -43,18 +51,13 @@ for name in wb2.sheetnames:
     flat_sims = list(similarities[iterate_indices])
     raw_data.extend(flat_sims)
     raw_labl.extend([name]*len(flat_sims))
-    tupl = []
-    for i, j in zip(*iterate_indices):
-        s = 0
-        tupl.append([terms[i], terms[j]])
-    raw_tupl.extend(tupl)
     sns.heatmap(similarities, yticklabels=terms, xticklabels=terms)
     plt.savefig(f'similarities_{name}.pdf', format='pdf', dpi=1200, bbox_inches='tight')
     plt.clf()
 
 import csv
-with open(f'raw_label_similarities_{model}.csv', 'wt') as outf:
+with open(f'raw_label_similarities_CodeBERT.csv', 'wt') as outf:
     writer = csv.writer(outf)
-    writer.writerow(["dataset", "similarity",'label a', 'label b'])
-    for lbl, d, (x,y) in zip(raw_labl, raw_data, raw_tupl):
-        writer.writerow([lbl, d, x, y])
+    writer.writerow(["dataset", "similarity"])
+    for lbl, d in zip(raw_labl, raw_data):
+        writer.writerow([lbl, d])

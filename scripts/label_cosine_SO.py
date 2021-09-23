@@ -1,5 +1,6 @@
 import matplotlib
 import numpy as np
+from gensim.models import KeyedVectors
 from openpyxl import load_workbook
 import fasttext as ft
 from sklearn import metrics
@@ -7,15 +8,27 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 wb2 = load_workbook('DatasetsLabels.xlsx')
-model = 'fasttext'
-fastext = ft.load_model('/home/sasce/PycharmProjects/ComponentSemantics/data/models/fastText/wiki.en.bin')
+model = 'SO'
+fastext = KeyedVectors.load_word2vec_format('SO_vectors_200.bin', binary=True)
 
+def clean(term):
+    a = str(term).strip('$').replace("-", ' ').lower().split(" ")
+    print(a)
+    return a
 
 def get_embeddings(terms):
     embeddings = []
     for term in terms:
-        embedding = fastext.get_sentence_vector(term)
-        embeddings.append(embedding)
+        words = clean(term)
+        t = []
+        for x in words:
+            if x in fastext:
+                t.append(fastext.get_vector(x))
+            else:
+                t.append(np.random.uniform(low=-1, high=1, size=(200,)))
+
+        embedding = np.mean(t, axis=0)
+        embeddings.append(list(embedding))
 
     return embeddings
 
