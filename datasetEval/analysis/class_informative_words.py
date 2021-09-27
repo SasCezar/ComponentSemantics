@@ -80,6 +80,7 @@ def train(model, X, y, test_size=0.3, random_state=1337):
     performance = {'train_score': trained_model.score(X_train, y_train),
                    'test_score': trained_model.score(X_test, y_test)}
     trained_model = model(max_depth=5).fit(X, y)
+    performance['all_score'] = trained_model.score(X, y)
     return trained_model, performance
 
 
@@ -182,7 +183,8 @@ def analyze_all():
                         informative_words[c].update(info_words[c])
 
                     print(performance)
-                    writer.writerow([i, performance['train_score'], performance['test_score']])
+                    writer.writerow([i, performance['train_score'],
+                                     performance['test_score'], performance['all_score']])
 
             info_words_name = f'{name}_words_{mod_name}_{n_sample}_{feat_name}_{n_features}_{max_df}_{min_df}.csv'
             save_info_words(info_words_name, informative_words)
