@@ -1,0 +1,1 @@
+b'# Sharding\n\n### Sharding Implementation\nRefer [Py-EVM](https://github.com/ethereum/py-evm) for the latest implementation progress.\n\n### Specification and Documentation\nSee the "docs" directory for documentation and EIPs.\n\n### Ethereum Research Forum\nPlease visit [ethresear.ch](https://ethresear.ch/c/sharding).\n'

@@ -1,0 +1,1 @@
+b'Notify.js\n=====\n\n> A simple, yet fully customizable notification library\n\nSee demos and full documentation at:\n\n## https://notifyjs.com/\n\n----\n\nNotify.js is released under the [MIT License](https://opensource.org/licenses/MIT).\n\nCopyright \xc2\xa9 Jaime Pillora &lt;dev@jpillora.com&gt;\n'

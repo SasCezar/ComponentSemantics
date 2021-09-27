@@ -1,0 +1,1 @@
+b"# Azure Service Fabric\xc2\xa0\r\n\r\n## We've moved!\r\n\r\nService Fabric has a new home at https://github.com/Microsoft/service-fabric. \r\n\r\nWe are currently in the process of moving all Service Fabric development to GitHub. As part of this transition, we're moving our repos from the Azure org to the Microsoft org.\r\n"

@@ -1,0 +1,1 @@
+b'# Frosted :snowman:\n\n## We moved to gitlab!\n\nPlease visit [Frosted OS](https://gitlab.com/insane-adding-machines/frosted) and [Insane Adding Machines](https://gitlab.com/insane-adding-machines/) new homes!\n\nBye!\n\n_the frosted development team_\n'

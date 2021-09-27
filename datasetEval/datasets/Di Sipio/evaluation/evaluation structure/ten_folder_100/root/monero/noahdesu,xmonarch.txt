@@ -1,0 +1,1 @@
+b'[![Build Status](https://travis-ci.org/noahdesu/xmonarch.svg?branch=master)](https://travis-ci.org/noahdesu/xmonarch)\n\n* Make\n* C/C++ compiler\n* Docker (for Emscripten SDK)\n\n```bash\nmake test\n```\n'

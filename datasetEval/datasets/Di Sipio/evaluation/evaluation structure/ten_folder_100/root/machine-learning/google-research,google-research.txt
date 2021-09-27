@@ -1,0 +1,1 @@
+b'# Google AI Research\n\nThis repository contains code released by\n[Google AI Research](https://ai.google/research).\n\n---\n\nBecause the repo is large, we recommend you clone the repo without its history.\n\n```\ngit clone git@github.com:google-research/google-research.git --depth=1\n```\n\n---\n\n*Disclaimer: This is not an official Google product.*\n'

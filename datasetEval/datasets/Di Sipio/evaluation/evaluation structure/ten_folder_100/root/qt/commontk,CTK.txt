@@ -1,0 +1,1 @@
+b'Common Toolkit\n==============\n\n.. image:: https://circleci.com/gh/commontk/CTK.png?style=shield\n    :target: https://circleci.com/gh/commontk/CTK\n\nThe Common Toolkit is a community effort to provide support code for medical image analysis,\nsurgical navigation, and related projects.\n\nSee http://commontk.org\n\n'

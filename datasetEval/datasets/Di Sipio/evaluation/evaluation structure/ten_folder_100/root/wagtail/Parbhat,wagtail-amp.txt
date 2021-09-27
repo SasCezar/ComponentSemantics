@@ -1,0 +1,1 @@
+b'# Wagtail AMP\n\nDemo project for the blog series: Amplify a Wagtail/Django site.\n'

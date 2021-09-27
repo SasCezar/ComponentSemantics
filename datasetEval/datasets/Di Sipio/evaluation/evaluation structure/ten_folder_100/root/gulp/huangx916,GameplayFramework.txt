@@ -1,0 +1,1 @@
+b'# GameplayFramework\nGameplayFramework for CocosCreator Instant Games  \nThe HTML form of the documentation can be found on: [https://huangx916.github.io/2019/01/01/gameplayframework/](https://huangx916.github.io/2019/01/01/gameplayframework/)\n'

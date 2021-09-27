@@ -1,0 +1,1 @@
+b"# We've moved!\n\nCome visit us in the [ScriptableRenderPipeline](https://github.com/Unity-Technologies/ScriptableRenderPipeline) repository.\n"

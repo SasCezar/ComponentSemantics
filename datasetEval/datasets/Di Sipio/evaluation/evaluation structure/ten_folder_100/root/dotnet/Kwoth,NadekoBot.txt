@@ -1,0 +1,1 @@
+b"Nadeko's development has been moved to  \n\nhttps://gitlab.com/Kwoth/NadekoBot\n\nDue to unprofessional and unfair treatment I've received from github support.  \n\nSee ya there :tada:"

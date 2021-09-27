@@ -1,0 +1,1 @@
+b"![Gitstalk](https://i.imgur.com/4TLcgCS.png)\n\n### Discover who's upto what on Github\nCheck it out at https://gitstalk.netlify.com/\n\n**Don't forget to upvote on [Product Hunt](https://www.producthunt.com/posts/gitstalk)**\n\n## Local Setup\n\n``` bash\n# install dependencies\nnpm install\n\n# serve with hot reload at localhost:8080\nnpm run dev\n```\n"

@@ -1,0 +1,1 @@
+b"# THIS REPOSITORY DOES NOTHING\n\nIt's here for historical purposes only.\n\nPlease see [doxidize](https://github.com/steveklabnik/doxidize), the successor to this project.\n"

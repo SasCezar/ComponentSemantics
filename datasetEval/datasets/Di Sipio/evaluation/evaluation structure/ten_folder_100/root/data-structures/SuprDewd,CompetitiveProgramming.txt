@@ -1,0 +1,1 @@
+b'# Competitive Programming\n\n[![Build Status](https://travis-ci.org/SuprDewd/CompetitiveProgramming.svg?branch=master)](https://travis-ci.org/SuprDewd/CompetitiveProgramming)\n\nThis repository contains the notebook of team viRUs from Reykjavik University.\n\n## License\nMIT: see the [LICENSE](https://github.com/SuprDewd/CompetitiveProgramming/blob/master/LICENSE) file.\n\n'

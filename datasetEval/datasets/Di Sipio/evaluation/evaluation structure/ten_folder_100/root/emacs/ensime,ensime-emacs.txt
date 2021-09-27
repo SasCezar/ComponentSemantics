@@ -1,0 +1,1 @@
+b'[![Melpa Status](http://melpa.milkbox.net/packages/ensime-badge.svg)](http://melpa.milkbox.net/#/ensime)\n[![Build Status](http://fommil.com/api/badges/ensime/ensime-emacs/status.svg)](http://fommil.com/ensime/ensime-emacs)\n\nDocumentation is available at [ensime.org](http://ensime.org/editors/emacs/)\n'

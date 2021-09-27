@@ -1,0 +1,1 @@
+b'# Nintendo Switch AArch64-only userland library.\nBased on libctru.\n\n[![Build status](https://doozer.io/badge/switchbrew/libnx/buildstatus/master)](https://doozer.io/switchbrew/libnx)\n\n# Install instructions\nSee [Switchbrew](https://switchbrew.org/wiki/Setting_up_Development_Environment).\n'

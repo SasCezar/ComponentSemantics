@@ -1,0 +1,1 @@
+b'### The RaspiBolt Guide is now available on GitHub Pages:\nhttps://stadicus.github.io/RaspiBolt/\n\nThis repository contains all sources and is used for Issue tracking.\n'

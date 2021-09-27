@@ -1,0 +1,1 @@
+b'# MoneroChain\n\n![MoneroChain](http://imgur.com/Urs1Jgi.png "MoneroChain")\n\n\n#### Run:\n\n```bash\nnpm run dev # run app in dev mode\n```\n\n#### Build:\n\n```bash\nnpm run build # build app\n```\n\nIt generates app in `dist` folder.\n'

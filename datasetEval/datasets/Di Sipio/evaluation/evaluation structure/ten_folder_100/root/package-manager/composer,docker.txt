@@ -1,0 +1,1 @@
+b'# Docker\n\nSource of the images at https://hub.docker.com/_/composer/\n\nDocumentation can be found at https://github.com/docker-library/docs/tree/master/composer\n'

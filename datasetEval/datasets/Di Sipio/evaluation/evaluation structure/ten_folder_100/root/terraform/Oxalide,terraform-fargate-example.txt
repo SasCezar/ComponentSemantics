@@ -1,0 +1,1 @@
+b'# Fargate with Terraform\n\nExample repository to deploy an ECS cluster hosting a web application.\n'

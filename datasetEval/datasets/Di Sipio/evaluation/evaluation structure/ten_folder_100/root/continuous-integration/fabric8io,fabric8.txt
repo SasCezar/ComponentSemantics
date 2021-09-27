@@ -1,0 +1,1 @@
+b'<aside class="notice">\nThis repository has been archived and resetted, you can still look at the git history for the old reference.\n</aside>\n'

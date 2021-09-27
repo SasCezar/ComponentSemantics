@@ -85,12 +85,12 @@ def train(model, X, y, test_size=0.3, random_state=1337):
 def analyze_all():
     # datasets = [(diSipio, {'path':'/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'}, 'sipio')]
     datasets = [
-        # (lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/41-software-systems',
+        # (lact, {'path': '../datasets/LACT/msr09-data/41-software-systems',
         #        'data': 'MUDA'}, 'MUDA'),
-         (lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/43-software-systems',
-                'data': 'LACT'}, 'LACT_Test'),
+         (lact, {'path': '../datasets/LACT/msr09-data/43-software-systems',
+                'data': 'LACT'}, 'LACT'),
         #(diSipio, {
-        #    'path': '/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
+        #    'path': '../datasets/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
         # 'sipio')
     ]
     # models = [(xgboost.XGBClassifier, shap.TreeExplainer, 'xgb')]

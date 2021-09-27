@@ -1,0 +1,1 @@
+b'**HTTP/3 explained** is a collaborative effort to document the HTTP/3 and the\nQUIC protocols. Join in and help!\n\nGet the Web, PDF, or e-book versions on\n[gitbook.com](https://www.gitbook.com/book/bagder/http3-explained/details).\n\nThe contents get updated automatically on every commit to this git repository.\n\n![HTTP/3 explained cover](cover_small.jpg)\n'

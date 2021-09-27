@@ -1,0 +1,1 @@
+b'Coin-Hive Proxy\n---------------\n\n### DEPRECATED:\n\n**Use [CoinHive Stratum](https://github.com/cazala/coin-hive-stratum) instead.**\n'

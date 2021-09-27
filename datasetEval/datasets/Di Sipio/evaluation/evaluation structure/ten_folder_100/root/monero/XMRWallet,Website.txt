@@ -1,0 +1,1 @@
+b'More information coming soon!\n\nWebsite: https://www.xmrwallet.com/#/landing.html\n\nSource language files - /src/i18n\nPublic html/css/js - public\n\nBuild:\n1. Install NodeJS https://nodejs.org/en/\n2. Install NPM https://docs.npmjs.com/getting-started/installing-node\n3. Terminal: npm install\n4. Terminal: gulp build\n'

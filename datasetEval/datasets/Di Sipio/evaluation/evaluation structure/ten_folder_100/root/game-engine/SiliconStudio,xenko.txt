@@ -1,0 +1,1 @@
+b'# Xenko: Repository inactive\n\nSince opensource MIT switch, Xenko is now hosted in its own organization.\n\n**Please use https://github.com/xenko3d/xenko instead**\n\nMore details at https://xenko.com/blog/xenko-opensource-mit/\n'

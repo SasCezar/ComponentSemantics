@@ -1,0 +1,1 @@
+b'This github blog theme is forked from [zJiaJun](https://github.com/zJiaJun).\n\nI use this repo to organise interesting papers, projects, websites, blogs and my reading/study notes.\n\nFeel free to send pull requests or open issues :-)\n'

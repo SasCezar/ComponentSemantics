@@ -1,0 +1,1 @@
+b"# Let's Build a Blockchain\nA mini cryptocurrency in Ruby\n\n![](https://i.ytimg.com/vi/3aJI1ABdjQk/hqdefault.jpg)\n### Video of the talk: https://youtu.be/3aJI1ABdjQk?t=17m23s\n\n### Slides here: https://speakerdeck.com/haseebq/lets-build-a-blockchain-a-mini-cryptocurrency-in-ruby\n"

@@ -1,0 +1,1 @@
+b'## Spring Boot Samples\n\nSee more on [blog.netgloo.com](http://blog.netgloo.com) the web development blog by [Netgloo](http://netgloo.com).\n'

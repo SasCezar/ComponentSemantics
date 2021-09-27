@@ -1,0 +1,1 @@
+b'\xef\xbb\xbf# WoA Installer for Raspberry Pi 3\r\n\r\n## IMPORTANT NOTICE\r\nThis project has been discontinued. \r\n\r\n\xe2\x9d\x97 Please use [WOA Deployer for Raspberry Pi](https://github.com/WOA-Project/WOA-Deployer-Rpi) instead'

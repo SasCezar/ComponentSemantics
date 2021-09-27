@@ -1,0 +1,1 @@
+b'# NBB REST API Design Guide\n\n## About\nThis repository hosts the REST API Design Guide of the [National Bank of Belgium](https://www.nbb.be).\n\nThe guide is located on the wiki of this repository: https://github.com/NationalBankBelgium/REST-API-Design-Guide/wiki/Home\n\n## License\nThis project is distributed under the terms of the [EUPL FOSS license](LICENSE.md)'

@@ -1,0 +1,1 @@
+b'# jQuery Bootstrap-style Dropdowns #\n\nCopyright [A Beautiful Site, LLC](http://abeautifulsite.net/)\n\nLicensed under the MIT license: http://opensource.org/licenses/MIT\n\n## Demo & Documentation ##\n\nhttp://labs.abeautifulsite.net/jquery-dropdown/'

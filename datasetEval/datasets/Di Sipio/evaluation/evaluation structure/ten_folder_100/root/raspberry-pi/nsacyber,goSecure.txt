@@ -1,0 +1,1 @@
+b'# goSecure\r\n\r\n## About goSecure\r\n\r\ngoSecure is an easy-to-use and portable Virtual Private Network (VPN) solution. \r\n\r\nTo get started or for more information see https://iadgov.github.io/goSecure/\r\n\r\n## License\r\nSee [LICENSE](./LICENSE.md).\r\n\r\n## Disclaimer\r\nSee [DISCLAIMER](./DISCLAIMER.md).'

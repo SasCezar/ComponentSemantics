@@ -1,0 +1,1 @@
+b'# macports-base\nThis repository contains the source code for the MacPorts command-line client.\n\nOfficial documentation: https://guide.macports.org/\n'

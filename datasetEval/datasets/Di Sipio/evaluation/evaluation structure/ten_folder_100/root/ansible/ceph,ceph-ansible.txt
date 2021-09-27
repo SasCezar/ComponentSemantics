@@ -1,0 +1,1 @@
+b'ceph-ansible\n============\nAnsible playbooks for Ceph, the distributed filesystem.\n\nPlease refer to our hosted documentation here: http://docs.ceph.com/ceph-ansible/master/\n\nYou can view documentation for our ``stable-*`` branches by substituting ``master`` in the link\nabove for the name of the branch. For example: http://docs.ceph.com/ceph-ansible/stable-3.0/ \n'

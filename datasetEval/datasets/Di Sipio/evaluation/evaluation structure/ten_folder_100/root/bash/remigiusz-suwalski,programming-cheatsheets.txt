@@ -1,0 +1,1 @@
+b"# programming-cheatsheets\nThis project is not maintained anymore, but people keep starring/forking it.\nI've decided to overwrite Git history.\nFrom now, please use [reference-cards](https://github.com/remigiusz-suwalski/reference-cards) instead.\n"

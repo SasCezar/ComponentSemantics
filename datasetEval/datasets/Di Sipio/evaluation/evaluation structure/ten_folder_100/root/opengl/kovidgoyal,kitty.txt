@@ -1,0 +1,1 @@
+b'= kitty - the fast, featureful, GPU based, terminal emulator\n\nSee https://sw.kovidgoyal.net/kitty/\n\nimage:https://circleci.com/gh/kovidgoyal/kitty.svg?style=svg["Build status", link="https://circleci.com/gh/kovidgoyal/kitty"]\n'

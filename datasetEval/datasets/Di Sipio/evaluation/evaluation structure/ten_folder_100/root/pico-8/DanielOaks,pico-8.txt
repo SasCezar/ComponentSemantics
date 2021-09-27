@@ -1,0 +1,1 @@
+b"This is most of my PICO-8 stuff, working repo.\n\nThis is all licensed under Creative Commons CC0 Public Domain unless noted otherwise in the cart/directory.\n\nCreditz to 'pixienop' appreciated if stuff from here's used, but not necessary.\n\n<3\n"

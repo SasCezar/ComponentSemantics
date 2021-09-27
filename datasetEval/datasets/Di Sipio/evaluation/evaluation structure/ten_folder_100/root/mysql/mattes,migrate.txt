@@ -1,0 +1,1 @@
+b'# migrate\n\nDatabase migrations written in Go. Use as CLI or import as library.\n\n# DEPRECATED\n\n__mattes/migrate is now [golang-migrate/migrate](https://github.com/golang-migrate/migrate)__\n\nPlease open issues and pull requests in the new repository.\n'

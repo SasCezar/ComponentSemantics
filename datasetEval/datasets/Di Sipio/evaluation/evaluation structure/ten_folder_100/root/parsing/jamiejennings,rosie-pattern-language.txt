@@ -1,0 +1,1 @@
+b"# We have moved!\n\nRosie's new home for code and issues is on gitlab at\n[https://gitlab.com/rosie-pattern-language/rosie](https://gitlab.com/rosie-pattern-language/rosie).\n\nRosie's home page remains at [http://rosie-lang.org](http://rosie-lang.org).\n\n"

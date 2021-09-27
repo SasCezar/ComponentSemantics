@@ -1,0 +1,1 @@
+b'# Raindrop.io Browser Extension\n### Install dependencies\nHighly recommend to user `yarn` to install dependencies, it prevent any inconsistencies!\n\n### Build for Chrome\n`yarn run build-chrome`\n\n### Build for Firefox\n`mkdir build`\n`yarn`\n`yarn run build-firefox`\n\n### Build for Opera\n`yarn run build-opera`'

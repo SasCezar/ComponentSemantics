@@ -1,0 +1,1 @@
+b"# [vue-patterns](https://learn-vuejs.github.io/vue-patterns/)\n\n> Useful Vue patterns, techniques, tips and tricks and helpful curated links.\n\n[![Vue Patterns](docs/.vuepress/public/vue-patterns-hero.png?raw=true 'Vue Patterns')](https://learn-vuejs.github.io/vue-patterns/)\n"

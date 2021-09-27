@@ -1,0 +1,1 @@
+b"## Sorcery has moved!\n\nYou can find sorcery at it's new home: [Sorcery/sorcery](https://github.com/Sorcery/sorcery)\n"

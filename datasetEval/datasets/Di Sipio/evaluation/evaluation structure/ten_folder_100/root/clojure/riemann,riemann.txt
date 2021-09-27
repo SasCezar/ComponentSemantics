@@ -1,0 +1,1 @@
+b'# Riemann monitors distributed systems.\n\nRiemann aggregates events from your servers and applications with a powerful stream processing language.\n\nFind out more at [http://riemann.io](http://riemann.io)\n\n## Build Status\n\n[![CircleCI](https://circleci.com/gh/riemann/riemann.svg?style=svg)](https://circleci.com/gh/riemann/riemann)\n\n\n'

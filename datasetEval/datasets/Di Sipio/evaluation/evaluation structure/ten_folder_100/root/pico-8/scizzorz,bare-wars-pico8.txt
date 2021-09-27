@@ -1,0 +1,1 @@
+b'# Bare Wars\n\nAmass an army of bears.\n\n## Cartridge\n\n![Bare Wars Cartridge](https://github.com/scizzorz/bare-wars-pico8/blob/master/barewars.p8.png)\n'

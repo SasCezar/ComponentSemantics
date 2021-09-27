@@ -1,0 +1,1 @@
+b'# Changing the Language in Android Apps\n\nThe repository contains 2 approaches for changing a locale in android apps.\n`ignore_deprecation` branch is more easier and flexible approach despite using some deprecated API.\n\nArticle on Medium:\nhttps://proandroiddev.com/change-language-programmatically-at-runtime-on-android-5e6bc15c758\n'
