@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "componentsemantics"
+version = "0.1.0"
+description = ""
+authors = ["Cezar  Sas"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+alabaster = "0.7.12"
+argh = "0.26.2"
+asn1crypto = "1.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

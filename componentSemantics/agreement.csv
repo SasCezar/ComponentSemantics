@@ -1,0 +1,5 @@
+metric,I5-L0,I0-L5,I4-L1,I1-L4,I2-L3,I3-L2
+cohesion,195,139,33,23,12,10
+inter_similarity,102,159,36,49,31,35
+dep_sim_corr,254,44,38,29,21,26
+silhouette,44,156,54,71,37,50
