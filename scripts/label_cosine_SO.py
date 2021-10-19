@@ -41,7 +41,14 @@ matplotlib.rc('font', **font)
 raw_data = []
 raw_labl = []
 raw_tupl = []
+remap = {'MUDABlue': 'MUDABlue', 'LACT': 'LACT', 'Ohasi': 'Ohasi', 'InformatiCup': 'ClassifyHub',
+         'Vasquez 2014 API': 'Vasquez', 'Le Clair Paper': 'Le Clair', 'LASCAD': 'LASCAD',
+         'Awesome-Java': 'Awesome-Java', 'HiGitClass-AI': 'HiGitClass-AI', 'HiGitClass-BIO': 'HiGitClass-BIO',
+         'Di Sipio': 'Di Sipio', 'Ours': 'Ours'}
+
 for name in wb2.sheetnames:
+    if name not in remap:
+        continue
     terms = []
     ws = wb2[name]
     print(ws.max_row, ws.min_row)
@@ -55,7 +62,7 @@ for name in wb2.sheetnames:
     iterate_indices = np.tril_indices(similarities.shape[0], k=-1)
     flat_sims = list(similarities[iterate_indices])
     raw_data.extend(flat_sims)
-    raw_labl.extend([name]*len(flat_sims))
+    raw_labl.extend([remap[name]] * len(flat_sims))
     tupl = []
     for i, j in zip(*iterate_indices):
         s = 0

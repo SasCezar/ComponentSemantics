@@ -12,8 +12,6 @@ wb2 = load_workbook('DatasetsLabels.xlsx')
 tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
 model = AutoModel.from_pretrained("microsoft/codebert-base")
 
-#fastext = ft.load_model('/home/sasce/PycharmProjects/ComponentSemantics/data/models/fastText/wiki.en.bin')
-
 
 def get_embeddings(terms):
     embeddings = []
@@ -36,7 +34,14 @@ matplotlib.rc('font', **font)
 raw_data = []
 raw_labl = []
 
+remap = {'MUDABlue': 'MUDABlue', 'LACT': 'LACT', 'Ohasi': 'Ohasi', 'InformatiCup': 'ClassifyHub',
+         'Vasquez 2014 API': 'Vasquez', 'Le Clair Paper': 'Le Clair', 'LASCAD': 'LASCAD',
+         'Awesome-Java': 'Awesome-Java', 'HiGitClass-AI': 'HiGitClass-AI', 'HiGitClass-BIO': 'HighGitClass-BIO',
+         'Ours': 'Ours'}
+
 for name in wb2.sheetnames:
+    if name not in remap:
+        continue
     terms = []
     ws = wb2[name]
     print(ws.max_row, ws.min_row)
@@ -50,12 +55,13 @@ for name in wb2.sheetnames:
     iterate_indices = np.tril_indices(similarities.shape[0], k=-1)
     flat_sims = list(similarities[iterate_indices])
     raw_data.extend(flat_sims)
-    raw_labl.extend([name]*len(flat_sims))
+    raw_labl.extend([remap[name]] * len(flat_sims))
     sns.heatmap(similarities, yticklabels=terms, xticklabels=terms)
     plt.savefig(f'similarities_{name}.pdf', format='pdf', dpi=1200, bbox_inches='tight')
     plt.clf()
 
 import csv
+
 with open(f'raw_label_similarities_CodeBERT.csv', 'wt') as outf:
     writer = csv.writer(outf)
     writer.writerow(["dataset", "similarity"])

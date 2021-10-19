@@ -7,20 +7,20 @@ import numpy as np
 import shap
 from joblib import Memory, Parallel, delayed
 from multiset import Multiset
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.utils import resample
 
+from dataloader import hiGitClass, diSipio, lact, awesomejava
 from datasetEval.analysis.class_informative_words import plot_heatmap, save_info_words, save_intersections, \
     save_heatmap, TFIDF, get_intersections
-from datasetEval.dataloader import diSipio, lact
 
 memory = Memory('cache', verbose=0)
 
 
-def analyze(model, explainer_class, X, y, feature_names, top_info_words=50, sample=10):
+def analyze(model, explainer_class, X, y, feature_names, top_info_words=50, sample=20):
     # X, y = resample(X, y, stratify=y, n_samples=sample)
-    explainer = explainer_class(model.predict_proba, X)
 
     y_map = {}
     for i in set(y):
@@ -31,54 +31,67 @@ def analyze(model, explainer_class, X, y, feature_names, top_info_words=50, samp
     informative_words = defaultdict(lambda: Multiset())
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        # X, y = resample(X, y, stratify=y, n_samples=sample)
-        #for i in range(0, len(X), sample):
-            #X_sample = X[i:i + sample] if i + sample < len(X) else X[i:]
-            #y_sample = y[i:i + sample] if i + sample < len(X) else y[i:]
+        ns = len(X)
+        X, y = resample(X, y, stratify=y, n_samples=ns)
+        for i in range(0, len(X), sample):
+            X_sample = X[i:i + sample] if i + sample < len(X) else X[i:]
+            y_sample = y[i:i + sample] if i + sample < len(X) else y[i:]
 
-        res = Parallel(n_jobs=3)(delayed(extract_info_words)(explainer, model, X, y, feature_names, y_map,
-                                                   top_info_words, i, sample) for i in range(0, len(X), sample))
+            res = extract_info_words(explainer_class, model, X_sample, y_sample, feature_names, y_map,
+                                     top_info_words)
+            for l in res:
+                informative_words[l].update(res[l])
+        # res = Parallel(n_jobs=2)(delayed(extract_info_words)(explainer_class, model, X, y, feature_names, y_map,
+        #                                           top_info_words, i, sample) for i in range(0, len(X), sample))
 
-        for r in res:
-            for i in r:
-                informative_words[i].update(r[i])
+        # for r in res:
+        #    for i in r:
+        #        informative_words[i].update(r[i])
 
     return informative_words
 
 
-def extract_info_words(explainer, model, X, y, feature_names, y_map, top_info_words, i, sample):
-    X_sample = X[i:i + sample] if i + sample < len(X) else X[i:]
-    y_sample = y[i:i + sample] if i + sample < len(X) else y[i:]
+def extract_info_words(explainer_class, model, X, y, feature_names, y_map, top_info_words):
+    explainer = explainer_class(model.predict_proba, X)
+    # X_sample = X[i:i + sample] if i + sample < len(X) else X[i:]
+    # y_sample = y[i:i + sample] if i + sample < len(X) else y[i:]
     informative_words = defaultdict(lambda: Multiset())
-    shap_values = explainer.shap_values(X_sample)
-    predicted_y = model.predict(X_sample)
+    shap_values = explainer.shap_values(X)
+    predicted_y = model.predict(X)
     # shap_interaction_values = explainer.shap_interaction_values(features)
     expected_value = explainer.expected_value
     # print('expected', expected_value)
     for sample_id in range(len(shap_values[0])):
-        y_id = y_map[y_sample[sample_id]]
+        y_id = y_map[y[sample_id]]
         y_tilde = predicted_y[sample_id]
         if y_id == y_map[y_tilde]:
             ind = np.argpartition(shap_values[y_id][sample_id], -top_info_words)[-top_info_words:]
             sample_features = [feature_names[i] for i in ind
                                # if shap_values[y_id][sample_id][i] + expected_value[y_id] > np.mean(expected_value)]
-                               if
-                               shap_values[y_id][sample_id][
-                                   i] > 0]  # + expected_value[y_id] > np.mean(expected_value)]
+                               if shap_values[y_id][sample_id][i] > 0]
+            # + expected_value[y_id] > np.mean(expected_value)]
             # sample_features_1 = [feature_names[i] for i in ind if shap_values[y_id][sample_id][i] + expected_value[y_id] > np.mean(expected_value)]
             # assert sample_features_1 == sample_features
 
-            informative_words[y_sample[sample_id]].update(sample_features)
+            informative_words[y[sample_id]].update(sample_features)
     return informative_words
 
 
 def train(model, X, y, test_size=0.3, random_state=1337):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)#, stratify=y)
     trained_model = model().fit(X_train, y_train)
     performance = {'train_score': trained_model.score(X_train, y_train),
                    'test_score': trained_model.score(X_test, y_test)}
-    trained_model = model().fit(X, y)
+
+    y_pred = trained_model.predict(X_test)
+    precision, recall, fscore, support = precision_recall_fscore_support(y_test, y_pred, average='weighted')
+    performance['precision'] = precision
+    performance['recall'] = recall
+    performance['fscore'] = fscore
+    performance['support'] = support
     performance['all_score'] = trained_model.score(X, y)
+
+    trained_model = model().fit(X, y)
     return trained_model, performance
 
 
@@ -87,11 +100,29 @@ def analyze_all():
     datasets = [
         # (lact, {'path': '../datasets/LACT/msr09-data/41-software-systems',
         #        'data': 'MUDA'}, 'MUDA'),
-         (lact, {'path': '../datasets/LACT/msr09-data/43-software-systems',
-                'data': 'LACT'}, 'LACT'),
-        #(diSipio, {
-        #    'path': '../datasets/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
-        # 'sipio')
+        # (lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/43-software-systems',
+        #        'data': 'LACT'}, 'LACT'),
+        # (diSipio, {
+        #    'path': '/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
+        # 'sipio'),
+        #(hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/AI_Hier.json',
+        #              'level': 0}, 'HiGitClassAI-0'),
+        #(hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/AI_Hier.json',
+        #              'level': 1}, 'HiGitClassAI-1'),
+        #(hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/Bio_Hier.json',
+        #              'level': 0}, 'HiGitClassBIO-0'),
+        #(hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/Bio_Hier.json',
+        #              'level': 1}, 'HiGitClassBIO-1'),
+        (awesomejava,
+          {'path': '/home/sasce/PycharmProjects/ComponentSemantics/componentSemantics/java-projects.final.csv',
+           'embeddings_path': '/home/sasce/PycharmProjects/ComponentSemantics/data/embeddings/terms-count',
+           'level': '1st'},
+          'OURS'),
+        # (awesomejava,
+        #  {'path': '/home/sasce/PycharmProjects/ComponentSemantics/componentSemantics/java-projects.final.csv',
+        #   'embeddings_path': '/home/sasce/PycharmProjects/ComponentSemantics/data/embeddings/terms-count',
+        #   'level': '3rd'},
+        #  'AwesomeJava')
     ]
     # models = [(xgboost.XGBClassifier, shap.TreeExplainer, 'xgb')]
     models = [(MultinomialNB, shap.KernelExplainer, 'MNB')]
@@ -114,7 +145,7 @@ def analyze_all():
             with open(scores_path, 'wt') as outf:
                 writer = csv.writer(outf)
                 writer.writerow(['run', 'train', 'test'])
-                for i in range(1):
+                for i in range(n_sample):
                     trained_model, performance = train(model, X, y)
                     info_words = analyze(trained_model, explainer, X, y, feature_names)
                     for c in info_words:

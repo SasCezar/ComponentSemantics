@@ -9,6 +9,7 @@ import shap
 import xgboost
 
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from multiset import Multiset
@@ -16,7 +17,8 @@ import seaborn as sn
 import matplotlib.pyplot as plt
 from joblib import Memory
 
-from datasetEval.dataloader import lact, diSipio
+from dataloader import awesomejava
+from datasetEval.dataloader import lact, diSipio, hiGitClass
 
 memory = Memory('cache', verbose=0)
 
@@ -50,11 +52,14 @@ def analyze(model, explainer_class, X, y, feature_names, top_info_words=50, samp
         y_id = y_map[y[sample_id]]
         y_tilde = predicted_y[sample_id]
         if y_id == y_map[y_tilde]:
-            ind = np.argpartition(shap_values[y_id][sample_id], -top_info_words)[-top_info_words:]
+            if type(shap_values) != list and len(shap_values.shape) == 2:
+                s_values = shap_values[sample_id]
+            else:
+                s_values = shap_values[y_id][sample_id]
+            ind = np.argpartition(s_values, -top_info_words)[-top_info_words:]
             sample_features = [feature_names[i] for i in ind
                                # if shap_values[y_id][sample_id][i] + expected_value[y_id] > np.mean(expected_value)]
-                               if
-                               shap_values[y_id][sample_id][i] > 0]  # + expected_value[y_id] > np.mean(expected_value)]
+                               if s_values[i] > 0]  # + expected_value[y_id] > np.mean(expected_value)]
             # sample_features_1 = [feature_names[i] for i in ind if shap_values[y_id][sample_id][i] + expected_value[y_id] > np.mean(expected_value)]
             # assert sample_features_1 == sample_features
 
@@ -75,11 +80,17 @@ def TFIDF(dataset, **kwargs):
 
 
 def train(model, X, y, test_size=0.3, random_state=1337):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, stratify=y)
-    trained_model = model(max_depth=5).fit(X_train, y_train)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)  # , stratify=y)
+    trained_model = model(max_depth=2, eta=0.2, min_child_weight=4).fit(X_train, y_train)
     performance = {'train_score': trained_model.score(X_train, y_train),
                    'test_score': trained_model.score(X_test, y_test)}
-    trained_model = model(max_depth=5).fit(X, y)
+    y_pred = trained_model.predict(X_test)
+    precision, recall, fscore, support = precision_recall_fscore_support(y_test, y_pred, average='weighted')
+    performance['precision'] = precision
+    performance['recall'] = recall
+    performance['fscore'] = fscore
+    performance['support'] = support
+    trained_model = model(max_depth=2,  eta=0.2, min_child_weight=4).fit(X, y)
     performance['all_score'] = trained_model.score(X, y)
     return trained_model, performance
 
@@ -150,19 +161,36 @@ def save_intersections(path, dataset, model, intersection_matrix, labels):
 
 def analyze_all():
     # datasets = [(diSipio, {'path':'/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'}, 'sipio')]
-    datasets = [#(lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/41-software-systems',
-                #        'data': 'MUDA'}, 'MUDA'),
-                #(lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/43-software-systems',
-                #        'data': 'LACT'}, 'LACT'),
-                (diSipio, {
-                    'path': '/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
-                 'sipio')]
+    datasets = [  # (lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/41-software-systems',
+        #        'data': 'MUDA'}, 'MUDA'),
+        # (lact, {'path': '/home/sasce/Downloads/Classifications Dataset/LACT/msr09-data/43-software-systems',
+        #        'data': 'LACT'}, 'LACT'),
+        # (diSipio, {
+        #    'path': '/home/sasce/Downloads/Classifications Dataset/Di Sipio/evaluation/evaluation structure/ten_folder_100/root'},
+        # 'sipio'),
+        # (hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/AI_Hier.json',
+        #              'level': 0}, 'HiGitClassAI-0'),
+        # (hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/AI_Hier.json',
+        #              'level': 1}, 'HiGitClassAI-1'),
+        # (hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/Bio_Hier.json',
+        #              'level': 0}, 'HiGitClassBIO-0'),
+        # (hiGitClass, {'path': '/home/sasce/Downloads/Classifications Dataset/HiGitClass/Bio_Hier.json',
+        #              'level': 1}, 'HiGitClassBIO-1')
+         (awesomejava, {'path': '/home/sasce/PycharmProjects/ComponentSemantics/componentSemantics/java-projects.final.csv',
+                        'embeddings_path': '/home/sasce/PycharmProjects/ComponentSemantics/data/embeddings/terms-count', 'level': '1st'},
+          'OURS'),
+        #(awesomejava,
+        # {'path': '/home/sasce/PycharmProjects/ComponentSemantics/componentSemantics/java-projects.final.csv',
+        #  'embeddings_path': '/home/sasce/PycharmProjects/ComponentSemantics/data/embeddings/terms-count',
+        #  'level': '3rd'},
+        # 'AwesomeJava')
+    ]
     models = [(xgboost.XGBClassifier, shap.TreeExplainer, 'xgb')]
     # models = [(DecisionTreeClassifier, shap.TreeExplainer, 'decisiontree')]
     n_features = 1000
     max_df = 0.9
     min_df = 0.1
-    n_sample = 5
+    n_sample = 1
     feature_extractor = (
         TFIDF, {'max_features': n_features, 'max_df': max_df, 'min_df': min_df, 'token_pattern': r"(?u)\b\w\w{3,}\b"},
         'tfidf')
