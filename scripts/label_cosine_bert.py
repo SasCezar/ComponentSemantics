@@ -17,7 +17,7 @@ def get_embeddings(terms):
     embeddings = []
     for term in terms:
         nl_tokens = tokenizer.tokenize(term)
-        tokens = [tokenizer.cls_token] + nl_tokens + [tokenizer.sep_token]
+        tokens = [tokenizer.cls_token] + [tokenizer.sep_token]
         tokens_ids = tokenizer.convert_tokens_to_ids(tokens)
         context_embeddings = model(torch.tensor(tokens_ids)[None, :])[0]
         sentence_embedding = torch.mean(context_embeddings, dim=1).squeeze()

@@ -35,6 +35,7 @@ remap = {'MUDABlue': 'MUDABlue', 'LACT': 'LACT', 'Ohasi': 'Ohasi', 'InformatiCup
          'Di Sipio': 'Di Sipio', 'Ours': 'Ours', 'Ohashi': 'Ohashi', 'Sharma': 'Sharma', 'Borges': 'Borges'}
 
 for name in wb2.sheetnames:
+    print(name)
     if name not in remap:
         continue
     terms = []
@@ -60,7 +61,10 @@ for name in wb2.sheetnames:
     plt.savefig(f'similarities_{remap[name]}_{model}.pdf', format='pdf', dpi=1200, bbox_inches='tight')
     plt.clf()
 
-with open(f'raw_label_similarities_{model}.csv', 'wt') as outf:
+
+print(raw_labl)
+
+with open(f'test_raw_label_similarities_{model}.csv', 'wt') as outf:
     writer = csv.writer(outf)
     writer.writerow(["dataset", "similarity", 'label a', 'label b'])
     for lbl, d, (x, y) in zip(raw_labl, raw_data, raw_tupl):
